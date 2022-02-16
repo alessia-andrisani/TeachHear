@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502333B327BD483C008E4884 /* ExerciseViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				502333AD27BD445B008E4884 /* ExerciseButton.swift */,
+			);
+			path = ExerciseViewComponents;
+			sourceTree = "<group>";
+		};
 		50DB598C27BBB8EE00E6A635 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +126,7 @@
 				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
 				502333AF27BD4608008E4884 /* CreateExerciseView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
+				502333B327BD483C008E4884 /* ExerciseViewComponents */,
 				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
 				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
 			);
@@ -142,7 +151,6 @@
 				50DB59B927BBC08D00E6A635 /* TrendsView.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
-				502333AD27BD445B008E4884 /* ExerciseButton.swift */,
 			);
 			path = ContentViewComponents;
 			sourceTree = "<group>";
