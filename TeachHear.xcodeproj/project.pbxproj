@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		502333AC27BD4190008E4884 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AB27BD4190008E4884 /* FirstView.swift */; };
+		502333AE27BD445B008E4884 /* ExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AD27BD445B008E4884 /* ExerciseButton.swift */; };
+		502333B027BD4608008E4884 /* CreateExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AF27BD4608008E4884 /* CreateExerciseView.swift */; };
 		50DB599927BBB8EE00E6A635 /* TeachHearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */; };
 		50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599A27BBB8EE00E6A635 /* ContentView.swift */; };
 		50DB599D27BBB8F000E6A635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB599C27BBB8F000E6A635 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		502333AB27BD4190008E4884 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		502333AD27BD445B008E4884 /* ExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseButton.swift; sourceTree = "<group>"; };
+		502333AF27BD4608008E4884 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
 		50DB599527BBB8EE00E6A635 /* TeachHear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachHear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachHearApp.swift; sourceTree = "<group>"; };
 		50DB599A27BBB8EE00E6A635 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				502333AB27BD4190008E4884 /* FirstView.swift */,
 				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
+				502333AF27BD4608008E4884 /* CreateExerciseView.swift */,
 				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
 				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
 			);
@@ -134,6 +139,7 @@
 				50DB59B927BBC08D00E6A635 /* TrendsView.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
+				502333AD27BD445B008E4884 /* ExerciseButton.swift */,
 			);
 			path = ContentViewComponents;
 			sourceTree = "<group>";
@@ -218,11 +224,13 @@
 			files = (
 				50DB59BA27BBC08D00E6A635 /* TrendsView.swift in Sources */,
 				502333AC27BD4190008E4884 /* FirstView.swift in Sources */,
+				502333B027BD4608008E4884 /* CreateExerciseView.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
 				50DB59B327BBBF0E00E6A635 /* Song+CoreDataProperties.swift in Sources */,
 				50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */,
+				502333AE27BD445B008E4884 /* ExerciseButton.swift in Sources */,
 				F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */,
 				50DB59B227BBBF0E00E6A635 /* Song+CoreDataClass.swift in Sources */,
 				50DB59B127BBBF0E00E6A635 /* Exercise+CoreDataProperties.swift in Sources */,
