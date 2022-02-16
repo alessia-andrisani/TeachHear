@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FoldersView: View {
-    var body: some View {
+	var body: some View {
 		VStack(alignment: .leading) {
 			Text("Folders")
 				.fontWeight(.bold)
@@ -16,13 +16,16 @@ struct FoldersView: View {
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 50) {
 					ForEach(0..<10) { _ in
-						ZStack {
-					  Image("Folder")
-							.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 3, y: 5)
-					Text("Simple Present")
-								.font(.system(size: 20))
-								.fontWeight(.bold)
-								.foregroundColor(.indigo)
+						
+						NavigationLink(destination: ExerciseView()) {
+							ZStack {
+								Image("Folder")
+									.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 3, y: 5)
+								Text("Simple Present")
+									.font(.system(size: 20))
+									.fontWeight(.bold)
+									.foregroundColor(.indigo)
+							}
 						}
 					}
 				}
@@ -31,11 +34,11 @@ struct FoldersView: View {
 			
 		}
 		.padding(.all)
-    }
+	}
 }
 
 struct FoldersView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoldersView()
-    }
+	static var previews: some View {
+		FoldersView()
+	}
 }

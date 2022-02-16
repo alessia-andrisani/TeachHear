@@ -8,31 +8,33 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    var body: some View {
-		ZStack(alignment: .leading) {
-			RoundedRectangle(cornerRadius: 20, style: .continuous)
-				.foregroundColor(Color(uiColor: .systemGray5))
-				.frame(height: 50)
-				.padding(.horizontal)
-			
-			HStack {
-				Image(systemName: "magnifyingglass")
-					.foregroundColor(.secondary)
+	var body: some View {
+		NavigationLink(destination: CreateExerciseView()) {
+			ZStack(alignment: .leading) {
+				RoundedRectangle(cornerRadius: 20, style: .continuous)
+					.foregroundColor(Color(uiColor: .systemGray5))
+					.frame(height: 50)
+					.padding(.horizontal)
 				
-				Text("Search for a song")
-					.foregroundColor(.secondary)
-				
+				HStack {
+					Image(systemName: "magnifyingglass")
+						.foregroundColor(.secondary)
+					
+					Text("Search for a song")
+						.foregroundColor(.secondary)
+					
+				}
+				.padding()
+				.padding(.leading)
 			}
-			.padding()
-			.padding(.leading)
 		}
-
-    }
+		
+	}
 }
 
 struct SearchBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBarView()
-.previewInterfaceOrientation(.landscapeRight)
-    }
+	static var previews: some View {
+		SearchBarView()
+			.previewInterfaceOrientation(.landscapeRight)
+	}
 }

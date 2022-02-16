@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TrendsView: View {
-    var body: some View {
+	var body: some View {
 		VStack(alignment: .leading) {
 			Text("Trends")
 				.fontWeight(.bold)
@@ -16,43 +16,45 @@ struct TrendsView: View {
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 50) {
 					ForEach(0..<10) { _ in
-						HStack {
-							ZStack(alignment: .leading) {
-								RoundedRectangle(cornerRadius: 13)
-									.strokeBorder(lineWidth: 0.1)
-									.foregroundColor(.secondary)
-									.frame(width: 360, height: 160)
-									.background(Color(uiColor: .systemGray6))
-									.mask(RoundedRectangle(cornerRadius: 7))
-									.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 2, y: 5)
-								HStack {
-								RoundedRectangle(cornerRadius: 10)
-									.foregroundColor(.indigo)
-									.frame(width: 120, height: 120)
-									.padding()
-									VStack {
-									Text("Save Your Tears")
-											.fontWeight(.semibold)
-											.font(.system(size: 20))
-									Text("Sentence Scramble")
-											.font(.system(size: 17))
+						NavigationLink(destination: CreateExerciseView()) {
+							HStack {
+								ZStack(alignment: .leading) {
+									RoundedRectangle(cornerRadius: 13)
+										.strokeBorder(lineWidth: 0.1)
+										.foregroundColor(.secondary)
+										.frame(width: 360, height: 160)
+										.background(Color(uiColor: .systemGray6))
+										.mask(RoundedRectangle(cornerRadius: 7))
+										.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 2, y: 5)
+									HStack {
+										RoundedRectangle(cornerRadius: 10)
+											.foregroundColor(.indigo)
+											.frame(width: 120, height: 120)
+											.padding()
+										VStack {
+											Text("Save Your Tears")
+												.fontWeight(.semibold)
+												.font(.system(size: 20))
+											Text("Sentence Scramble")
+												.font(.system(size: 17))
+										}
 									}
 								}
 							}
+							.padding(.trailing)
 						}
-						.padding(.trailing)
 					}
 				}
 			}
 			
 		}
 		.padding()
-    }
+	}
 }
 
 struct TrendsView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrendsView()
-.previewInterfaceOrientation(.landscapeLeft)
-    }
+	static var previews: some View {
+		TrendsView()
+			.previewInterfaceOrientation(.landscapeLeft)
+	}
 }
