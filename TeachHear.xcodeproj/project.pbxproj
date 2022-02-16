@@ -21,6 +21,8 @@
 		50DB59BA27BBC08D00E6A635 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B927BBC08D00E6A635 /* TrendsView.swift */; };
 		50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BB27BBC09B00E6A635 /* RecentsView.swift */; };
 		50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */; };
+		F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84827BCF22800B6E4C1 /* LyricsView.swift */; };
+		F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		50DB59B927BBC08D00E6A635 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
 		50DB59BB27BBC09B00E6A635 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F538A84827BCF22800B6E4C1 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+		F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			children = (
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
+				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
+				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
 			);
 			path = ContentViewComponents;
+			sourceTree = "<group>";
+		};
+		F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */,
+			);
+			path = LyricsViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +216,10 @@
 				50DB59BA27BBC08D00E6A635 /* TrendsView.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
+				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
 				50DB59B327BBBF0E00E6A635 /* Song+CoreDataProperties.swift in Sources */,
 				50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */,
+				F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */,
 				50DB59B227BBBF0E00E6A635 /* Song+CoreDataClass.swift in Sources */,
 				50DB59B127BBBF0E00E6A635 /* Exercise+CoreDataProperties.swift in Sources */,
 				50DB59B827BBC07400E6A635 /* FoldersView.swift in Sources */,
