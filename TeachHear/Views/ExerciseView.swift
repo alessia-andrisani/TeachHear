@@ -1,5 +1,5 @@
 //
-//  CreateExerciseView.swift
+//  ExerciseView.swift
 //  TeachHear
 //
 //  Created by Alessia Andrisani on 16/02/22.
@@ -7,50 +7,20 @@
 
 import SwiftUI
 
-struct CreateExerciseView: View {
-	@State var selectedExerciseType = ExerciseType.wordScramble
+struct ExerciseView: View {
 	var body: some View {
-		
 		ZStack {
 			Color.indigo
 				.ignoresSafeArea()
-			VStack {
-				ZStack(alignment: .leading) {
-					RoundedRectangle(cornerRadius: 30, style: .continuous)
-						.foregroundColor(Color.white)
-						.frame(height: 121)
-					//						.frame(width: 820, height: 121)
-					
-					VStack(alignment: .leading) {
-						
-						Text("Exercise type")
-							.fontWeight(.semibold)
-							.font(.system(size: 22))
-							.padding()
-						
-						HStack {
-							ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
-								Button {
-									selectedExerciseType = exerciseType
-								} label: {
-									ExerciseButton(exerciseType: exerciseType,
-												   selectedExerciseType: $selectedExerciseType)
-								}
-								
-							}
-							
-						}
-						.padding([.bottom, .leading])
-					}
-				}
-				
-				ZStack {
-					RoundedRectangle(cornerRadius: 30, style: .continuous)
-						.foregroundColor(Color.white)
-						.ignoresSafeArea(edges: .vertical)
-					
-					ScrollView(.vertical, showsIndicators: true) {
-						Text("""
+			
+			RoundedRectangle(cornerRadius: 30, style: .continuous)
+				.foregroundColor(Color.white)
+				.frame(minWidth: 820, idealWidth: 820, maxWidth: 900, minHeight: 800, idealHeight: .infinity, maxHeight: .infinity)
+				.ignoresSafeArea()
+			
+			
+			ScrollView(.vertical, showsIndicators: true) {
+				Text("""
 Ooh
 Na-na, yeah
 I saw you dancing in a crowded room
@@ -89,22 +59,16 @@ Save your tears for another day (ah)
 Save your tears for another day (ah)
 
 """)
-							.font(.largeTitle)
-						
-					}
-				}
+					.font(.largeTitle)
 				
 			}
-			.frame(minWidth: 820, idealWidth: 820, maxWidth: 900, minHeight: 800, idealHeight: .infinity, maxHeight: .infinity)
 		}
-		.navigationTitle("New Exercise")
-		.navigationBarTitleDisplayMode(.inline)
 	}
 }
 
-struct CreateExerciseView_Previews: PreviewProvider {
+struct ExerciseView_Previews: PreviewProvider {
 	static var previews: some View {
-		CreateExerciseView()
-			.previewInterfaceOrientation(.landscapeLeft)
+		ExerciseView()
+.previewInterfaceOrientation(.landscapeLeft)
 	}
 }
