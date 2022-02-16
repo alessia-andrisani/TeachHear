@@ -12,6 +12,7 @@ struct SearchBarView: View {
 		ZStack(alignment: .leading) {
 			RoundedRectangle(cornerRadius: 20, style: .continuous)
 				.foregroundColor(Color(uiColor: .systemGray5))
+				.frame(height: 50)
 				.padding(.horizontal)
 			
 			HStack {

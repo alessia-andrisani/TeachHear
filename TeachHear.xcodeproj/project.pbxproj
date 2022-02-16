@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502333AC27BD4190008E4884 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AB27BD4190008E4884 /* FirstView.swift */; };
 		50DB599927BBB8EE00E6A635 /* TeachHearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */; };
 		50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599A27BBB8EE00E6A635 /* ContentView.swift */; };
 		50DB599D27BBB8F000E6A635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB599C27BBB8F000E6A635 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502333AB27BD4190008E4884 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		50DB599527BBB8EE00E6A635 /* TeachHear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachHear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachHearApp.swift; sourceTree = "<group>"; };
 		50DB599A27BBB8EE00E6A635 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,8 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
-				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
+				502333AB27BD4190008E4884 /* FirstView.swift */,
 				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
+				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
 				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
 			);
 			path = Views;
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DB59BA27BBC08D00E6A635 /* TrendsView.swift in Sources */,
+				502333AC27BD4190008E4884 /* FirstView.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
