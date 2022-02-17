@@ -30,7 +30,7 @@ struct FirstView: View {
 					}
 					
 					
-					TrendsView()
+					TrendsSection()
 						.padding(.bottom)
 					
 					

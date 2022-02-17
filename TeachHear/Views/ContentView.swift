@@ -8,27 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+	@Environment(\.managedObjectContext) private var moc
 	
-	@Environment(\.managedObjectContext) var moc
-	
-	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) var songs: FetchedResults<Song>
+	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<Song>
 	
 	var body: some View {
 		NavigationView {
-			ScrollView(.vertical) {
-				SearchBarView()
-					.padding([.top, .bottom])
-				
-				FoldersView()
-					.padding(.bottom)
-				
-				TrendsView()
-					.padding(.bottom)
-				
-				RecentsView()
-					.padding(.bottom)
-				
+			ScrollView {
+				VStack(spacing: 20) {
+					SearchBarView()
+					
+					FoldersView()
+					
+					TrendsSection()
+					
+					RecentsView()
+				}
 			}
+			.navigationTitle("Exercises")
+			.navigationBarTitleDisplayMode(.inline)
 		}
 		.navigationViewStyle(.stack)
 	}

@@ -23,12 +23,14 @@
 		50DB59B327BBBF0E00E6A635 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59AF27BBBF0E00E6A635 /* Song+CoreDataProperties.swift */; };
 		50DB59B527BBBF2D00E6A635 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B427BBBF2D00E6A635 /* DataController.swift */; };
 		50DB59B827BBC07400E6A635 /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B727BBC07400E6A635 /* FoldersView.swift */; };
-		50DB59BA27BBC08D00E6A635 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B927BBC08D00E6A635 /* TrendsView.swift */; };
+		50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B927BBC08D00E6A635 /* TrendsSection.swift */; };
 		50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BB27BBC09B00E6A635 /* RecentsView.swift */; };
 		50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */; };
 		F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84827BCF22800B6E4C1 /* LyricsView.swift */; };
 		F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */; };
 		F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */; };
+		F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */; };
+		F538A85227BEC70800B6E4C1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A85127BEC70800B6E4C1 /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,12 +51,14 @@
 		50DB59AF27BBBF0E00E6A635 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50DB59B427BBBF2D00E6A635 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		50DB59B727BBC07400E6A635 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
-		50DB59B927BBC08D00E6A635 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		50DB59B927BBC08D00E6A635 /* TrendsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsSection.swift; sourceTree = "<group>"; };
 		50DB59BB27BBC09B00E6A635 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F538A84827BCF22800B6E4C1 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricButton.swift; sourceTree = "<group>"; };
 		F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderShape.swift; sourceTree = "<group>"; };
+		F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
+		F538A85127BEC70800B6E4C1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,15 +129,16 @@
 		50DB59AB27BBBE1400E6A635 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
+				502333B327BD483C008E4884 /* ExerciseViewComponents */,
+				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
-				502333AB27BD4190008E4884 /* FirstView.swift */,
-				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
 				502333AF27BD4608008E4884 /* CreateExerciseView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
+				502333AB27BD4190008E4884 /* FirstView.swift */,
 				50C1258C27BEA35A00496708 /* GridExercisesView.swift */,
-				502333B327BD483C008E4884 /* ExerciseViewComponents */,
-				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
-				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
+				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
+				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,10 +158,11 @@
 			isa = PBXGroup;
 			children = (
 				50DB59B727BBC07400E6A635 /* FoldersView.swift */,
-				50DB59B927BBC08D00E6A635 /* TrendsView.swift */,
+				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
 				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
+				F538A85127BEC70800B6E4C1 /* Header.swift */,
 			);
 			path = ContentViewComponents;
 			sourceTree = "<group>";
@@ -239,9 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DB59BA27BBC08D00E6A635 /* TrendsView.swift in Sources */,
+				50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */,
 				502333AC27BD4190008E4884 /* FirstView.swift in Sources */,
 				502333B027BD4608008E4884 /* CreateExerciseView.swift in Sources */,
+				F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
@@ -254,6 +261,7 @@
 				50DB59B227BBBF0E00E6A635 /* Song+CoreDataClass.swift in Sources */,
 				50DB59B127BBBF0E00E6A635 /* Exercise+CoreDataProperties.swift in Sources */,
 				502333B227BD4771008E4884 /* ExerciseView.swift in Sources */,
+				F538A85227BEC70800B6E4C1 /* Header.swift in Sources */,
 				50DB59B827BBC07400E6A635 /* FoldersView.swift in Sources */,
 				50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */,
 				50DB59B527BBBF2D00E6A635 /* DataController.swift in Sources */,
