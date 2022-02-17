@@ -27,6 +27,7 @@ struct ContentView: View {
 			}
 			.navigationTitle("Exercises")
 			.navigationBarTitleDisplayMode(.inline)
+			.background(Color(uiColor: .systemGroupedBackground))
 		}
 		.navigationViewStyle(.stack)
 	}

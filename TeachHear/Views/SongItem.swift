@@ -12,19 +12,18 @@ struct SongItem: View {
 	
     var body: some View {
 		NavigationLink(destination: ExerciseView()) {
-			HStack {
+			VStack {
 				Color.indigo
 					.cornerRadius(10)
-					.frame(width: 120, height: 120)
+					.aspectRatio(1, contentMode: .fill)
 				
-				VStack(alignment: .leading) {
-					Text("Save Your Tears")  // TODO: Use song.wrappedTitle
-						.font(.title3.weight(.semibold))
-						.foregroundColor(.primary)
-				}
-				.padding(.horizontal)
+				Text("Save Your Tears")  // TODO: Use song.wrappedTitle
+					.font(.title3.weight(.semibold))
+					.foregroundColor(.primary)
+					.padding(.top, 8)
 			}
 			.padding()
+			.frame(width: 180)
 			.background {
 				Color(uiColor: .secondarySystemGroupedBackground)
 					.cornerRadius(20)

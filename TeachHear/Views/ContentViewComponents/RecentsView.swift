@@ -23,7 +23,7 @@ struct RecentsView: View {
 										.strokeBorder(lineWidth: 0.1)
 										.foregroundColor(.secondary)
 										.frame(width: 360, height: 160)
-										.background(Color(uiColor: .systemGray6))
+										.background(Color(uiColor: .secondarySystemGroupedBackground))
 										.mask(RoundedRectangle(cornerRadius: 7))
 										.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 2, y: 5)
 									HStack {
