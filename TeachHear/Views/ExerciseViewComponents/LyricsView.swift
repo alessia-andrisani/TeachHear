@@ -93,7 +93,7 @@ chimica chimica
 
 struct LyricsView: View {
 	init(_ lyrics: String, allowsWordSelection: Bool) {
-		let lyricsWithSections = lyrics.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")
+		let lyricsWithSections = lyrics.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")  // Inserts a invisible character to keep the sections of the text
 		let lines = lyricsWithSections.split(separator: "\n")
 		let words = lines.map { $0.split(separator: " ") }
 		

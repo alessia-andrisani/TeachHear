@@ -76,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				502333AD27BD445B008E4884 /* ExerciseButton.swift */,
+				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
+				F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */,
 			);
 			path = ExerciseViewComponents;
 			sourceTree = "<group>";
@@ -131,13 +133,11 @@
 			children = (
 				50DB59BF27BBC18300E6A635 /* ContentViewComponents */,
 				502333B327BD483C008E4884 /* ExerciseViewComponents */,
-				F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */,
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				502333AF27BD4608008E4884 /* CreateExerciseView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
 				502333AB27BD4190008E4884 /* FirstView.swift */,
 				50C1258C27BEA35A00496708 /* GridExercisesView.swift */,
-				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
 				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 			);
 			path = Views;
@@ -165,14 +165,6 @@
 				F538A85127BEC70800B6E4C1 /* Header.swift */,
 			);
 			path = ContentViewComponents;
-			sourceTree = "<group>";
-		};
-		F538A84A27BCFCAF00B6E4C1 /* LyricsViewComponents */ = {
-			isa = PBXGroup;
-			children = (
-				F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */,
-			);
-			path = LyricsViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
