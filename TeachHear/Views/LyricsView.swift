@@ -114,29 +114,25 @@ struct LyricsView: View {
 	
 	var body: some View {
 		ScrollView {
-			HStack {
-				Spacer()
-				
-				VStack(alignment: .leading) {
-					ForEach(lines.indices, id: \.self) { lineIndex in
-						if allowsWordSelection {
-							HStack {
-								ForEach(words[lineIndex].indices, id: \.self) { wordIndex in
-									LyricButton(String(words[lineIndex][wordIndex]),
-												isHighlighted: $states[lineIndex][wordIndex])
-								}
+			VStack(alignment: .leading) {
+				ForEach(lines.indices, id: \.self) { lineIndex in
+					if allowsWordSelection {
+						HStack(spacing: .zero) {
+							ForEach(words[lineIndex].indices, id: \.self) { wordIndex in
+								LyricButton(String(words[lineIndex][wordIndex] + " "),
+											isHighlighted: $states[lineIndex][wordIndex])
 							}
-						} else {
-							LyricButton(String(lines[lineIndex]),
-										isHighlighted: $states[lineIndex][0])
 						}
+					} else {
+						LyricButton(String(lines[lineIndex]) + " ",
+									isHighlighted: $states[lineIndex][0])
 					}
 				}
-				
-				Spacer()
 			}
+			.padding(20)
 		}
-		.background(Color.indigo.opacity(0.35))
+		.background(Color(uiColor: .systemGroupedBackground))
+		.cornerRadius(30)
 	}
 }
 

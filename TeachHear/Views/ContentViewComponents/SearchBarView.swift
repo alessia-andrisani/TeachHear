@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchBarView: View {
 	var body: some View {
-		NavigationLink(destination: CreateExerciseView()) {
+		NavigationLink(destination: ExerciseView()) {
 			ZStack(alignment: .leading) {
 				RoundedRectangle(cornerRadius: 20, style: .continuous)
 					.foregroundColor(Color(uiColor: .systemGray5))

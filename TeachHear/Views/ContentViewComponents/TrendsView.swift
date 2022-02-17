@@ -16,7 +16,7 @@ struct TrendsView: View {
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 50) {
 					ForEach(0..<10) { _ in
-						NavigationLink(destination: CreateExerciseView()) {
+						NavigationLink(destination: ExerciseView()) {
 							HStack {
 								ZStack(alignment: .leading) {
 									RoundedRectangle(cornerRadius: 13)
