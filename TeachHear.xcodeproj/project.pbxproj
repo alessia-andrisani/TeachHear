@@ -27,6 +27,7 @@
 		50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */; };
 		F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84827BCF22800B6E4C1 /* LyricsView.swift */; };
 		F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */; };
+		F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F538A84827BCF22800B6E4C1 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricButton.swift; sourceTree = "<group>"; };
+		F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				50DB59B927BBC08D00E6A635 /* TrendsView.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
+				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
 			);
 			path = ContentViewComponents;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
 				50DB59B327BBBF0E00E6A635 /* Song+CoreDataProperties.swift in Sources */,
 				50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */,
+				F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */,
 				502333AE27BD445B008E4884 /* ExerciseButton.swift in Sources */,
 				F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */,
 				50DB59B227BBBF0E00E6A635 /* Song+CoreDataClass.swift in Sources */,
@@ -381,7 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TeachHear/Preview Content\"";
-				DEVELOPMENT_TEAM = 72YVL4WZT4;
+				DEVELOPMENT_TEAM = 7K244PQA5S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -394,7 +398,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-2andrisani.alessia.TeachHear";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gregor.TeachHear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -410,7 +414,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TeachHear/Preview Content\"";
-				DEVELOPMENT_TEAM = 72YVL4WZT4;
+				DEVELOPMENT_TEAM = 7K244PQA5S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -423,7 +427,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-2andrisani.alessia.TeachHear";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gregor.TeachHear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
