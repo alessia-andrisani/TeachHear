@@ -24,7 +24,6 @@
 		50DB59B527BBBF2D00E6A635 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B427BBBF2D00E6A635 /* DataController.swift */; };
 		50DB59B827BBC07400E6A635 /* FoldersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B727BBC07400E6A635 /* FoldersSection.swift */; };
 		50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B927BBC08D00E6A635 /* TrendsSection.swift */; };
-		50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BB27BBC09B00E6A635 /* RecentsView.swift */; };
 		50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */; };
 		F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84827BCF22800B6E4C1 /* LyricsView.swift */; };
 		F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */; };
@@ -53,7 +52,6 @@
 		50DB59B427BBBF2D00E6A635 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		50DB59B727BBC07400E6A635 /* FoldersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersSection.swift; sourceTree = "<group>"; };
 		50DB59B927BBC08D00E6A635 /* TrendsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsSection.swift; sourceTree = "<group>"; };
-		50DB59BB27BBC09B00E6A635 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F538A84827BCF22800B6E4C1 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricButton.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
-				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
 			);
 			path = Views;
@@ -163,8 +160,8 @@
 				50DB59B727BBC07400E6A635 /* FoldersSection.swift */,
 				F538A85127BEC70800B6E4C1 /* Header.swift */,
 				50547D3827BF936A00970CF8 /* RecentsSection.swift */,
-				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
+				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 			);
 			path = ContentViewComponents;
@@ -259,7 +256,6 @@
 				502333B227BD4771008E4884 /* ExerciseView.swift in Sources */,
 				F538A85227BEC70800B6E4C1 /* Header.swift in Sources */,
 				50DB59B827BBC07400E6A635 /* FoldersSection.swift in Sources */,
-				50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */,
 				50DB59B527BBBF2D00E6A635 /* DataController.swift in Sources */,
 				50DB599927BBB8EE00E6A635 /* TeachHearApp.swift in Sources */,
 				50DB59B027BBBF0E00E6A635 /* Exercise+CoreDataClass.swift in Sources */,
