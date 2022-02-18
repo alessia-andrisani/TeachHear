@@ -1,5 +1,5 @@
 //
-//  TrendsView.swift
+//  TrendsSection.swift
 //  TeachHear
 //
 //  Created by Alessia Andrisani on 15/02/22.
@@ -24,7 +24,7 @@ struct TrendsSection: View {
 	}
 }
 
-struct TrendsView_Previews: PreviewProvider {
+struct TrendsSection_Previews: PreviewProvider {
 	static var previews: some View {
 		TrendsSection()
 			.previewInterfaceOrientation(.landscapeLeft)
