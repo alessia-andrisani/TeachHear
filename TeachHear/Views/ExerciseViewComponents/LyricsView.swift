@@ -70,13 +70,29 @@ struct LyricsView: View {
 					if allowsWordSelection {
 						HStack(spacing: .zero) {
 							ForEach(words[lineIndex].indices, id: \.self) { wordIndex in
-								LyricButton(String(words[lineIndex][wordIndex] + " "),
-											isHighlighted: $states[lineIndex][wordIndex])
+								let word: String = {
+									if states[lineIndex][wordIndex] == true {
+										return words[lineIndex][wordIndex].wordScramble()
+									} else {
+										return String(words[lineIndex][wordIndex])
+									}
+								}() + " "
+								
+								// TODO: Add Fill the Gap highlighting
+								
+								LyricButton(word, isHighlighted: $states[lineIndex][wordIndex])
 							}
 						}
 					} else {
-						LyricButton(String(lines[lineIndex]) + " ",
-									isHighlighted: $states[lineIndex][0])
+						let sentence: String = {
+							if states[lineIndex][0] == true {
+								return lines[lineIndex].sentenceScramble()
+							} else {
+								return String(lines[lineIndex])
+							}
+						}() + " "
+						
+						LyricButton(sentence, isHighlighted: $states[lineIndex][0])
 					}
 				}
 			}

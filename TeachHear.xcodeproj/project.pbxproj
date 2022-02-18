@@ -31,6 +31,7 @@
 		F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */; };
 		F538A85227BEC70800B6E4C1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A85127BEC70800B6E4C1 /* Header.swift */; };
 		F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53B0CF527BFA44700A6FC68 /* FolderItem.swift */; };
+		F53B0CF827BFAD6B00A6FC68 /* Substring.SubSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53B0CF727BFAD6B00A6FC68 /* Substring.SubSequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
 		F538A85127BEC70800B6E4C1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F53B0CF527BFA44700A6FC68 /* FolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItem.swift; sourceTree = "<group>"; };
+		F53B0CF727BFAD6B00A6FC68 /* Substring.SubSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Substring.SubSequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,8 @@
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
+				F53B0CF727BFAD6B00A6FC68 /* Substring.SubSequence.swift */,
+				F53B0CF927BFAD7300A6FC68 /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +169,13 @@
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 			);
 			path = ContentViewComponents;
+			sourceTree = "<group>";
+		};
+		F53B0CF927BFAD7300A6FC68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			files = (
 				50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */,
 				50547D3927BF936A00970CF8 /* RecentsSection.swift in Sources */,
+				F53B0CF827BFAD6B00A6FC68 /* Substring.SubSequence.swift in Sources */,
 				50547D3B27BF93E300970CF8 /* ExerciseItem.swift in Sources */,
 				F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
