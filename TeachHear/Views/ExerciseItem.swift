@@ -14,6 +14,7 @@ struct ExerciseItem: View {
 				Color.indigo
 					.cornerRadius(10)
 					.aspectRatio(1, contentMode: .fill)
+					.frame(width: 148)
 				
 				VStack(alignment: .leading) {
 					Text("Save Your Tears")  // TODO: Use song.wrappedTitle
@@ -28,7 +29,6 @@ struct ExerciseItem: View {
 				.padding(.horizontal, 3)
 			}
 			.padding()
-			.frame(width: 360)
 			.background {
 				Color(uiColor: .secondarySystemGroupedBackground)
 					.cornerRadius(20)
