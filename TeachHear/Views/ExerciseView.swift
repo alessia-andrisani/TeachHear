@@ -20,9 +20,12 @@ struct ExerciseView: View {
 		HStack {
 			Spacer()
 			
-			Text("Select the \(selectedExerciseType == .sentenceScramble ? "sentences" : "words") you want to scramble")
+			
 			
 			VStack(spacing: 16) {
+				
+				Text("Select the \(selectedExerciseType == ExerciseType.sentenceScramble ? "sentences" : "words") you want to scramble")
+				
 				if isNew {
 					VStack(alignment: .leading) {
 						Text("Exercise type")
@@ -49,7 +52,7 @@ struct ExerciseView: View {
 					.cornerRadius(30)
 				}
 				
-				LyricsView(lyrics, allowsWordSelection: selectedExerciseType != .sentenceScramle)
+				LyricsView(lyrics, allowsWordSelection: selectedExerciseType != .sentenceScramble)
 					.frame(width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height))
 				
 				// TODO: Add done button

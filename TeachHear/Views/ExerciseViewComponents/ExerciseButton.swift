@@ -10,7 +10,7 @@ import SwiftUI
 
 enum ExerciseType: String, CaseIterable {
 	case wordScramble = "Word Scramble"
-	case sentenceScramle = "Sentence Scramble"
+	case sentenceScramble = "Sentence Scramble"
 	case fillTheGap = "Fill The Gap"
 }
 
