@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502333AC27BD4190008E4884 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AB27BD4190008E4884 /* FirstView.swift */; };
 		502333AE27BD445B008E4884 /* ExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AD27BD445B008E4884 /* ExerciseButton.swift */; };
 		502333B227BD4771008E4884 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333B127BD4770008E4884 /* ExerciseView.swift */; };
 		50547D3927BF936A00970CF8 /* RecentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50547D3827BF936A00970CF8 /* RecentsSection.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		502333AB27BD4190008E4884 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		502333AD27BD445B008E4884 /* ExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseButton.swift; sourceTree = "<group>"; };
 		502333B127BD4770008E4884 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		50547D3827BF936A00970CF8 /* RecentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSection.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				502333B327BD483C008E4884 /* ExerciseViewComponents */,
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
-				502333AB27BD4190008E4884 /* FirstView.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
@@ -245,7 +242,6 @@
 			files = (
 				50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */,
 				50547D3927BF936A00970CF8 /* RecentsSection.swift in Sources */,
-				502333AC27BD4190008E4884 /* FirstView.swift in Sources */,
 				50547D3B27BF93E300970CF8 /* ExerciseItem.swift in Sources */,
 				F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
