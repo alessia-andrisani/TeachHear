@@ -1,5 +1,5 @@
 //
-//  FoldersView.swift
+//  FoldersSection.swift
 //  TeachHear
 //
 //  Created by Alessia Andrisani on 15/02/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoldersView: View {
+struct FoldersSection: View {
 	var body: some View {
 		VStack(alignment: .leading) {
 			Text("Folders")
@@ -37,8 +37,8 @@ struct FoldersView: View {
 	}
 }
 
-struct FoldersView_Previews: PreviewProvider {
+struct FoldersSection_Previews: PreviewProvider {
 	static var previews: some View {
-		FoldersView()
+		FoldersSection()
 	}
 }

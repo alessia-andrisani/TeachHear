@@ -24,7 +24,7 @@
 		50DB59B227BBBF0E00E6A635 /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59AE27BBBF0E00E6A635 /* Song+CoreDataClass.swift */; };
 		50DB59B327BBBF0E00E6A635 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59AF27BBBF0E00E6A635 /* Song+CoreDataProperties.swift */; };
 		50DB59B527BBBF2D00E6A635 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B427BBBF2D00E6A635 /* DataController.swift */; };
-		50DB59B827BBC07400E6A635 /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B727BBC07400E6A635 /* FoldersView.swift */; };
+		50DB59B827BBC07400E6A635 /* FoldersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B727BBC07400E6A635 /* FoldersSection.swift */; };
 		50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59B927BBC08D00E6A635 /* TrendsSection.swift */; };
 		50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BB27BBC09B00E6A635 /* RecentsView.swift */; };
 		50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */; };
@@ -55,7 +55,7 @@
 		50DB59AE27BBBF0E00E6A635 /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
 		50DB59AF27BBBF0E00E6A635 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50DB59B427BBBF2D00E6A635 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		50DB59B727BBC07400E6A635 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
+		50DB59B727BBC07400E6A635 /* FoldersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersSection.swift; sourceTree = "<group>"; };
 		50DB59B927BBC08D00E6A635 /* TrendsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsSection.swift; sourceTree = "<group>"; };
 		50DB59BB27BBC09B00E6A635 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		50DB59BF27BBC18300E6A635 /* ContentViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				50DB59B727BBC07400E6A635 /* FoldersView.swift */,
+				50DB59B727BBC07400E6A635 /* FoldersSection.swift */,
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 				50547D3827BF936A00970CF8 /* RecentsSection.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
@@ -266,7 +266,7 @@
 				50DB59B127BBBF0E00E6A635 /* Exercise+CoreDataProperties.swift in Sources */,
 				502333B227BD4771008E4884 /* ExerciseView.swift in Sources */,
 				F538A85227BEC70800B6E4C1 /* Header.swift in Sources */,
-				50DB59B827BBC07400E6A635 /* FoldersView.swift in Sources */,
+				50DB59B827BBC07400E6A635 /* FoldersSection.swift in Sources */,
 				50DB59BC27BBC09B00E6A635 /* RecentsView.swift in Sources */,
 				50DB59B527BBBF2D00E6A635 /* DataController.swift in Sources */,
 				50DB599927BBB8EE00E6A635 /* TeachHearApp.swift in Sources */,
