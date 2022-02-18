@@ -8,87 +8,38 @@
 import SwiftUI
 
 let lyrics = """
-E non so bene come dirlo, come farlo
-ma ne parlo seriamente
-e non conviene se lo fingo, se lo canto
-se lo urlo tra la gente
-e non mi basta avere un cuore
-per provare dell'amore veramente
-e non mi servono parole per un poco di piacere
-è solamente una questione di
+Una mattina mi sono alzato
+O bella ciao, bella ciao, bella ciao, ciao, ciao
+Una mattina mi sono alzato
+E ho trovato l'invasor
 
-Chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
+O partigiano, portami via
+O bella ciao, bella ciao, bella ciao, ciao, ciao
+O partigiano, portami via
+Ché mi sento di morir
 
-E non c'è dove oppure quando
-solo fango ed un impianto travolgente
-e non c'è anticipo o ritardo
-e se rimango vengo ripetutamente
-e non m'importa del pudore
-delle suore me ne sbatto totalmente
-e non mi fare la morale
-che alla fine, se Dio vuole è solamente
-una questione di
+E se io muoio da partigiano
+O bella ciao, bella ciao, bella ciao, ciao, ciao
+E se io muoio da partigiano
+Tu mi devi seppellir
 
-Chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
+E seppellire lassù in montagna
+O bella ciao, bella ciao, bella ciao, ciao, ciao
+E seppellire lassù in montagna
+Sotto l'ombra di un bel fior
 
-E non c'è iodio oppure zinco
-è solo marmo bianco e muscoli bollenti
-e non c'è podio che non vinco
-è solo cardio e conta spingere sui tempi
-e non mi serve una Ferrari se non vali
-come fante a fari spenti
-ma no non contano gli affari
-siamo chiari e se compari i coefficienti
-è una questione di
+Tutte le genti che passeranno
+O bella ciao, bella ciao, bella ciao ciao ciao
+E le genti che passeranno
+Mi diranno: "Che bel fior"
 
-Trovare quello giusto
-quello che guardi e per un po'
-solo un po'
-solo un po'
-il mondo è solo un ricordo alla fine
-se ho gli occhi nei tuoi occhi
-e le tue labbra sulle mie labbra
-la mano sulla coscia incalza
-e credimi ti dico sì
-è solo una questione di
+E questo è il fiore del partigiano
+O bella ciao, bella ciao, bella ciao ciao ciao
+Questo è il fiore del partigiano
+Morto per la libertà
 
-Chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
-chimica chimica
-chi-chi-chi-chi-chi-chi
-chimica chimica
-è una questione di
+E questo è il fiore del partigiano
+Morto per la libertà
 """
 
 struct LyricsView: View {
