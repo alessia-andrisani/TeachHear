@@ -42,7 +42,6 @@
 		502333AF27BD4608008E4884 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
 		502333B127BD4770008E4884 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		50C1258C27BEA35A00496708 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
-		50C1258C27BEA35A00496708 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		50547D3827BF936A00970CF8 /* RecentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSection.swift; sourceTree = "<group>"; };
 		50547D3A27BF93E300970CF8 /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
 		50DB599527BBB8EE00E6A635 /* TeachHear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachHear.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +141,7 @@
 				502333B327BD483C008E4884 /* ExerciseViewComponents */,
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				502333AF27BD4608008E4884 /* CreateExerciseView.swift */,
+				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
 				502333AB27BD4190008E4884 /* FirstView.swift */,
 				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
@@ -167,11 +167,10 @@
 				F53B0CEE27BF971000A6FC68 /* FolderItem.swift */,
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 				50547D3827BF936A00970CF8 /* RecentsSection.swift */,
-				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
+				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
 				50DB59B727BBC07400E6A635 /* FoldersSection.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				F538A85127BEC70800B6E4C1 /* Header.swift */,
-				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 			);
