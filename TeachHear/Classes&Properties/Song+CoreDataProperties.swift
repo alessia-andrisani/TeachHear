@@ -19,7 +19,7 @@ extension Song {
     @NSManaged public var id: String?
     @NSManaged public var lyrics: String?
     @NSManaged public var title: String?
-    @NSManaged public var exercise: NSSet?
+    @NSManaged public var exercises: NSSet?
 	
 	public var wrappedTitle: String {
 		title ?? "No Title"
@@ -34,7 +34,7 @@ extension Song {
 	}
 	
 	public var exerciseArray: [Exercise] {
-		let set = exercise as? Set<Exercise> ?? []
+		let set = exercises as? Set<Exercise> ?? []
 		
 		return set.sorted {
 			$0.wrappedTitle < $1.wrappedTitle
