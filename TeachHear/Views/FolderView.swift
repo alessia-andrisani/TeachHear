@@ -20,7 +20,6 @@ struct FolderView: View {
 		}
 		.navigationTitle("Simple Present")
 		.background(Color(uiColor: .systemGroupedBackground))
-    }
 }
 
 struct FolderView_Previews: PreviewProvider {
