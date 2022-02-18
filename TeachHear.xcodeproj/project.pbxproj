@@ -13,7 +13,7 @@
 		502333B227BD4771008E4884 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333B127BD4770008E4884 /* ExerciseView.swift */; };
 		50547D3927BF936A00970CF8 /* RecentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50547D3827BF936A00970CF8 /* RecentsSection.swift */; };
 		50547D3B27BF93E300970CF8 /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50547D3A27BF93E300970CF8 /* ExerciseItem.swift */; };
-		50C1258D27BEA35A00496708 /* GridExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1258C27BEA35A00496708 /* GridExercisesView.swift */; };
+		50C1258D27BEA35A00496708 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1258C27BEA35A00496708 /* FolderView.swift */; };
 		50DB599927BBB8EE00E6A635 /* TeachHearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */; };
 		50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599A27BBB8EE00E6A635 /* ContentView.swift */; };
 		50DB599D27BBB8F000E6A635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB599C27BBB8F000E6A635 /* Assets.xcassets */; };
@@ -33,6 +33,7 @@
 		F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */; };
 		F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */; };
 		F538A85227BEC70800B6E4C1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A85127BEC70800B6E4C1 /* Header.swift */; };
+		F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53B0CF527BFA44700A6FC68 /* FolderItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,7 @@
 		502333B127BD4770008E4884 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		50547D3827BF936A00970CF8 /* RecentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSection.swift; sourceTree = "<group>"; };
 		50547D3A27BF93E300970CF8 /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
-		50C1258C27BEA35A00496708 /* GridExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridExercisesView.swift; sourceTree = "<group>"; };
+		50C1258C27BEA35A00496708 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		50DB599527BBB8EE00E6A635 /* TeachHear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachHear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachHearApp.swift; sourceTree = "<group>"; };
 		50DB599A27BBB8EE00E6A635 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderShape.swift; sourceTree = "<group>"; };
 		F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
 		F538A85127BEC70800B6E4C1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		F53B0CF527BFA44700A6FC68 /* FolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +143,7 @@
 				502333AF27BD4608008E4884 /* CreateExerciseView.swift */,
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
 				502333AB27BD4190008E4884 /* FirstView.swift */,
-				50C1258C27BEA35A00496708 /* GridExercisesView.swift */,
+				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
 			);
@@ -169,6 +171,7 @@
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
 				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
 				F538A85127BEC70800B6E4C1 /* Header.swift */,
+				F53B0CF527BFA44700A6FC68 /* FolderItem.swift */,
 			);
 			path = ContentViewComponents;
 			sourceTree = "<group>";
@@ -251,8 +254,9 @@
 				F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
+				F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
-				50C1258D27BEA35A00496708 /* GridExercisesView.swift in Sources */,
+				50C1258D27BEA35A00496708 /* FolderView.swift in Sources */,
 				50DB59B327BBBF0E00E6A635 /* Song+CoreDataProperties.swift in Sources */,
 				50DB59BE27BBC0AB00E6A635 /* SearchBarView.swift in Sources */,
 				F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */,

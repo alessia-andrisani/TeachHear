@@ -17,7 +17,7 @@ struct FoldersView: View {
 				HStack(spacing: 50) {
 					ForEach(0..<10) { _ in
 						
-						NavigationLink(destination: GridExercisesView()) {
+						NavigationLink(destination: FolderView()) {
 							ZStack {
 								Image("Folder")
 									.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 3, y: 5)
