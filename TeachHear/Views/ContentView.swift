@@ -18,7 +18,7 @@ struct ContentView: View {
 				VStack(spacing: 20) {
 					SearchBarView()
 					
-					FoldersView()
+					FoldersSection()
 					
 					TrendsSection()
 					

@@ -1,5 +1,5 @@
 //
-//  GridExercisesView.swift
+//  FolderView.swift
 //  TeachHear
 //
 //  Created by Alessia Andrisani on 17/02/22.
@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct GridExercisesView: View {
-	
+struct FolderView: View {
 	private let columns: [GridItem] =  [GridItem(.adaptive(minimum: 400))]
 	
     var body: some View {
@@ -50,9 +49,9 @@ struct GridExercisesView: View {
     }
 }
 
-struct GridExercisesView_Previews: PreviewProvider {
+struct FolderView_Previews: PreviewProvider {
     static var previews: some View {
-        GridExercisesView()
-.previewInterfaceOrientation(.landscapeLeft)
+        FolderView()
+			.previewInterfaceOrientation(.landscapeLeft)
     }
 }
