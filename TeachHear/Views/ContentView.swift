@@ -22,7 +22,7 @@ struct ContentView: View {
 					
 					TrendsSection()
 					
-					RecentsView()
+					RecentsSection()
 				}
 			}
 			.navigationTitle("Exercises")

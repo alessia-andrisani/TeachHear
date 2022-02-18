@@ -11,6 +11,8 @@
 		502333AE27BD445B008E4884 /* ExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AD27BD445B008E4884 /* ExerciseButton.swift */; };
 		502333B027BD4608008E4884 /* CreateExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333AF27BD4608008E4884 /* CreateExerciseView.swift */; };
 		502333B227BD4771008E4884 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502333B127BD4770008E4884 /* ExerciseView.swift */; };
+		50547D3927BF936A00970CF8 /* RecentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50547D3827BF936A00970CF8 /* RecentsSection.swift */; };
+		50547D3B27BF93E300970CF8 /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50547D3A27BF93E300970CF8 /* ExerciseItem.swift */; };
 		50C1258D27BEA35A00496708 /* GridExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1258C27BEA35A00496708 /* GridExercisesView.swift */; };
 		50DB599927BBB8EE00E6A635 /* TeachHearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */; };
 		50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB599A27BBB8EE00E6A635 /* ContentView.swift */; };
@@ -38,6 +40,8 @@
 		502333AD27BD445B008E4884 /* ExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseButton.swift; sourceTree = "<group>"; };
 		502333AF27BD4608008E4884 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
 		502333B127BD4770008E4884 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		50547D3827BF936A00970CF8 /* RecentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSection.swift; sourceTree = "<group>"; };
+		50547D3A27BF93E300970CF8 /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
 		50C1258C27BEA35A00496708 /* GridExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridExercisesView.swift; sourceTree = "<group>"; };
 		50DB599527BBB8EE00E6A635 /* TeachHear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachHear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachHearApp.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				502333AB27BD4190008E4884 /* FirstView.swift */,
 				50C1258C27BEA35A00496708 /* GridExercisesView.swift */,
 				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
+				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			children = (
 				50DB59B727BBC07400E6A635 /* FoldersView.swift */,
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
+				50547D3827BF936A00970CF8 /* RecentsSection.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
 				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
@@ -238,8 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DB59BA27BBC08D00E6A635 /* TrendsSection.swift in Sources */,
+				50547D3927BF936A00970CF8 /* RecentsSection.swift in Sources */,
 				502333AC27BD4190008E4884 /* FirstView.swift in Sources */,
 				502333B027BD4608008E4884 /* CreateExerciseView.swift in Sources */,
+				50547D3B27BF93E300970CF8 /* ExerciseItem.swift in Sources */,
 				F538A85027BEC4DD00B6E4C1 /* SongItem.swift in Sources */,
 				50DB599B27BBB8EE00E6A635 /* ContentView.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
