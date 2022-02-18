@@ -164,14 +164,14 @@
 		50DB59BF27BBC18300E6A635 /* ContentViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F53B0CF527BFA44700A6FC68 /* FolderItem.swift */,
+				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
 				50DB59B727BBC07400E6A635 /* FoldersSection.swift */,
-				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
+				F538A85127BEC70800B6E4C1 /* Header.swift */,
 				50547D3827BF936A00970CF8 /* RecentsSection.swift */,
 				50DB59BB27BBC09B00E6A635 /* RecentsView.swift */,
 				50DB59BD27BBC0AB00E6A635 /* SearchBarView.swift */,
-				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
-				F538A85127BEC70800B6E4C1 /* Header.swift */,
-				F53B0CF527BFA44700A6FC68 /* FolderItem.swift */,
+				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
 			);
 			path = ContentViewComponents;
 			sourceTree = "<group>";
