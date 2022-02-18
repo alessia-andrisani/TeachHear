@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ExerciseView: View {
-	let isNew: Bool = false
+	init(isNew: Bool = false) {
+		self.isNew = isNew
+	}
+	
+	let isNew: Bool
 	
 	@State var selectedExerciseType = ExerciseType.wordScramble
 	
