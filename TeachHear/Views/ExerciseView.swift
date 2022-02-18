@@ -20,6 +20,8 @@ struct ExerciseView: View {
 		HStack {
 			Spacer()
 			
+			Text("Select the \(selectedExerciseType == .sentenceScramble ? "sentences" : "words") you want to scramble")
+			
 			VStack(spacing: 16) {
 				if isNew {
 					VStack(alignment: .leading) {
