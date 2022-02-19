@@ -23,8 +23,11 @@ struct ExerciseView: View {
 			
 			
 			VStack(spacing: 16) {
-				
+				if selectedExerciseType != .fillTheGap {
 				Text("Select the \(selectedExerciseType == ExerciseType.sentenceScramble ? "sentences" : "words") you want to scramble")
+				} else {
+					Text("Select the words you want to remove")
+				}
 				
 				if isNew {
 					VStack(alignment: .leading) {
