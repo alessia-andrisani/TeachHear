@@ -8,26 +8,60 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @State var userInput : String = ""
+
+  
+    @StateObject var APIMManager = APIManager()
+    @EnvironmentObject var IDTTrackManager: IDTrackManager
+    
 	var body: some View {
-		NavigationLink(destination: ExerciseView()) {
-			ZStack(alignment: .leading) {
-				RoundedRectangle(cornerRadius: 20, style: .continuous)
-					.foregroundColor(Color(uiColor: .systemGray5))
-					.frame(height: 50)
-					.padding(.horizontal)
-				
-				HStack {
-					Image(systemName: "magnifyingglass")
-						.foregroundColor(.secondary)
-					
-					Text("Search for a song")
-						.foregroundColor(.secondary)
-					
-				}
-				.padding()
-				.padding(.leading)
-			}
-		}
+
+
+			HStack {
+			
+                TextField("Type song name, artist or lyrics...", text: $userInput)
+                    .disableAutocorrection(true)
+                .padding(.top)
+                .padding(.horizontal)
+                Spacer()
+                
+                Button {
+                    userInput = ""
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .foregroundColor(Color(uiColor: .systemGray2))
+                }
+                
+                Spacer()
+                
+//                ResultsList()
+
+                
+              Spacer()
+                    .padding()
+            
+                
+                
+			}                .onChange(of: userInput, perform:  { value in
+                let pronnedInput = userInput.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+            
+                if userInput == "" {
+                    Task {
+                     await  APIMManager.fetchData(userInput: ".")
+                    }
+                   
+
+                } else {
+                    Task {
+                    
+            await APIMManager.fetchData(userInput: pronnedInput)
+                }
+                }
+               
+            })
+
+            
+      
 		
 	}
 }

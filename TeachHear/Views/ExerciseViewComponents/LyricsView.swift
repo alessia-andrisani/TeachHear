@@ -43,6 +43,8 @@ Morto per la libertà
 """
 
 struct LyricsView: View {
+ 
+
 	init(_ lyrics: String, allowsWordSelection: Bool) {
 		let lyricsWithSections = lyrics.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")  // Inserts a invisible character to keep the sections of the text
 		let lines = lyricsWithSections.split(separator: "\n")
@@ -55,6 +57,7 @@ struct LyricsView: View {
 		self.lines = lines
 		self.words = words
 		self.allowsWordSelection = allowsWordSelection
+        self.lyrics = lyrics
 	}
 	
 	@State private var states: [[Bool]]
@@ -62,6 +65,7 @@ struct LyricsView: View {
 	private let lines: [String.SubSequence]
 	private let words: [[Substring.SubSequence]]
 	private let allowsWordSelection: Bool
+    private let lyrics: String
 	
 	var body: some View {
 		ScrollView {
@@ -105,7 +109,7 @@ struct LyricsView: View {
 
 struct LyricsView_Previews: PreviewProvider {
 	static var previews: some View {
-		LyricsView(lyrics, allowsWordSelection: true)
+        LyricsView(lyrics, allowsWordSelection: true)
 			.previewDevice("iPad Pro (11-inch) (3rd generation)")
 			.previewInterfaceOrientation(.landscapeLeft)
 	}
