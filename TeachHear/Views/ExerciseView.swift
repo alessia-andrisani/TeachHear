@@ -20,8 +20,6 @@ struct ExerciseView: View {
 		HStack {
 			Spacer()
 			
-			
-			
 			VStack(spacing: 16) {
 				if selectedExerciseType != .fillTheGap {
 				Text("Select the \(selectedExerciseType == ExerciseType.sentenceScramble ? "sentences" : "words") you want to scramble")
@@ -31,20 +29,14 @@ struct ExerciseView: View {
 				
 				if isNew {
 					VStack(alignment: .leading) {
-						Text("Exercise type")
+						Text("Exercise Type")
 							.font(.title2.weight(.semibold))
-							.padding(.leading)
-							.padding(.leading)
+							.padding(.leading, 32)
 						
 						ScrollView(.horizontal) {
 							HStack {
 								ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
-									Button {
-										selectedExerciseType = exerciseType
-									} label: {
-										ExerciseButton(exerciseType: exerciseType,
-													   selectedExerciseType: $selectedExerciseType)
-									}
+									ExerciseTypeButton(exerciseType, selected: $selectedExerciseType)
 								}
 							}
 							.padding(.horizontal)
