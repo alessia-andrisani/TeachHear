@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ExerciseView: View {
-    init(isNew: Bool = false, _ lyrics: String) {
+	init(isNew: Bool = false) {
 		self.isNew = isNew
-        self.lyrics = lyrics
 	}
 	
 	let isNew: Bool
-    let lyrics: String
 	
 	@State var selectedExerciseType = ExerciseType.wordScramble
 	
@@ -74,7 +72,7 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
 	static var previews: some View {
-        ExerciseView("ERROR")
+		ExerciseView()
 .previewInterfaceOrientation(.landscapeLeft)
 	}
 }
