@@ -30,4 +30,8 @@ extension Substring.SubSequence {
 				.reduce("", { $0.isEmpty ? $1 : ($0 + " " + $1) })
 		}
 	}
+	
+	func fillTheGap() -> String {
+		String(self.map { _ in return "_" })
+	}
 }
