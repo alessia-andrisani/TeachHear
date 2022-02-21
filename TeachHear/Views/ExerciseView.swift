@@ -55,7 +55,7 @@ struct ExerciseView: View {
 					.cornerRadius(30)
 				}
 				
-				LyricsView(lyrics, allowsWordSelection: selectedExerciseType != .sentenceScramble)
+				LyricsView(lyrics, exerciseType: $selectedExerciseType)
 					.frame(width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height))
 				
 				// TODO: Add done button
