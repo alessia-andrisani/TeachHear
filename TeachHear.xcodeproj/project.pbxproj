@@ -139,7 +139,6 @@
 				502333B127BD4770008E4884 /* ExerciseView.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
-				F53B0CF727BFAD6B00A6FC68 /* Substring.SubSequence.swift */,
 				F53B0CF927BFAD7300A6FC68 /* Extensions */,
 			);
 			path = Views;
@@ -174,6 +173,7 @@
 		F53B0CF927BFAD7300A6FC68 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F53B0CF727BFAD6B00A6FC68 /* Substring.SubSequence.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
