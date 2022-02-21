@@ -21,12 +21,6 @@ struct ExerciseView: View {
 			Spacer()
 			
 			VStack(spacing: 16) {
-				if selectedExerciseType != .fillTheGap {
-				Text("Select the \(selectedExerciseType == ExerciseType.sentenceScramble ? "sentences" : "words") you want to scramble")
-				} else {
-					Text("Select the words you want to remove")
-				}
-				
 				if isNew {
 					VStack(alignment: .leading) {
 						Text("Exercise Type")
@@ -47,12 +41,23 @@ struct ExerciseView: View {
 					.cornerRadius(30)
 				}
 				
-				LyricsView(lyrics, exerciseType: $selectedExerciseType)
-					.frame(width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height))
+				VStack(alignment: .leading) {
+					if isNew {
+						Text(selectedExerciseType.instructions)
+							.font(.title2.weight(.semibold))
+							.padding(.leading, 32)
+							.offset(y: 16)
+					}
+					
+					LyricsView(lyrics, exerciseType: $selectedExerciseType)
+				}
+				.frame(width: UIScreen.main.bounds.width * 2 / 3)
+				.background(Color(uiColor: .systemGroupedBackground))
+				.cornerRadius(30)
 				
 				// TODO: Add done button
 			}
-			.frame(width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height))
+			.frame(width: UIScreen.main.bounds.width * 2 / 3)
 			
 			Spacer()
 		}

@@ -49,6 +49,7 @@ struct LyricsView: View {
 		let words = lines.map { $0.split(separator: " ") }
 		
 		_exerciseType = exerciseType
+		_previousType = .init(initialValue: exerciseType.wrappedValue)
 		
 		_states = .init(initialValue: lines.indices
 							.map { words[$0] }
@@ -60,6 +61,7 @@ struct LyricsView: View {
 	
 	@Binding private var exerciseType: ExerciseType
 	
+	@State private var previousType: ExerciseType
 	@State private var states: [[Bool]]
 	
 	private let lines: [String.SubSequence]
@@ -106,6 +108,15 @@ struct LyricsView: View {
 		}
 		.background(Color(uiColor: .systemGroupedBackground))
 		.cornerRadius(30)
+		.onChange(of: exerciseType) { newType in
+			if newType == .sentenceScramble || previousType == .sentenceScramble {
+				for i in states.indices {
+					states[i] = states[i].map { _ in return false }
+				}
+			}
+			
+			previousType = newType
+		}
 	}
 }
 
