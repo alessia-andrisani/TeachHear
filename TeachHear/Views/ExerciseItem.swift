@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ExerciseItem: View {
+	
+	var exercise: Exercise
+	
     var body: some View {
         NavigationLink(destination: ExerciseView(lyrics: .exampleLyrics)) {
 			HStack {
@@ -17,11 +20,11 @@ struct ExerciseItem: View {
 					.frame(width: 148)
 				
 				VStack(alignment: .leading) {
-					Text("Save Your Tears")  // TODO: Use song.wrappedTitle
+					Text(exercise.title)  // TODO: Use song.wrappedTitle
 						.font(.title3.weight(.semibold))
 						.foregroundColor(.primary)
 					
-					Text("Save Your Tears")  // TODO: Use song.wrappedTitle
+					Text(exercise.song.title)  // TODO: Use song.wrappedTitle
 						.font(.body.weight(.semibold))
 						.foregroundColor(.secondary)
 					
@@ -40,6 +43,6 @@ struct ExerciseItem: View {
 
 struct ExerciseItem_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseItem()
+		ExerciseItem(exercise: Exercise(title: "", song: Song(id: "", title: "", originalLyrics: ""), lyrics: "", date: Date.now))
     }
 }

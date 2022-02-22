@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct RecentsSection: View {
+	
+	@EnvironmentObject var exerciseStore: ExerciseStore
+	
     var body: some View {
 		VStack(alignment: .leading) {
 			Header("Recents")
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {
-					ForEach(0..<10) { _ in
-						ExerciseItem()
+					ForEach(exerciseStore.exercises) { exercise in
+						ExerciseItem(exercise: exercise)
 					}
 				}
 				.padding(.horizontal, 20)

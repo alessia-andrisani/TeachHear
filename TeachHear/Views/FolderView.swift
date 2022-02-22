@@ -10,11 +10,13 @@ import SwiftUI
 struct FolderView: View {
 	private let columns: [GridItem] =  [GridItem(.adaptive(minimum: 400))]
 	
+	@EnvironmentObject var exerciseStore: ExerciseStore
+	
     var body: some View {
 		ScrollView(.vertical, showsIndicators: true) {
 			LazyVGrid(columns: columns, spacing: 50) {
-				ForEach(0..<14) { _ in
-					ExerciseItem()
+				ForEach(exerciseStore.exercises) { exercise in
+					ExerciseItem(exercise: exercise)
 				}
 			}
 		}

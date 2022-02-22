@@ -19,6 +19,7 @@ struct ExerciseView: View {
 	@State private var selectedExerciseType = ExerciseType.wordScramble
 	
 	@State private var showingOptions = false
+	@EnvironmentObject var exerciseStore: ExerciseStore
 	
 	var body: some View {
 		ScrollView {
@@ -50,15 +51,25 @@ struct ExerciseView: View {
 								Button("Done") {
 									showingOptions = true
 								}
-								.confirmationDialog("Choose an option", isPresented: $showingOptions, titleVisibility: .hidden) {
+								.confirmationDialog("Where do you want to save the exercise?", isPresented: $showingOptions, titleVisibility: .hidden) {
+									
+									Button("Add to recents") {
+										let newExercise = Exercise(title: "Present Simple", song: Song(id: "", title: "Brividi", originalLyrics: .exampleLyrics), lyrics: .exampleLyrics, date: Date.now)
+										
+										exerciseStore.exercises.append(newExercise)
+										
+										
+										
+									}
 									
 									Button("Create new folder") {
-										//Add action here
+										// TODO: Add action here
 									}
 									
 									Button("Add to existing folder") {
-										//Add action here
+										// TODO: Add action here
 									}
+	
 								}
 							}
 						}
@@ -79,7 +90,6 @@ struct ExerciseView: View {
 					.cornerRadius(30)
 					.padding(.bottom)
 					
-					// TODO: Add done button
 				}
 				.frame(width: UIScreen.main.bounds.width * 2 / 3)
 				
