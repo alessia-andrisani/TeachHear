@@ -43,13 +43,12 @@ Morto per la libertà
 """
 
 struct LyricsView: View {
-	init(_ lyrics: String, exerciseType: Binding<ExerciseType>) {
+ 
+
+	init(_ lyrics: String, allowsWordSelection: Bool) {
 		let lyricsWithSections = lyrics.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")  // Inserts a invisible character to keep the sections of the text
 		let lines = lyricsWithSections.split(separator: "\n")
 		let words = lines.map { $0.split(separator: " ") }
-		
-		_exerciseType = exerciseType
-		_previousType = .init(initialValue: exerciseType.wrappedValue)
 		
 		_states = .init(initialValue: lines.indices
 							.map { words[$0] }
@@ -57,30 +56,27 @@ struct LyricsView: View {
 		
 		self.lines = lines
 		self.words = words
+		self.allowsWordSelection = allowsWordSelection
+        self.lyrics = lyrics
 	}
 	
-	@Binding private var exerciseType: ExerciseType
-	
-	@State private var previousType: ExerciseType
 	@State private var states: [[Bool]]
 	
 	private let lines: [String.SubSequence]
 	private let words: [[Substring.SubSequence]]
+	private let allowsWordSelection: Bool
+    private let lyrics: String
 	
 	var body: some View {
 		ScrollView {
 			VStack(alignment: .leading) {
 				ForEach(lines.indices, id: \.self) { lineIndex in
-					if exerciseType == .wordScramble || exerciseType == .fillTheGap {
+					if allowsWordSelection {
 						HStack(spacing: .zero) {
 							ForEach(words[lineIndex].indices, id: \.self) { wordIndex in
 								let word: String = {
 									if states[lineIndex][wordIndex] == true {
-										if exerciseType == .fillTheGap {
-											return String(words[lineIndex][wordIndex].map { _ in return "_" })
-										} else {
-											return words[lineIndex][wordIndex].wordScramble()
-										}
+										return words[lineIndex][wordIndex].wordScramble()
 									} else {
 										return String(words[lineIndex][wordIndex])
 									}
@@ -108,21 +104,12 @@ struct LyricsView: View {
 		}
 		.background(Color(uiColor: .systemGroupedBackground))
 		.cornerRadius(30)
-		.onChange(of: exerciseType) { newType in
-			if newType == .sentenceScramble || previousType == .sentenceScramble {
-				for i in states.indices {
-					states[i] = states[i].map { _ in return false }
-				}
-			}
-			
-			previousType = newType
-		}
 	}
 }
 
 struct LyricsView_Previews: PreviewProvider {
 	static var previews: some View {
-		LyricsView(lyrics, exerciseType: .constant(.wordScramble))
+        LyricsView(lyrics, allowsWordSelection: true)
 			.previewDevice("iPad Pro (11-inch) (3rd generation)")
 			.previewInterfaceOrientation(.landscapeLeft)
 	}

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ExerciseView: View {
-	init(isNew: Bool = false) {
+    init(isNew: Bool = false, _ lyrics: String) {
 		self.isNew = isNew
+        self.lyrics = lyrics
 	}
 	
 	let isNew: Bool
+    let lyrics: String
 	
 	@State var selectedExerciseType = ExerciseType.wordScramble
 	
@@ -20,17 +22,31 @@ struct ExerciseView: View {
 		HStack {
 			Spacer()
 			
+			
+			
 			VStack(spacing: 16) {
+				if selectedExerciseType != .fillTheGap {
+				Text("Select the \(selectedExerciseType == ExerciseType.sentenceScramble ? "sentences" : "words") you want to scramble")
+				} else {
+					Text("Select the words you want to remove")
+				}
+				
 				if isNew {
 					VStack(alignment: .leading) {
-						Text("Exercise Type")
+						Text("Exercise type")
 							.font(.title2.weight(.semibold))
-							.padding(.leading, 32)
+							.padding(.leading)
+							.padding(.leading)
 						
 						ScrollView(.horizontal) {
 							HStack {
 								ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
-									ExerciseTypeButton(exerciseType, selected: $selectedExerciseType)
+									Button {
+										selectedExerciseType = exerciseType
+									} label: {
+										ExerciseButton(exerciseType: exerciseType,
+													   selectedExerciseType: $selectedExerciseType)
+									}
 								}
 							}
 							.padding(.horizontal)
@@ -41,23 +57,12 @@ struct ExerciseView: View {
 					.cornerRadius(30)
 				}
 				
-				VStack(alignment: .leading) {
-					if isNew {
-						Text(selectedExerciseType.instructions)
-							.font(.title2.weight(.semibold))
-							.padding(.leading, 32)
-							.offset(y: 16)
-					}
-					
-					LyricsView(lyrics, exerciseType: $selectedExerciseType)
-				}
-				.frame(width: UIScreen.main.bounds.width * 2 / 3)
-				.background(Color(uiColor: .systemGroupedBackground))
-				.cornerRadius(30)
+				LyricsView(lyrics, allowsWordSelection: selectedExerciseType != .sentenceScramble)
+					.frame(width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height))
 				
 				// TODO: Add done button
 			}
-			.frame(width: UIScreen.main.bounds.width * 2 / 3)
+			.frame(width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height))
 			
 			Spacer()
 		}
@@ -69,7 +74,7 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
 	static var previews: some View {
-		ExerciseView()
+        ExerciseView("ERROR")
 .previewInterfaceOrientation(.landscapeLeft)
 	}
 }

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @State var userInput : String = ""
+
+  
+    @StateObject var APIMManager = APIManager()
+    @EnvironmentObject var IDTTrackManager: IDTrackManager
+    
 	var body: some View {
 
 
