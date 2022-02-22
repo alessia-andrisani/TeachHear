@@ -18,6 +18,8 @@ struct ExerciseView: View {
 	
 	@State private var selectedExerciseType = ExerciseType.wordScramble
 	
+	@State private var showingOptions = false
+	
 	var body: some View {
 		ScrollView {
 			HStack {
@@ -42,6 +44,24 @@ struct ExerciseView: View {
 						.padding(.vertical)
 						.background(Color(uiColor: .secondarySystemGroupedBackground))
 						.cornerRadius(30)
+						
+						.toolbar {
+							ToolbarItem {
+								Button("Done") {
+									showingOptions = true
+								}
+								.confirmationDialog("Choose an option", isPresented: $showingOptions, titleVisibility: .hidden) {
+									
+									Button("Create new folder") {
+										//Add action here
+									}
+									
+									Button("Add to existing folder") {
+										//Add action here
+									}
+								}
+							}
+						}
 					}
 					
 					VStack(alignment: .leading) {

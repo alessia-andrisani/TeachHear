@@ -10,7 +10,21 @@ import SwiftUI
 struct FoldersSection: View {
 	var body: some View {
 		VStack(alignment: .leading) {
-			Header("Folders")
+			
+			HStack {
+				Header("Folders")
+				
+				Spacer()
+				
+				Button {
+					//Add action here
+				} label: {
+					Image(systemName: "folder.badge.plus")
+						.font(.title)
+				}
+				.padding(.trailing, 30)
+			}
+
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {
