@@ -190,7 +190,7 @@ struct ResultsList : View {
                         } label: {
                             
                             
-                            Text("\(shared.listOfFinalTittles![Index] ?? "Error")")
+                            Text(shared.listOfFinalTittles![Index])
  
                         }
                         
