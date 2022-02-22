@@ -47,7 +47,7 @@ struct SearchBarView: View {
             
                 if userInput == "" {
                     Task {
-                     await  APIMManager.fetchData(userInput: "xoloitzcuintle")
+                     await  APIMManager.fetchData(userInput: ".")
                     }
                    
 
