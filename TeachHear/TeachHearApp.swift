@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct TeachHearApp: App {
 	
+	@StateObject var exerciseStore = ExerciseStore()
 	@StateObject private var dataController = DataController()
 	
     var body: some Scene {
@@ -17,6 +18,7 @@ struct TeachHearApp: App {
             ContentView()
 				.environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(IDTrackManager.shared)
+				.environmentObject(exerciseStore)
         }
     }
 }
