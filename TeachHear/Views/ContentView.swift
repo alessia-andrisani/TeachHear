@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var moc
 	
-	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<Song>
+	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<CoreSong>
 	
 	var body: some View {
 		NavigationView {

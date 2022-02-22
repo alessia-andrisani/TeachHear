@@ -1,8 +1,8 @@
 //
-//  Exercise+CoreDataProperties.swift
+//  CoreExercise+CoreDataProperties.swift
 //  TeachHear
 //
-//  Created by Alessia Andrisani on 15/02/22.
+//  Created by Alessia Andrisani on 22/02/22.
 //
 //
 
@@ -10,17 +10,17 @@ import Foundation
 import CoreData
 
 
-extension Exercise {
+extension CoreExercise {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Exercise> {
-        return NSFetchRequest<Exercise>(entityName: "Exercise")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CoreExercise> {
+        return NSFetchRequest<CoreExercise>(entityName: "CoreExercise")
     }
 
     @NSManaged public var date: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var lyrics: String?
     @NSManaged public var title: String?
-    @NSManaged public var song: Song?
+    @NSManaged public var song: CoreSong?
 	
 	public var wrappedTitle: String {
 		
@@ -33,6 +33,6 @@ extension Exercise {
 
 }
 
-extension Exercise : Identifiable {
+extension CoreExercise : Identifiable {
 
 }

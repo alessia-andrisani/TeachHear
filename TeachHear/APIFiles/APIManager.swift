@@ -119,5 +119,4 @@ public class APIManager: ObservableObject {
         tracksList = firstData.track_list
         
     }
-    
 }
