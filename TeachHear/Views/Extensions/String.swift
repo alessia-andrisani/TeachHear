@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Substring.SubSequence {
+extension String {
 	func wordScramble() -> String {
 		let shuffled = String(shuffled())
 		
@@ -29,5 +29,9 @@ extension Substring.SubSequence {
 				.map { $0.lowercased() }
 				.reduce("", { $0.isEmpty ? $1 : ($0 + " " + $1) })
 		}
+	}
+	
+	func fillTheGap() -> String {
+		String(self.map { _ in return "_" })
 	}
 }

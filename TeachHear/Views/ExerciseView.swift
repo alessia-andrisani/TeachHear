@@ -17,49 +17,52 @@ struct ExerciseView: View {
 	@State var selectedExerciseType = ExerciseType.wordScramble
 	
 	var body: some View {
-		HStack {
-			Spacer()
-			
-			VStack(spacing: 16) {
-				if isNew {
-					VStack(alignment: .leading) {
-						Text("Exercise Type")
-							.font(.title2.weight(.semibold))
-							.padding(.leading, 32)
-						
-						ScrollView(.horizontal) {
-							HStack {
-								ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
-									ExerciseTypeButton(exerciseType, selected: $selectedExerciseType)
-								}
-							}
-							.padding(.horizontal)
-						}
-					}
-					.padding(.vertical)
-					.background(Color(uiColor: .systemGroupedBackground))
-					.cornerRadius(30)
-				}
+		ScrollView {
+			HStack {
+				Spacer()
 				
-				VStack(alignment: .leading) {
+				VStack(spacing: 16) {
 					if isNew {
-						Text(selectedExerciseType.instructions)
-							.font(.title2.weight(.semibold))
-							.padding(.leading, 32)
-							.offset(y: 16)
+						VStack(alignment: .leading) {
+							Text("Exercise Type")
+								.font(.title2.weight(.semibold))
+								.padding(.leading, 32)
+							
+							ScrollView(.horizontal) {
+								HStack {
+									ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
+										ExerciseTypeButton(exerciseType, selected: $selectedExerciseType)
+									}
+								}
+								.padding(.horizontal)
+							}
+						}
+						.padding(.vertical)
+						.background(Color(uiColor: .secondarySystemGroupedBackground))
+						.cornerRadius(30)
 					}
 					
-					LyricsView(lyrics, exerciseType: $selectedExerciseType)
+					VStack(alignment: .leading) {
+						if isNew {
+							Text(selectedExerciseType.instructions)
+								.font(.title2.weight(.semibold))
+								.padding(.leading, 32)
+								.offset(y: 16)
+						}
+						
+						LyricsView(lyrics, exerciseType: $selectedExerciseType)
+					}
+					.frame(width: UIScreen.main.bounds.width * 2 / 3)
+					.background(Color(uiColor: .secondarySystemGroupedBackground))
+					.cornerRadius(30)
+					.padding(.bottom)
+					
+					// TODO: Add done button
 				}
 				.frame(width: UIScreen.main.bounds.width * 2 / 3)
-				.background(Color(uiColor: .systemGroupedBackground))
-				.cornerRadius(30)
 				
-				// TODO: Add done button
+				Spacer()
 			}
-			.frame(width: UIScreen.main.bounds.width * 2 / 3)
-			
-			Spacer()
 		}
 		.background(Color.indigo.opacity(0.35))
 		.navigationBarTitleDisplayMode(.inline)
@@ -70,6 +73,6 @@ struct ExerciseView: View {
 struct ExerciseView_Previews: PreviewProvider {
 	static var previews: some View {
 		ExerciseView()
-.previewInterfaceOrientation(.landscapeLeft)
+			.previewInterfaceOrientation(.landscapeLeft)
 	}
 }

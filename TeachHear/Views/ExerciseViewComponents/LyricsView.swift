@@ -55,7 +55,6 @@ struct LyricsView: View {
 							.map { words[$0] }
 							.map { line in line.map { _ in return false } })
 		
-		self.lines = lines
 		self.words = words
 	}
 	
@@ -64,54 +63,48 @@ struct LyricsView: View {
 	@State private var previousType: ExerciseType
 	@State private var states: [[Bool]]
 	
-	private let lines: [String.SubSequence]
 	private let words: [[Substring.SubSequence]]
 	
 	var body: some View {
-		ScrollView {
-			VStack(alignment: .leading) {
-				ForEach(lines.indices, id: \.self) { lineIndex in
-					if exerciseType == .wordScramble || exerciseType == .fillTheGap {
-						HStack(spacing: .zero) {
-							ForEach(words[lineIndex].indices, id: \.self) { wordIndex in
-								let word: String = {
-									if states[lineIndex][wordIndex] == true {
-										if exerciseType == .fillTheGap {
-											return String(words[lineIndex][wordIndex].map { _ in return "_" })
-										} else {
-											return words[lineIndex][wordIndex].wordScramble()
-										}
-									} else {
-										return String(words[lineIndex][wordIndex])
-									}
-								}() + " "
-								
-								// TODO: Add Fill the Gap highlighting
-								
-								LyricButton(word, isHighlighted: $states[lineIndex][wordIndex])
-							}
-						}
-					} else {
-						let sentence: String = {
-							if states[lineIndex][0] == true {
-								return lines[lineIndex].sentenceScramble()
-							} else {
-								return String(lines[lineIndex])
-							}
-						}() + " "
+		VStack(alignment: .leading) {
+			let range = 0..<(words.count)
+			
+			ForEach(range, id: \.self) { lineIndex in
+				HStack(spacing: .zero) {
+					let indices = exerciseType == .sentenceScramble && states[lineIndex][0] ? words[lineIndex].indices.shuffled() : Array(words[lineIndex].indices)
+					
+					ForEach(indices, id: \.self) { wordIndex in
+						let word = String(words[lineIndex][wordIndex])
 						
-						LyricButton(sentence, isHighlighted: $states[lineIndex][0])
+						if word == "\u{200b}" {
+							Spacer()
+								.frame(height: 10)
+						} else {
+							let word: String = {
+								if states[lineIndex][wordIndex] == true {
+									switch exerciseType {
+										case .wordScramble: return word.wordScramble()
+										case .fillTheGap: return word.fillTheGap()
+										case .sentenceScramble: return word.lowercased()
+									}
+								} else {
+									return word
+								}
+							}() + " "
+							
+							let selectionIndex = exerciseType == .sentenceScramble ? 0 : wordIndex
+							
+							LyricButton(word, isHighlighted: $states[lineIndex][selectionIndex])
+						}
 					}
 				}
 			}
-			.padding(20)
 		}
-		.background(Color(uiColor: .systemGroupedBackground))
-		.cornerRadius(30)
+		.padding(20)
 		.onChange(of: exerciseType) { newType in
 			if newType == .sentenceScramble || previousType == .sentenceScramble {
-				for i in states.indices {
-					states[i] = states[i].map { _ in return false }
+				for index in states.indices {
+					states[index] = states[index].map { _ in return false }
 				}
 			}
 			
