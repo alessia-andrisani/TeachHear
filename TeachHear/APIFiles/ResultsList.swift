@@ -17,7 +17,7 @@ public class IDTrackManager: ObservableObject {
     @Published var listOfFinalTittles :[String]? = Array(repeating: "", count: 10)
     @Published var listOfTrackedIDs: [Int]? = Array(repeating: 0, count: 10)
     @Published var  listOfHasLyricsCodes: [Int]? = Array(repeating: 0, count: 10)
-    //    @State var listOfSongs: [String]? = []
+
     @Published var listOfSongURLs: [String]? = Array(repeating: "", count: 10)
     @Published var listOfSongLyrics: [String]? = Array(repeating: "", count: 10)
     @Published var listAppear: Bool? = true
@@ -65,7 +65,7 @@ public class IDTrackManager: ObservableObject {
                     if listOfSongURLs?[i] == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=f86e6a5be12d62a10584fcd10ec622d3"  {
                         
                         passsData(lyricsData: "ERROR", i: 1)
-                        //                        listOfFinalTittles = Array(repeating: "", count: 10)
+      
                         
                     } else {
                         
@@ -158,7 +158,7 @@ public class IDTrackManager: ObservableObject {
 
 struct ResultsList : View {
     @EnvironmentObject var shared: IDTrackManager
-    //    @EnvironmentObject var sshared: GetDIsplayedLyrics
+
     
     var body: some View {
         
@@ -176,26 +176,22 @@ struct ResultsList : View {
                         NavigationLink {
                             //Check if the lyrics of the song are available
                             if shared.listOfHasLyricsCodes![Index] == 0 {
-//                                LyricsContentView(displayedFinalLyrics: "No lyrics Available ☹️", displayedFinalTittle: shared.listOfFinalTittles![Index])
-                                ExerciseView("No lyrics Available ☹️")
-//
-//                                LyricsView("No lyrics Available ☹️", allowsWordSelection: false)
+
+                                ExerciseView(lyrics: "No lyrics Available ☹️", isNew: true)
+
                             } else {
-//                                LyricsContentView(displayedFinalLyrics: shared.listOfSongLyrics![Index], displayedFinalTittle: shared.listOfFinalTittles![Index])
+
                                 
-                                ExerciseView (shared.listOfSongLyrics![Index])
+                                ExerciseView(lyrics: shared.listOfSongLyrics![Index], isNew: true)
                                 
-//                                LyricsView(shared.listOfSongLyrics![Index], allowsWordSelection: true)
+
                             }
                             
                         } label: {
                             
                             
                             Text("\(shared.listOfFinalTittles![Index] ?? "Error")")
-                            //                Text(shared.listOfSongLyrics![i] ?? "ERROR")
-                            //    Text("\(shared.listOfTrackedIDs![i] ?? 1)")
-                            //    Text("\(shared.listOfStatusCodes![i] ?? 1)")
-                            //                    Text("\(shared.listOfHasLyricsCodes![i] ?? 1)")
+ 
                         }
                         
                     }

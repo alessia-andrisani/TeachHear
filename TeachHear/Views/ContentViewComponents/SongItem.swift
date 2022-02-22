@@ -11,7 +11,7 @@ struct SongItem: View {
 //	let song: Song
 	
     var body: some View {
-		NavigationLink(destination: ExerciseView(isNew: true)) {
+        NavigationLink(destination: ExerciseView(lyrics: .exampleLyrics, isNew: true)) {
 			VStack {
 				Color.indigo
 					.cornerRadius(10)

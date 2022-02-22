@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExerciseItem: View {
     var body: some View {
-		NavigationLink(destination: ExerciseView()) {
+        NavigationLink(destination: ExerciseView(lyrics: .exampleLyrics)) {
 			HStack {
 				Color.indigo
 					.cornerRadius(10)
