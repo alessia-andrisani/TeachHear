@@ -54,7 +54,7 @@ struct ExerciseView: View {
 								.confirmationDialog("Where do you want to save the exercise?", isPresented: $showingOptions, titleVisibility: .hidden) {
 									
 									Button("Add to recents") {
-										let newExercise = Exercise(title: "Present Simple", song: Song(id: "", title: "Brividi", originalLyrics: .exampleLyrics), lyrics: .exampleLyrics, date: Date.now)
+										let newExercise = Exercise(title: "Present Simple", song: Song(id: "", title: "Bella Ciao", originalLyrics: .exampleLyrics), lyrics: .exampleLyrics, date: Date.now)
 										
 										exerciseStore.exercises.append(newExercise)
 										
