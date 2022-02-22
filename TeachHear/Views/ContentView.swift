@@ -15,15 +15,28 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			ScrollView {
-				VStack(spacing: 20) {
-					SearchBarView()
-					
-					FoldersSection()
-					
-					TrendsSection()
-					
-					RecentsSection()
-				}
+                VStack(spacing: 20) {
+                
+                    ZStack {
+                    SearchBarView()
+                    }
+                    
+                    
+                    ZStack{
+                        
+                        VStack{
+                    
+                    FoldersSection()
+                    
+                    TrendsSection()
+                    
+                    RecentsSection()
+                        }
+                    
+                   ResultsList()
+                      
+                    }
+                }
 			}
 			.navigationTitle("Exercises")
 			.navigationBarTitleDisplayMode(.inline)

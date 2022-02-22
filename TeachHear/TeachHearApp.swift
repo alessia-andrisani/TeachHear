@@ -16,6 +16,7 @@ struct TeachHearApp: App {
         WindowGroup {
             ContentView()
 				.environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(IDTrackManager.shared)
         }
     }
 }
