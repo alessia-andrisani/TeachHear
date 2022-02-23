@@ -20,6 +20,7 @@ struct ExerciseView: View {
 	
 	@State private var showingOptions = false
 	@EnvironmentObject var exerciseStore: ExerciseStore
+	@Environment(\.dismiss) var dismiss
 	
 	var body: some View {
 		ScrollView {
@@ -58,6 +59,7 @@ struct ExerciseView: View {
 										
 										exerciseStore.exercises.append(newExercise)
 										
+										dismiss()
 										
 										
 									}
