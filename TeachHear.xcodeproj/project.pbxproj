@@ -35,6 +35,8 @@
 		6C3C534D27C4EA3B00FA3CF8 /* SecondaryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */; };
 		71050B4027C7A696009409FA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050B3E27C7A696009409FA /* OnboardingView.swift */; };
 		71050B4127C7A696009409FA /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050B3F27C7A696009409FA /* OnboardingPage.swift */; };
+		71DCCF8127C7C80300D18FB7 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 71DCCF8027C7C80300D18FB7 /* YouTubeiOSPlayerHelper */; };
+		71DCCF8327C7C81500D18FB7 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */; };
 		F5330E9227C3E9D400B1B204 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5330E9127C3E9D400B1B204 /* ExerciseType.swift */; };
 		F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84827BCF22800B6E4C1 /* LyricsView.swift */; };
 		F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */; };
@@ -77,6 +79,7 @@
 		6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryDataModel.swift; sourceTree = "<group>"; };
 		71050B3E27C7A696009409FA /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		71050B3F27C7A696009409FA /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
 		F5330E9127C3E9D400B1B204 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		F538A84827BCF22800B6E4C1 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		F538A84B27BCFCE400B6E4C1 /* LyricButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricButton.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71DCCF8127C7C80300D18FB7 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +172,7 @@
 				F5D182BD27C5040A00E49365 /* ExerciseView.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
 				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
+				71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +270,9 @@
 			dependencies = (
 			);
 			name = TeachHear;
+			packageProductDependencies = (
+				71DCCF8027C7C80300D18FB7 /* YouTubeiOSPlayerHelper */,
+			);
 			productName = TeachHear;
 			productReference = 50DB599527BBB8EE00E6A635 /* TeachHear.app */;
 			productType = "com.apple.product-type.application";
@@ -293,6 +301,9 @@
 				Base,
 			);
 			mainGroup = 50DB598C27BBB8EE00E6A635;
+			packageReferences = (
+				71DCCF7F27C7C80300D18FB7 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+			);
 			productRefGroup = 50DB599627BBB8EE00E6A635 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,6 +346,7 @@
 				F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */,
 				71050B4027C7A696009409FA /* OnboardingView.swift in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
+				71DCCF8327C7C81500D18FB7 /* YouTubePlayer.swift in Sources */,
 				50C1258D27BEA35A00496708 /* FolderView.swift in Sources */,
 				F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */,
 				502333AE27BD445B008E4884 /* ExerciseTypeButton.swift in Sources */,
@@ -557,6 +569,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		71DCCF7F27C7C80300D18FB7 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		71DCCF8027C7C80300D18FB7 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71DCCF7F27C7C80300D18FB7 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		50DB59A727BBBE0100E6A635 /* TeachHear.xcdatamodeld */ = {
