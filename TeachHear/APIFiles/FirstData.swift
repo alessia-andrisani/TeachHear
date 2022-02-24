@@ -26,10 +26,10 @@ struct HHeader: Codable {
 }
 
 struct Track: Codable {
-    let track: Tracks
+    let track: TrackProperties
 }
 
-struct Tracks: Codable {
+struct TrackProperties: Codable {
     let track_id: Int
     let has_lyrics: Int
     let track_name : String
