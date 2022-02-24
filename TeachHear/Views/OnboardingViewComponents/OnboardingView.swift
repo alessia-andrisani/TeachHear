@@ -12,7 +12,7 @@ struct OnboardingView: View {
 	
 	var body: some View {
 		TabView(selection: $selection) {
-			OnboardingPage(imageName: "musicDancer",
+			OnboardingPage(imageName: "MusicDancer",
 						   previousButton: false,
 						   nextButton: true,
 						   skipButton: true,
@@ -20,7 +20,7 @@ struct OnboardingView: View {
 						   selection: $selection)
 				.tag(0)
 			
-			OnboardingPage(imageName: "noteTaking",
+			OnboardingPage(imageName: "NoteTaking",
 						   previousButton: true,
 						   nextButton: true,
 						   skipButton: true,
@@ -28,7 +28,7 @@ struct OnboardingView: View {
 						   selection: $selection)
 				.tag(1)
 			
-			OnboardingPage(imageName: "teacher",
+			OnboardingPage(imageName: "Teacher",
 						   previousButton: true,
 						   nextButton: false,
 						   skipButton: false,

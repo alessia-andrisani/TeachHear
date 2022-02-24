@@ -30,10 +30,11 @@ struct OnboardingPage: View {
 				VStack{
 					Image(imageName)
 						.resizable()
-						.frame(width: UIScreen.main.bounds.width * 0.18, height: UIScreen.main.bounds.height * 0.25)
-					//					.aspectRatio(contentMode: .fit)
-					//					.frame(width: 200, height: 250)
-						.padding(.bottom, 70)
+						.aspectRatio(contentMode: .fit)
+						.frame(width: UIScreen.main.bounds.width * 0.18)
+						.padding(.top, 40)
+						.padding(.bottom, 50)
+					
 					Group{
 						Text("Use music in education")
 							.fontWeight(.semibold)
@@ -43,7 +44,7 @@ struct OnboardingPage: View {
 						Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco l")
 							.fontWeight(.regular)
 							.font(.system(size: 24))
-							.padding(.bottom, 110)
+							.padding(.bottom, 60)
 						HStack{
 							if skipButton {
 								Button(action: {
@@ -129,7 +130,7 @@ struct OnboardingPage: View {
 
 struct OnboardingPage_Previews: PreviewProvider {
 	static var previews: some View {
-		OnboardingPage(imageName: "musicDancer", previousButton: true, nextButton: true, skipButton: true, startButton: false, selection: .constant(0))
+		OnboardingPage(imageName: "MusicDancer", previousButton: true, nextButton: true, skipButton: true, startButton: false, selection: .constant(0))
 			.previewInterfaceOrientation(.landscapeRight)
 	}
 }
