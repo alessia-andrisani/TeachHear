@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ExerciseView: View {
-	init(lyrics: String, isNew: Bool = false) {
-		self.lyrics = lyrics
+	init(_ exercise: Exercise, isNew: Bool = false) {
+		self.exercise = exercise
 		self.isNew = isNew
 	}
 	
-	private let lyrics: String
+	private let exercise: Exercise
 	private let isNew: Bool
 	
 	@State private var selectedExerciseType = ExerciseType.wordScramble
@@ -85,7 +85,7 @@ struct ExerciseView: View {
 								.offset(y: 16)
 						}
 						
-						LyricsView(lyrics, exerciseType: $selectedExerciseType)
+						LyricsView(exercise.lyrics, exerciseType: $selectedExerciseType)
 							.disabled(!isNew)
 					}
 					.frame(width: UIScreen.main.bounds.width * 2 / 3)
@@ -107,7 +107,7 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
 	static var previews: some View {
-		ExerciseView(lyrics: .exampleLyrics)
+		ExerciseView(.exampleExercise)
 			.previewInterfaceOrientation(.landscapeLeft)
 	}
 }

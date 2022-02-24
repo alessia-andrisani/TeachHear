@@ -14,6 +14,12 @@ struct Exercise: Identifiable {
 	var lyrics: String
 	var date: Date
 	
+	static var exampleExercise = Exercise(title: "Bella Ciao",
+										  song: Song(id: "",
+													 title: "Bella Ciao",
+													 originalLyrics: .exampleLyrics),
+										  lyrics: .exampleLyrics,
+										  date: .now)
 }
 
 struct Song: Identifiable {

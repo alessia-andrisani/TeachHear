@@ -12,7 +12,7 @@ struct ExerciseItem: View {
 	var exercise: Exercise
 	
     var body: some View {
-        NavigationLink(destination: ExerciseView(lyrics: .exampleLyrics)) {
+        NavigationLink(destination: ExerciseView(exercise)) {
 			HStack {
 				Color.indigo
 					.cornerRadius(10)

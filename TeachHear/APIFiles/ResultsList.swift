@@ -171,26 +171,30 @@ struct ResultsList : View {
               
                 List{
                     
-                    ForEach (0..<shared.listOfTrackedIDs!.count) { Index in
+                    ForEach (0..<shared.listOfTrackedIDs!.count) { index in
                         
                         NavigationLink {
                             //Check if the lyrics of the song are available
-                            if shared.listOfHasLyricsCodes![Index] == 0 {
+                            if shared.listOfHasLyricsCodes![index] == 0 {
 
-                                ExerciseView(lyrics: "No lyrics Available ☹️", isNew: true)
+//                                ExerciseView(lyrics: "No lyrics Available ☹️", isNew: true)
 
                             } else {
-
+								let song = Song(id: "\(shared.listOfTrackedIDs![index])",
+												title: shared.listOfFinalTittles![index],
+												originalLyrics: shared.listOfSongLyrics![index])
+								let exercise = Exercise(title: "",
+														song: song,
+														lyrics: shared.listOfSongLyrics![index],
+														date: .now)
                                 
-                                ExerciseView(lyrics: shared.listOfSongLyrics![Index], isNew: true)
-                                
-
+                                ExerciseView(exercise, isNew: true)
                             }
                             
                         } label: {
                             
                             
-                            Text(shared.listOfFinalTittles![Index])
+                            Text(shared.listOfFinalTittles![index])
  
                         }
                         
