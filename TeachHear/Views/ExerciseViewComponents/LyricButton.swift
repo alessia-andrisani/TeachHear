@@ -23,7 +23,7 @@ struct LyricButton: View {
 		}
 		.font(.largeTitle.bold())
 		.frame(height: 44)
-		.tint(isHighlighted ? .indigo : .primary)
+		.foregroundColor(isHighlighted ? .indigo : .primary)
 	}
 }
 

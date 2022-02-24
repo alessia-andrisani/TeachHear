@@ -86,6 +86,7 @@ struct ExerciseView: View {
 						}
 						
 						LyricsView(lyrics, exerciseType: $selectedExerciseType)
+							.disabled(!isNew)
 					}
 					.frame(width: UIScreen.main.bounds.width * 2 / 3)
 					.background(Color(uiColor: .secondarySystemGroupedBackground))
