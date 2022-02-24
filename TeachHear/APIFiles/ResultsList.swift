@@ -47,7 +47,7 @@ public class IDTrackManager: ObservableObject {
             listOfHasLyricsCodes![i] = splitElementsInArray.track.has_lyrics
             
             //Here we create the URLs based on the Track_IDs to get the lyrics of each song.
-            listOfSongURLs![i] = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=\(listOfTrackedIDs![i])&apikey=f86e6a5be12d62a10584fcd10ec622d3"
+            listOfSongURLs![i] = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=\(listOfTrackedIDs![i])&apikey=ded278d14431e37e7574b08e57dd8bc2"
             
             
             if listOfSongURLs == nil  {
@@ -58,11 +58,11 @@ public class IDTrackManager: ObservableObject {
             } else {
                 
                 //URL
-                if let url = URL(string: listOfSongURLs?[i] ?? "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=f86e6a5be12d62a10584fcd10ec622d3")
+                if let url = URL(string: listOfSongURLs?[i] ?? "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=ded278d14431e37e7574b08e57dd8bc2")
                     
                 {
                     //With the if statement below we check that we have a valir URL
-                    if listOfSongURLs?[i] == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=f86e6a5be12d62a10584fcd10ec622d3"  {
+                    if listOfSongURLs?[i] == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=ded278d14431e37e7574b08e57dd8bc2"  {
                         
                         passsData(lyricsData: "ERROR", i: 1)
       

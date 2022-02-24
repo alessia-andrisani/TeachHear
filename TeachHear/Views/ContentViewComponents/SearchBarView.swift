@@ -16,7 +16,7 @@ struct SearchBarView: View {
 	
 	var body: some View {
 		HStack {
-			TextField("Type song name, artist or lyrics...", text: $userInput)
+			TextField("Type artist and song name...", text: $userInput)
 				.disableAutocorrection(true)
 				.padding(.top)
 				.padding(.horizontal)

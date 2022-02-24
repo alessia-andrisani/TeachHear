@@ -26,11 +26,11 @@ public class APIManager: ObservableObject {
     
     public func fetchData (userInput: String) async {
         
-        let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=f86e6a5be12d62a10584fcd10ec622d3"
+        let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=ded278d14431e37e7574b08e57dd8bc2"
 
   
         
-        if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=f86e6a5be12d62a10584fcd10ec622d3"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=f86e6a5be12d62a10584fcd10ec622d3"  {
+        if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=ded278d14431e37e7574b08e57dd8bc2"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=ded278d14431e37e7574b08e57dd8bc2"  {
    
             listAppearance = true
 
