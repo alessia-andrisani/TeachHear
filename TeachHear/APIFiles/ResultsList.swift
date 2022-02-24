@@ -164,7 +164,7 @@ struct ResultsList : View {
         
         ZStack {
             if shared.listOfSongLyrics == Array(repeating: "", count: 10)  {  }
-            else if shared.listAppear == true {
+            else if shared.listAppear == false {
        
             }
             else {

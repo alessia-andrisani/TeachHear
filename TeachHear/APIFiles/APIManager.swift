@@ -32,10 +32,10 @@ public class APIManager: ObservableObject {
         
         if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=ded278d14431e37e7574b08e57dd8bc2"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=ded278d14431e37e7574b08e57dd8bc2"  {
    
-            listAppearance = true
+            listAppearance = false
 
         } else {
-            listAppearance = false
+            listAppearance = true
         }
       
         //--------------------------------------------------
