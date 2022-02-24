@@ -12,6 +12,8 @@ struct ContentView: View {
 	
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<CoreSong>
 	
+	@AppStorage("showOnboarding") private var showOnboarding = true
+	
 	var body: some View {
 		NavigationView {
 			ScrollView {
@@ -43,6 +45,9 @@ struct ContentView: View {
 			.background(Color(uiColor: .systemGroupedBackground))
 		}
 		.navigationViewStyle(.stack)
+		.fullScreenCover(isPresented: $showOnboarding) {
+			OnboardingView()
+		}
 	}
 }
 
