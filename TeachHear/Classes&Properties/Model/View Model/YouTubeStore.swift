@@ -7,9 +7,7 @@
 
 import Foundation
 
-class YouTubeStore: ObservableObject {
-	private static let apiKey = "AIzaSyBg7Mod1WCcNXGKrpomKP5PnJkFmm1TR9g"
-	
+class YouTubeStore: ObservableObject {	
 	@Published var trackID = ""
 	
 	func search(for searchText: String) {
