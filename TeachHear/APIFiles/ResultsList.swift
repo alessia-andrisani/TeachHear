@@ -1,3 +1,5 @@
+
+
 //
 //  IDTrackManager.swift
 //  APITeachHear
@@ -17,15 +19,41 @@ public class IDTrackManager: ObservableObject {
     @Published var listOfFinalTittles :[String]? = Array(repeating: "", count: 10)
     @Published var listOfTrackedIDs: [Int]? = Array(repeating: 0, count: 10)
     @Published var  listOfHasLyricsCodes: [Int]? = Array(repeating: 0, count: 10)
+    
+    @Published var filteredListOfStatusCodes : [Int]? = Array(repeating: 0, count: 10)
+    @Published var filteredListOfFinalTittles :[String]? = Array(repeating: "", count: 10)
+    @Published var filteredListOfTrackedIDs: [Int]? = Array(repeating: 0, count: 10)
+    @Published var  filteredListOfHasLyricsCodes: [Int]? = Array(repeating: 0, count: 10)
+    @Published var filteredListOfSongLyrics: [String]? = Array(repeating: "", count: 10)
 
     @Published var listOfSongURLs: [String]? = Array(repeating: "", count: 10)
     @Published var listOfSongLyrics: [String]? = Array(repeating: "", count: 10)
-    @Published var listAppear: Bool? = true
+    @Published var listAppear: Bool? = false
+    
+    
     var counter: Int = 1
-    func fetchData (inputTittlesList: ArraySlice<Track>?, listOfTrackedSongs: ArraySlice<Track>?, listAppearance: Bool) async {
-  
-        listAppear = listAppearance
+    
+    func resetResults() {
+        listOfStatusCodes = Array(repeating: 0, count: 10)
+        listOfFinalTittles = Array(repeating: "", count: 10)
+        listOfTrackedIDs = Array(repeating: 0, count: 10)
+        listOfHasLyricsCodes = Array(repeating: 0, count: 10)
 
+        filteredListOfStatusCodes = Array(repeating: 0, count: 10)
+        filteredListOfFinalTittles = Array(repeating: "", count: 10)
+        filteredListOfTrackedIDs = Array(repeating: 0, count: 10)
+        filteredListOfHasLyricsCodes = Array(repeating: 0, count: 10)
+        filteredListOfSongLyrics = Array(repeating: "", count: 10)
+//
+        listOfSongURLs = Array(repeating: "", count: 10)
+        listOfSongLyrics = Array(repeating: "", count: 10)
+    }
+    
+    func fetchData (inputTittlesList: ArraySlice<Track>?, listOfTrackedSongs: ArraySlice<Track>?, listAppearance: Bool) async {
+        
+        var j = -1
+        var h = -1
+        listAppear = listAppearance
 
         
         if listOfTrackedSongs!.count >= 10 {
@@ -47,7 +75,7 @@ public class IDTrackManager: ObservableObject {
             listOfHasLyricsCodes![i] = splitElementsInArray.track.has_lyrics
             
             //Here we create the URLs based on the Track_IDs to get the lyrics of each song.
-            listOfSongURLs![i] = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=\(listOfTrackedIDs![i])&apikey=ded278d14431e37e7574b08e57dd8bc2"
+            listOfSongURLs![i] = "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=\(listOfTrackedIDs![i])&apikey=\(LyricsApiKey().apiKey())"
             
             
             if listOfSongURLs == nil  {
@@ -58,11 +86,11 @@ public class IDTrackManager: ObservableObject {
             } else {
                 
                 //URL
-                if let url = URL(string: listOfSongURLs?[i] ?? "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=ded278d14431e37e7574b08e57dd8bc2")
+                if let url = URL(string: listOfSongURLs?[i] ?? "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=\(LyricsApiKey().apiKey())")
                     
                 {
                     //With the if statement below we check that we have a valir URL
-                    if listOfSongURLs?[i] == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=ded278d14431e37e7574b08e57dd8bc2"  {
+                    if listOfSongURLs?[i] == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=\(LyricsApiKey().apiKey())"  {
                         
                         passsData(lyricsData: "ERROR", i: 1)
       
@@ -91,16 +119,28 @@ public class IDTrackManager: ObservableObject {
                                     
                                     if llyricsData.statusCode != 200{
                                         
-                                        self.listOfSongLyrics![i] = "No lyrics Available"
+                                        self.listOfSongLyrics![i] = "An Error Ocurred while requesting the lyrics"
                                         self.listOfStatusCodes![i] = llyricsData.statusCode
+                                      
                                     } else {
-                                        
+                                      
                                         //Pass the data to the main view
                                         self.listOfStatusCodes![i] = llyricsData.statusCode
+                                        self.listOfSongLyrics![i] = llyricsData.songLyrics
+                                
                                         
+                                        if  self.listOfHasLyricsCodes![i] == 1 {
+                                            h = h+1
+                                        self.filteredListOfSongLyrics![h] = llyricsData.songLyrics
+                                         print("filtered", self.filteredListOfSongLyrics!)
+                                         print("Esto es i", i)
+                                         print("Esto es h", h)
+                                        }
                                         
                                         
                                         self.passsData(lyricsData: llyricsData.songLyrics, i: i)
+                                        
+                                        
                                     }
                                     
                                     
@@ -109,17 +149,34 @@ public class IDTrackManager: ObservableObject {
                                 
                                 
                             }
+                            
+                           
                         }
                         task.resume()
                     }
                 }
                 
-                
+            }
+            if  self.listOfHasLyricsCodes![i] == 1 {
+                j = j+1
+                self.filteredListOfStatusCodes![j] = self.listOfStatusCodes![i]
+                self.filteredListOfFinalTittles![j] = self.listOfFinalTittles![i]
+                self.filteredListOfTrackedIDs![j] = self.listOfTrackedIDs![i]
+                self.filteredListOfHasLyricsCodes![j] = self.listOfHasLyricsCodes![i]
+                self.filteredListOfSongLyrics![j] = self.listOfSongLyrics![i]
+                print("Has Lyrics Codes", self.filteredListOfHasLyricsCodes!)
+                print("Has Lyrics", self.filteredListOfHasLyricsCodes!.filter{$0 > 0}.count)
+                print("Status codes", self.listOfStatusCodes!)
+                print("This is i", i)
+                print("This is j", j)
+                print("Arrays")
+                print(self.filteredListOfFinalTittles!)
+                print(self.filteredListOfSongLyrics!)
+                print(self.listOfSongLyrics!)
                 
             }
-            
         }
-        
+      
         
        return
         
@@ -149,12 +206,14 @@ public class IDTrackManager: ObservableObject {
     
     public func passsData(lyricsData: String, i: Int)   {
         
-        listOfSongLyrics?[i] = lyricsData
-        
+//        listOfSongLyrics?[i] = lyricsData
+//        print("lyricsData", lyricsData)
+     
     }
     
     
 }
+
 
 struct ResultsList : View {
     @EnvironmentObject var shared: IDTrackManager
@@ -163,38 +222,34 @@ struct ResultsList : View {
     var body: some View {
         
         ZStack {
-            if shared.listOfSongLyrics == Array(repeating: "", count: 10)  {  }
-            else if shared.listAppear == false {
-       
-            }
-            else {
+//            if shared.filteredListOfSongLyrics == Array(repeating: "", count: 10)  {  }
+             if shared.listAppear == true {
               
                 List{
                     
-                    ForEach (0..<shared.listOfTrackedIDs!.count) { index in
+                    ForEach (0..<shared.filteredListOfHasLyricsCodes!.filter{$0 > 0}.count, id: \.self) { index in
                         
                         NavigationLink {
                             //Check if the lyrics of the song are available
-                            if shared.listOfHasLyricsCodes![index] == 0 {
-
-//                                ExerciseView(lyrics: "No lyrics Available ☹️", isNew: true)
-
-                            } else {
-								let song = Song(id: "\(shared.listOfTrackedIDs![index])",
-												title: shared.listOfFinalTittles![index],
-												originalLyrics: shared.listOfSongLyrics![index])
+//                            if shared.filteredListOfHasLyricsCodes![index] == 0 {
+//
+////                                ExerciseView(lyrics: "No lyrics Available ☹️", isNew: true)
+//
+//                            } else {
+								let song = Song(id: "\(shared.filteredListOfTrackedIDs![index])",
+												title: shared.filteredListOfFinalTittles![index],
+												originalLyrics: shared.filteredListOfSongLyrics![index])
 								let exercise = Exercise(title: "",
 														song: song,
-														lyrics: shared.listOfSongLyrics![index],
+														lyrics: shared.filteredListOfSongLyrics![index],
 														date: .now)
                                 
                                 ExerciseView(exercise, isNew: true)
-                            }
+//                            }
                             
                         } label: {
                             
-                            
-                            Text(shared.listOfFinalTittles![index])
+                            Text(shared.filteredListOfFinalTittles![index])
  
                         }
                         
@@ -204,8 +259,8 @@ struct ResultsList : View {
                     .padding(.horizontal)
                     .ignoresSafeArea()
                 
-            }
             
+        }
         }
     }
 }

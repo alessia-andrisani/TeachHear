@@ -25,6 +25,7 @@
 		50FACF8827C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */; };
 		50FACF8A27C53E19004FDD40 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8927C53E19004FDD40 /* Exercise.swift */; };
 		50FACF8C27C53E2B004FDD40 /* ExerciseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */; };
+		6C36CA7C27C9255600E0F39E /* LyricsAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */; };
 		6C3C533F27C4E9FB00FA3CF8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */; };
 		6C3C534127C4EA1200FA3CF8 /* FirstData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534027C4EA1200FA3CF8 /* FirstData.swift */; };
 		6C3C534327C4EA1900FA3CF8 /* FirstDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534227C4EA1900FA3CF8 /* FirstDataModel.swift */; };
@@ -71,6 +72,7 @@
 		50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreExercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50FACF8927C53E19004FDD40 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStore.swift; sourceTree = "<group>"; };
+		6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsAPIKey.swift; sourceTree = "<group>"; };
 		6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6C3C534027C4EA1200FA3CF8 /* FirstData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstData.swift; sourceTree = "<group>"; };
 		6C3C534227C4EA1900FA3CF8 /* FirstDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstDataModel.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				6C3C534827C4EA3100FA3CF8 /* ResultModel.swift */,
 				6C3C534A27C4EA3600FA3CF8 /* ResultsList.swift */,
 				6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */,
+				6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */,
 			);
 			path = APIFiles;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				71050B4127C7A696009409FA /* OnboardingPage.swift in Sources */,
 				71DCCF8727C7D01800D18FB7 /* YouTubeResults.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
+				6C36CA7C27C9255600E0F39E /* LyricsAPIKey.swift in Sources */,
 				F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */,
 				71050B4027C7A696009409FA /* OnboardingView.swift in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,

@@ -11,6 +11,7 @@ struct SearchBarView: View {
 	@EnvironmentObject var IDTTrackManager: IDTrackManager
 	
 	@State var userInput : String = ""
+    @State var searchButton : Bool = true
 	
 	@StateObject var APIMManager = APIManager()
 	
@@ -25,17 +26,28 @@ struct SearchBarView: View {
 			
 			Button {
 				userInput = ""
+                searchButton.toggle()
+//                IDTTrackManager.resetResults()
 			} label: {
 				Image(systemName: "xmark.circle")
 					.foregroundColor(Color(uiColor: .systemGray2))
 			}
+            
+            Button {
+                searchButton.toggle()
+                IDTTrackManager.resetResults()
+                
+            } label: {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(Color(uiColor: .systemGray2))
+            }
 			
 			Spacer()
 			
 			Spacer()
 				.padding()
 		}
-		.onChange(of: userInput, perform:  { value in
+		.onChange(of: searchButton, perform:  { value in
 			let pronnedInput = userInput.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
 			
 			if userInput == "" {
