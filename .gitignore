@@ -93,4 +93,4 @@ iOSInjectionProject/
 *.DS_Store
 
 # YouTube API key
-YouTubeStore+APIKey.swift
+**/YouTubeStore+APIKey.swift
