@@ -40,7 +40,7 @@ struct SearchBarView: View {
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(uiColor: .systemGray2))
-            }
+            }.keyboardShortcut(.defaultAction)
 			
 			Spacer()
 			

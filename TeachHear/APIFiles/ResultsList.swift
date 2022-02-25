@@ -132,13 +132,8 @@ public class IDTrackManager: ObservableObject {
                                         if  self.listOfHasLyricsCodes![i] == 1 {
                                             h = h+1
                                         self.filteredListOfSongLyrics![h] = llyricsData.songLyrics
-                                         print("filtered", self.filteredListOfSongLyrics!)
-                                         print("Esto es i", i)
-                                         print("Esto es h", h)
                                         }
                                         
-                                        
-                                        self.passsData(lyricsData: llyricsData.songLyrics, i: i)
                                         
                                         
                                     }
@@ -164,15 +159,7 @@ public class IDTrackManager: ObservableObject {
                 self.filteredListOfTrackedIDs![j] = self.listOfTrackedIDs![i]
                 self.filteredListOfHasLyricsCodes![j] = self.listOfHasLyricsCodes![i]
                 self.filteredListOfSongLyrics![j] = self.listOfSongLyrics![i]
-                print("Has Lyrics Codes", self.filteredListOfHasLyricsCodes!)
-                print("Has Lyrics", self.filteredListOfHasLyricsCodes!.filter{$0 > 0}.count)
-                print("Status codes", self.listOfStatusCodes!)
-                print("This is i", i)
-                print("This is j", j)
-                print("Arrays")
-                print(self.filteredListOfFinalTittles!)
-                print(self.filteredListOfSongLyrics!)
-                print(self.listOfSongLyrics!)
+
                 
             }
         }
@@ -206,8 +193,7 @@ public class IDTrackManager: ObservableObject {
     
     public func passsData(lyricsData: String, i: Int)   {
         
-//        listOfSongLyrics?[i] = lyricsData
-//        print("lyricsData", lyricsData)
+        listOfSongLyrics?[i] = lyricsData
      
     }
     

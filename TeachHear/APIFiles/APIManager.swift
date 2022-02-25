@@ -16,7 +16,7 @@ public class APIManager: ObservableObject {
     @Published var tracksList : ArraySlice<Track>?
     {
         didSet{
-      print("Listapp", listAppearance)
+
             Task{
 //                IDTrackManager()
                 await IDTrackManager.shared.fetchData(inputTittlesList: receivedTittlesList, listOfTrackedSongs: tracksList, listAppearance: listAppearance)
@@ -32,7 +32,6 @@ public class APIManager: ObservableObject {
         
         let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=\(LyricsApiKey().apiKey())"
         
-print ("APIKey",LyricsApiKey().apiKey())
   
         
         if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=\(LyricsApiKey().apiKey())"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=\(LyricsApiKey().apiKey())"  {
@@ -72,7 +71,6 @@ print ("APIKey",LyricsApiKey().apiKey())
                        
                         } else {
                          
-                            print(decodedata.message.body.track_list.count)
                             //Convert to usable form
                             let someData =
                             self.convertDecodedDataToUsableForm(decodedData: decodedata)
