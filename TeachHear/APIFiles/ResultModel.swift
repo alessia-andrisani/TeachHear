@@ -10,5 +10,4 @@ import Foundation
 struct ResultModel {
     let statusCode: Int
     let songLyrics: String
-    
 }

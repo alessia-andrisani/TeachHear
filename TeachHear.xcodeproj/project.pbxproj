@@ -35,6 +35,7 @@
 		6C3C534B27C4EA3600FA3CF8 /* ResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534A27C4EA3600FA3CF8 /* ResultsList.swift */; };
 		6C3C534D27C4EA3B00FA3CF8 /* SecondaryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */; };
 		6CD6ADBE27CBA1FE00EECBD2 /* IDTrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6ADBD27CBA1FE00EECBD2 /* IDTrackManager.swift */; };
+		6CD6ADC027CBA73000EECBD2 /* CondensedResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6ADBF27CBA73000EECBD2 /* CondensedResults.swift */; };
 		71050B4027C7A696009409FA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050B3E27C7A696009409FA /* OnboardingView.swift */; };
 		71050B4127C7A696009409FA /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050B3F27C7A696009409FA /* OnboardingPage.swift */; };
 		71C603C627C8EC89008CE482 /* YouTubeStore+APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C603C527C8EC89008CE482 /* YouTubeStore+APIKey.swift */; };
@@ -85,6 +86,7 @@
 		6C3C534A27C4EA3600FA3CF8 /* ResultsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsList.swift; sourceTree = "<group>"; };
 		6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryDataModel.swift; sourceTree = "<group>"; };
 		6CD6ADBD27CBA1FE00EECBD2 /* IDTrackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTrackManager.swift; sourceTree = "<group>"; };
+		6CD6ADBF27CBA73000EECBD2 /* CondensedResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondensedResults.swift; sourceTree = "<group>"; };
 		71050B3E27C7A696009409FA /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		71050B3F27C7A696009409FA /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		71C603C527C8EC89008CE482 /* YouTubeStore+APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubeStore+APIKey.swift"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */,
+				6CD6ADBD27CBA1FE00EECBD2 /* IDTrackManager.swift */,
 				6C3C534027C4EA1200FA3CF8 /* FirstData.swift */,
 				6C3C534227C4EA1900FA3CF8 /* FirstDataModel.swift */,
 				6C3C534427C4EA2300FA3CF8 /* ListOfSongsModel.swift */,
@@ -250,7 +253,7 @@
 				6C3C534A27C4EA3600FA3CF8 /* ResultsList.swift */,
 				6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */,
 				6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */,
-				6CD6ADBD27CBA1FE00EECBD2 /* IDTrackManager.swift */,
+				6CD6ADBF27CBA73000EECBD2 /* CondensedResults.swift */,
 			);
 			path = APIFiles;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				6C3C534927C4EA3100FA3CF8 /* ResultModel.swift in Sources */,
 				71050B4127C7A696009409FA /* OnboardingPage.swift in Sources */,
 				71DCCF8727C7D01800D18FB7 /* YouTubeResults.swift in Sources */,
+				6CD6ADC027CBA73000EECBD2 /* CondensedResults.swift in Sources */,
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
 				6C36CA7C27C9255600E0F39E /* LyricsAPIKey.swift in Sources */,
 				F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */,

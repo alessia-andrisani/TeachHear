@@ -10,6 +10,4 @@ import Foundation
 struct SecondaryDataModel {
     let statusCode: Int
     let track_list : String
-
-    
 }

@@ -13,8 +13,6 @@ import SwiftUI
 public class IDTrackManager: ObservableObject {
     private init() { }
     
-    static var shared = IDTrackManager()
-    
     @Published var listOfStatusCodes : [Int]? = Array(repeating: 0, count: 10)
     @Published var listOfFinalTittles :[String]? = Array(repeating: "", count: 10)
     @Published var listOfTrackedIDs: [Int]? = Array(repeating: 0, count: 10)
@@ -29,6 +27,7 @@ public class IDTrackManager: ObservableObject {
     @Published var listOfSongURLs: [String]? = Array(repeating: "", count: 10)
     @Published var listOfSongLyrics: [String]? = Array(repeating: "", count: 10)
     @Published var listAppear: Bool? = false
+    @Published var Condensate: CondensedResults
     
     
     var counter: Int = 1
@@ -158,12 +157,14 @@ public class IDTrackManager: ObservableObject {
                 self.filteredListOfFinalTittles![j] = self.listOfFinalTittles![i]
                 self.filteredListOfTrackedIDs![j] = self.listOfTrackedIDs![i]
                 self.filteredListOfHasLyricsCodes![j] = self.listOfHasLyricsCodes![i]
-                self.filteredListOfSongLyrics![j] = self.listOfSongLyrics![i]
 
                 
             }
         }
-      
+        
+        Condensate = CondensedResults(hasLyricsCodes: filteredListOfHasLyricsCodes!, statusCodes: filteredListOfStatusCodes!, tittles: filteredListOfFinalTittles!, lyrics: filteredListOfSongLyrics!, trackedIDs: filteredListOfTrackedIDs!)
+        
+        print ("Condensate", Condensate)
         
        return
         
