@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBarView: View {
 	@EnvironmentObject var IDTTrackManager: IDTrackManager
 	
-	@State var userInput : String = ""
+    @State var userInput : String = ""
     @State var searchButton : Bool = true
 	
 	@StateObject var APIMManager = APIManager()
@@ -61,6 +61,7 @@ struct SearchBarView: View {
 				}
 			}
 		})
+        
 	}
 }
 
@@ -70,3 +71,5 @@ struct SearchBarView_Previews: PreviewProvider {
 			.previewInterfaceOrientation(.landscapeRight)
 	}
 }
+
+

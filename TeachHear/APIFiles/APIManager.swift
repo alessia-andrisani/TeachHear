@@ -25,10 +25,7 @@ public class APIManager: ObservableObject {
     }
     
     public func fetchData (userInput: String) async {
-//        guard !userInput.isEmpty else {
-//            IDTrackManager.shared.resetResults()
-//            return
-//        }
+
         
         let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=\(LyricsApiKey().apiKey())"
         
