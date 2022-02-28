@@ -52,7 +52,7 @@ struct SearchBarView: View {
 			
 			if userInput == "" {
 				Task {
-					await  APIMManager.fetchData(userInput: "xoloitzcuintle")
+					await APIMManager.fetchData(userInput: "xoloitzcuintle")
 				}
 				
 			} else {
@@ -61,6 +61,14 @@ struct SearchBarView: View {
 				}
 			}
 		})
+        .onChange(of: userInput, perform:  { value in
+            print ("UserInput")
+            if userInput == "" {
+                Task {
+                    await APIMManager.fetchData(userInput: "xoloitzcuintle")
+                }
+            }
+        })
         
 	}
 }

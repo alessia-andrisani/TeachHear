@@ -16,9 +16,7 @@ public class APIManager: ObservableObject {
     @Published var tracksList : ArraySlice<Track>?
     {
         didSet{
-
             Task{
-//                IDTrackManager()
                 await IDTrackManager.shared.fetchData(inputTittlesList: receivedTittlesList, listOfTrackedSongs: tracksList, listAppearance: listAppearance)
             }
         }
