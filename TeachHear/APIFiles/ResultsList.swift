@@ -17,9 +17,9 @@ struct ResultsList : View {
     var body: some View {
         
         ZStack {
-            
-            if shared.songProperties?.filter{ $0.lyrics != nil && $0.lyrics != "" }.count ?? 0 > 0 {
-                if shared.listAppear == true {
+         
+                               if shared.listAppear == true {
+                if shared.songProperties?.filter{ $0.lyrics != nil && $0.lyrics != "" }.count ?? 0 > 0  {
                     let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil && $0.lyrics != ""}
                     List{
                         
@@ -36,7 +36,6 @@ struct ResultsList : View {
                                                         date: .now)
                                 
                                 ExerciseView(exercise, isNew: true)
-                                
                                 
                             } label: {
                                 

@@ -36,7 +36,7 @@ struct ContentView: View {
                     
                     RecentsSection()
                         }
-                   ResultsList()
+                        ResultsList()
                       
                     }
                 }

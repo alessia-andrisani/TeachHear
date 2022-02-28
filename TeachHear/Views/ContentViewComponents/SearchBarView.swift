@@ -27,6 +27,7 @@ struct SearchBarView: View {
             
             Button {
                 userInput = ""
+                IDTTrackManager.listAppear = false
             } label: {
                 Image(systemName: "xmark.circle")
                     .foregroundColor(Color(uiColor: .systemGray2))
@@ -47,8 +48,13 @@ struct SearchBarView: View {
         .onChange(of: searchButton, perform:  { value in
             let pronnedInput = userInput.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
             
+            if userInput == "" {
+                
+            } else {
+            
                 Task {
                     await APIMManager.fetchData(userInput: pronnedInput)
+            }
             }
         })
         .onChange(of: userInput, perform:  { value in
