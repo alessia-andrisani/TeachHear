@@ -15,24 +15,22 @@ public class IDTrackManager: ObservableObject {
     
     @Published var songProperties: [SongInfo]?
     @Published var listAppear: Bool? = false
-        private init() { }
+    private init() { }
     
     var counter: Int = 1
     
     
     func fetchData (inputTittlesList: ArraySlice<Track>?, listOfTrackedSongs: ArraySlice<Track>?, listAppearance: Bool) async {
         songProperties = nil
-
-        listAppear = listAppearance
-
         
-        if listOfTrackedSongs!.count >= 10 {
-            //This if statement is ment to ckeck if the size of the songs returned by the API is greater than 10
-            counter = 9
-            
-        } else {
+        listAppear = listAppearance
+        
+        
+        if listOfTrackedSongs!.count > 1 {
             counter = listOfTrackedSongs!.count-1
             
+        } else {
+            counter = 1
         }
         
         for i in 0...counter {
@@ -59,7 +57,7 @@ public class IDTrackManager: ObservableObject {
                     if songProperties?[i].songURL == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=\(LyricsApiKey().apiKey())"  {
                         
                         passsData(lyricsData: "ERROR", i: 1)
-      
+                        
                         
                     } else {
                         //URL Session
@@ -80,16 +78,16 @@ public class IDTrackManager: ObservableObject {
                                     //Convert to usable form
                                     
                                     let lyricsData = self.convertDecodedDataToUsableForm(decodedData: decodedata)
-                      
+                                    
                                     if lyricsData.statusCode != 200{
                                         
                                         self.songProperties![i].lyrics = "An Error Ocurred while requesting the lyrics"
-                                      
+                                        
                                     } else {
                                         //Pass the data to the main view
                                         
                                         self.songProperties![i].lyrics = lyricsData.songLyrics
-
+                                        
                                     }
                                     
                                     
@@ -99,7 +97,7 @@ public class IDTrackManager: ObservableObject {
                                 
                             }
                             
-                           
+                            
                         }
                         task.resume()
                     }
@@ -108,7 +106,7 @@ public class IDTrackManager: ObservableObject {
             }
         }
         
-       return
+        return
         
     }
     
@@ -137,7 +135,7 @@ public class IDTrackManager: ObservableObject {
     public func passsData(lyricsData: String, i: Int)   {
         
         self.songProperties![i].lyrics = lyricsData
-     
+        
     }
     
     

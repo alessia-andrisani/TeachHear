@@ -8,19 +8,10 @@
 import Foundation
 
 struct SongInfo {
-    
     var title: String
     var trackID: Int
     var hasLyrics: Int
     var songURL: String
     var lyrics: String? = nil
-    
-    //    var filteredListOfStatusCodes : Int
-    //    var filteredListOfFinalTittles : String
-    //    var filteredListOfTrackedIDs: Int
-    //    var  filteredListOfHasLyricsCodes: Int
-    //    var filteredListOfSongLyrics: String
-
-                                                
     }
 

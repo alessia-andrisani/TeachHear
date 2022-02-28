@@ -18,39 +18,39 @@ struct ResultsList : View {
         
         ZStack {
             
-            if shared.songProperties?.filter{ $0.lyrics != nil  && $0.lyrics != "" }.count ?? 0 > 0 {
-            if shared.listAppear == true {
-                let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil && $0.lyrics != ""}
-                List{
-
-                    ForEach (0..<filteredInfo.count-1, id: \.self) { index in
+            if shared.songProperties?.filter{ $0.lyrics != nil && $0.lyrics != "" }.count ?? 0 > 0 {
+                if shared.listAppear == true {
+                    let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil && $0.lyrics != ""}
+                    List{
                         
-                        NavigationLink {
-
-                            let song = Song(id: "\(filteredInfo[index].trackID)",
-                                            title: filteredInfo[index].title,
-                                            originalLyrics: filteredInfo[index].lyrics ?? "No lyrics")
-                            let exercise = Exercise(title: "",
-                                                    song: song,
-                                                    lyrics: filteredInfo[index].lyrics ?? "No lyrics",
-                                                    date: .now)
+                        ForEach (0..<filteredInfo.count-1, id: \.self) { index in
                             
-                            ExerciseView(exercise, isNew: true)
-
-                            
-                        } label: {
-                            
-                            Text(filteredInfo[index].title)
+                            NavigationLink {
+                                
+                                let song = Song(id: "\(filteredInfo[index].trackID)",
+                                                title: filteredInfo[index].title,
+                                                originalLyrics: filteredInfo[index].lyrics ?? "No lyrics")
+                                let exercise = Exercise(title: "",
+                                                        song: song,
+                                                        lyrics: filteredInfo[index].lyrics ?? "No lyrics",
+                                                        date: .now)
+                                
+                                ExerciseView(exercise, isNew: true)
+                                
+                                
+                            } label: {
+                                
+                                Text(filteredInfo[index].title)
+                                
+                            }
                             
                         }
-                        
                     }
+                    .listStyle(PlainListStyle())
+                    .padding(.horizontal)
+                    .ignoresSafeArea()
+                    
                 }
-                .listStyle(PlainListStyle())
-                .padding(.horizontal)
-                .ignoresSafeArea()
-                
-            }
             }
         }
     }
