@@ -18,9 +18,9 @@ struct ResultsList : View {
         
         ZStack {
             
-            if shared.songProperties?.filter{ $0.lyrics != nil}.count ?? 0 > 0 {
+            if shared.songProperties?.filter{ $0.lyrics != nil  && $0.lyrics != "" }.count ?? 0 > 0 {
             if shared.listAppear == true {
-                let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil}
+                let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil && $0.lyrics != ""}
                 List{
 
                     ForEach (0..<filteredInfo.count-1, id: \.self) { index in
