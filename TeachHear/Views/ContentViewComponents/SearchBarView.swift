@@ -27,8 +27,7 @@ struct SearchBarView: View {
             
             Button {
                 userInput = ""
-                searchButton.toggle()
-                //                IDTTrackManager.resetResults()
+                IDTTrackManager.listAppear = false
             } label: {
                 Image(systemName: "xmark.circle")
                     .foregroundColor(Color(uiColor: .systemGray2))
@@ -36,8 +35,6 @@ struct SearchBarView: View {
             
             Button {
                 searchButton.toggle()
-                
-                
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(uiColor: .systemGray2))
@@ -51,22 +48,13 @@ struct SearchBarView: View {
         .onChange(of: searchButton, perform:  { value in
             let pronnedInput = userInput.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
             
-            if userInput == "" {
-                Task {
-                    await APIMManager.fetchData(userInput: "xoloitzcuintle")
-                }
-                
-            } else {
                 Task {
                     await APIMManager.fetchData(userInput: pronnedInput)
-                }
             }
         })
         .onChange(of: userInput, perform:  { value in
             if userInput == "" {
-                Task {
-                    await APIMManager.fetchData(userInput: "xoloitzcuintle")
-                }
+                IDTTrackManager.listAppear = false
             }
         })
         
