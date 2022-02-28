@@ -20,18 +20,19 @@ struct ResultsList : View {
             
             if shared.songProperties?.filter{ $0.lyrics != nil}.count ?? 0 > 0 {
             if shared.listAppear == true {
+                let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil}
                 List{
 
-                    ForEach (0..<shared.songProperties!.filter{ $0.lyrics != nil}.count-1, id: \.self) { index in
+                    ForEach (0..<filteredInfo.count-1, id: \.self) { index in
                         
                         NavigationLink {
 
-                            let song = Song(id: "\(shared.songProperties!.filter{ $0.lyrics != nil}[index].trackID)",
-                                            title: shared.songProperties!.filter{ $0.lyrics != nil}[index].title,
-                                            originalLyrics:shared.songProperties!.filter{ $0.lyrics != nil}[index].lyrics ?? "No lyrics")
+                            let song = Song(id: "\(filteredInfo[index].trackID)",
+                                            title: filteredInfo[index].title,
+                                            originalLyrics: filteredInfo[index].lyrics ?? "No lyrics")
                             let exercise = Exercise(title: "",
                                                     song: song,
-                                                    lyrics: shared.songProperties!.filter{ $0.lyrics != nil}[index].lyrics ?? "No lyrics",
+                                                    lyrics: filteredInfo[index].lyrics ?? "No lyrics",
                                                     date: .now)
                             
                             ExerciseView(exercise, isNew: true)
@@ -39,7 +40,7 @@ struct ResultsList : View {
                             
                         } label: {
                             
-                            Text(shared.songProperties!.filter{ $0.lyrics != nil}[index].title)
+                            Text(filteredInfo[index].title)
                             
                         }
                         
