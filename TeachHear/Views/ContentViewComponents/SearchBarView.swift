@@ -35,7 +35,7 @@ struct SearchBarView: View {
             
             Button {
                 searchButton.toggle()
-                IDTTrackManager.resetResults()
+
                 
             } label: {
                 Image(systemName: "magnifyingglass")

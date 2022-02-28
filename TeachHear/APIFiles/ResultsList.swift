@@ -17,34 +17,29 @@ struct ResultsList : View {
     var body: some View {
         
         ZStack {
-            //            if shared.filteredListOfSongLyrics == Array(repeating: "", count: 10)  {  }
+            
+            if shared.songProperties?.filter{ $0.lyrics != nil}.count ?? 0 > 0 {
             if shared.listAppear == true {
-                
                 List{
-                    
-                    ForEach (0..<shared.Condensate.hasLyricsCodes.filter{$0 > 0}.count, id: \.self) { index in
+
+                    ForEach (0..<shared.songProperties!.filter{ $0.lyrics != nil}.count-1, id: \.self) { index in
                         
                         NavigationLink {
-                            //Check if the lyrics of the song are available
-                            //                            if shared.filteredListOfHasLyricsCodes![index] == 0 {
-                            //
-                            ////                                ExerciseView(lyrics: "No lyrics Available ☹️", isNew: true)
-                            //
-                            //                            } else {
-                            let song = Song(id: "\(shared.Condensate.trackedIDs[index])",
-                                            title: shared.Condensate.tittles[index],
-                                            originalLyrics: shared.Condensate.lyrics[index])
+
+                            let song = Song(id: "\(shared.songProperties!.filter{ $0.lyrics != nil}[index].trackID)",
+                                            title: shared.songProperties!.filter{ $0.lyrics != nil}[index].title,
+                                            originalLyrics:shared.songProperties!.filter{ $0.lyrics != nil}[index].lyrics ?? "No lyrics")
                             let exercise = Exercise(title: "",
                                                     song: song,
-                                                    lyrics: shared.Condensate.lyrics[index],
+                                                    lyrics: shared.songProperties!.filter{ $0.lyrics != nil}[index].lyrics ?? "No lyrics",
                                                     date: .now)
                             
                             ExerciseView(exercise, isNew: true)
-                            //                            }
+
                             
                         } label: {
                             
-                            Text(shared.Condensate.tittles[index])
+                            Text(shared.songProperties!.filter{ $0.lyrics != nil}[index].title)
                             
                         }
                         
@@ -54,7 +49,7 @@ struct ResultsList : View {
                 .padding(.horizontal)
                 .ignoresSafeArea()
                 
-                
+            }
             }
         }
     }
