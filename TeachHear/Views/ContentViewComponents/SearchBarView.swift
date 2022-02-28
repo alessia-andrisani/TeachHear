@@ -27,7 +27,6 @@ struct SearchBarView: View {
             
             Button {
                 userInput = ""
-                IDTTrackManager.listAppear = false
             } label: {
                 Image(systemName: "xmark.circle")
                     .foregroundColor(Color(uiColor: .systemGray2))
