@@ -8,20 +8,20 @@
 import Foundation
 
 struct FirstData: Codable {
-    let message: MMessage
+    let message: MessageList
    
 }
 
-struct MMessage: Codable {
-    let header: HHeader
-    let body: BBody
+struct MessageList: Codable {
+    let header: HeaderList
+    let body: BodyList
 }
 
-struct BBody: Codable {
+struct BodyList: Codable {
     let track_list: [Track]
 }
 
-struct HHeader: Codable {
+struct HeaderList: Codable {
     let status_code: Int
 }
 

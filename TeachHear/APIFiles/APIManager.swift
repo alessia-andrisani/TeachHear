@@ -13,24 +13,25 @@ public class APIManager: ObservableObject {
     @Published var receivedTittlesList : ArraySlice<Track>?
     @Published var receivedTittles : ArraySlice<Track>?
     @Published var listAppearance : Bool = false
-    
     @Published var tracksList : ArraySlice<Track>?
     {
         didSet{
-      
+
             Task{
+//                IDTrackManager()
                 await IDTrackManager.shared.fetchData(inputTittlesList: receivedTittlesList, listOfTrackedSongs: tracksList, listAppearance: listAppearance)
             }
         }
     }
     
     public func fetchData (userInput: String) async {
-        
-        let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=ded278d14431e37e7574b08e57dd8bc2"
 
+        
+        let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=\(LyricsApiKey().apiKey())"
+        
   
         
-        if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=ded278d14431e37e7574b08e57dd8bc2"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=ded278d14431e37e7574b08e57dd8bc2"  {
+        if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=\(LyricsApiKey().apiKey())"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=\(LyricsApiKey().apiKey())"  {
    
             listAppearance = false
 
@@ -38,13 +39,7 @@ public class APIManager: ObservableObject {
             listAppearance = true
         }
       
-        //--------------------------------------------------
-        // f86e6a5be12d62a10584fcd10ec622d3 DiegoCas9
-        // ded278d14431e37e7574b08e57dd8bc2 AndresCas9
-        // 0d79498daea98df76c2aa81a7f3b127b LopezCas9
-        //Comments above correspond to different API keys, they are interchangable
-        //--------------------------------------------------
-        
+
         //URL
         if let url = URL(string: firstDataURL) {
             
@@ -73,7 +68,6 @@ public class APIManager: ObservableObject {
                        
                         } else {
                          
-                            print(decodedata.message.body.track_list.count)
                             //Convert to usable form
                             let someData =
                             self.convertDecodedDataToUsableForm(decodedData: decodedata)
@@ -119,4 +113,5 @@ public class APIManager: ObservableObject {
         tracksList = firstData.track_list
         
     }
+    
 }
