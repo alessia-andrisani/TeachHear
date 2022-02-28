@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SearchBarView: View {
     @EnvironmentObject var IDTTrackManager: IDTrackManager
+    @StateObject var APIMManager = APIManager()
     
     @State var userInput : String = ""
     @State var searchButton : Bool = true
     
-    @StateObject var APIMManager = APIManager()
+   
     
     var body: some View {
         HStack {

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var moc
+    @EnvironmentObject var IDTTrackManager: IDTrackManager
+    @StateObject var APIMManager = APIManager()
 	
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<CoreSong>
 	
@@ -34,11 +36,11 @@ struct ContentView: View {
                     
                     RecentsSection()
                         }
-                    
                    ResultsList()
                       
                     }
                 }
+
 			}
 			.navigationTitle("Exercises")
 			.navigationBarTitleDisplayMode(.inline)

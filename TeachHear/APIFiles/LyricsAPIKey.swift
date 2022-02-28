@@ -20,7 +20,7 @@ struct LyricsApiKey {
     
     func apiKey () -> String {
         
-        let theKey = "f86e6a5be12d62a10584fcd10ec622d3"
+        let theKey = "0d79498daea98df76c2aa81a7f3b127b"
         
         return theKey
         
