@@ -30,7 +30,7 @@ struct ExerciseView: View {
 				VStack(spacing: 16) {
 					if isNew {
 						VStack(alignment: .leading) {
-							Text("Exercise Type")
+							Text("Exercise Type:")
 								.font(.title2.weight(.semibold))
 								.padding(.leading, 32)
 							

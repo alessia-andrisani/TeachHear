@@ -25,6 +25,7 @@
 		50FACF8827C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */; };
 		50FACF8A27C53E19004FDD40 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8927C53E19004FDD40 /* Exercise.swift */; };
 		50FACF8C27C53E2B004FDD40 /* ExerciseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */; };
+		50FB952027CE4248001E9A0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50FB951E27CE4248001E9A0A /* Localizable.strings */; };
 		6C36CA7C27C9255600E0F39E /* LyricsAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */; };
 		6C3C533F27C4E9FB00FA3CF8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */; };
 		6C3C534127C4EA1200FA3CF8 /* FirstData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534027C4EA1200FA3CF8 /* FirstData.swift */; };
@@ -76,6 +77,7 @@
 		50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreExercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50FACF8927C53E19004FDD40 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStore.swift; sourceTree = "<group>"; };
+		50FB951F27CE4248001E9A0A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsAPIKey.swift; sourceTree = "<group>"; };
 		6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6C3C534027C4EA1200FA3CF8 /* FirstData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstData.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		50DB598C27BBB8EE00E6A635 = {
 			isa = PBXGroup;
 			children = (
+				50FB951E27CE4248001E9A0A /* Localizable.strings */,
 				50DB599727BBB8EE00E6A635 /* TeachHear */,
 				50DB599627BBB8EE00E6A635 /* Products */,
 			);
@@ -320,6 +323,8 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
+				es,
 			);
 			mainGroup = 50DB598C27BBB8EE00E6A635;
 			packageReferences = (
@@ -340,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DB59A027BBB8F000E6A635 /* Preview Assets.xcassets in Resources */,
+				50FB952027CE4248001E9A0A /* Localizable.strings in Resources */,
 				50DB599D27BBB8F000E6A635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +405,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50FB951E27CE4248001E9A0A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50FB951F27CE4248001E9A0A /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		50DB59A127BBB8F000E6A635 /* Debug */ = {
