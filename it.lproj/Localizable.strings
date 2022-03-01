@@ -17,7 +17,7 @@
 "Done" = "Fine";
 
 /* No comment provided by engineer. */
-"Exercise Type" = "Scegli la tipologia di esercizio:";
+"Exercise Type:" = "Scegli la tipologia di esercizio:";
 
 /* No comment provided by engineer. */
 "Exercises" = "Esercizi";
@@ -77,7 +77,7 @@
 "Where do you want to save the exercise?" = "Dove vuoi salvare l'esercizio?";
 
 /* No comment provided by engineer. */
-"You can choose between three different types of exercise: word scramble, fill the gap and sentence scramble. Just choose the one you like and tap the words or sentences you want to use." = "Puoi scegliere tra tre diverse tipologie di esercizi: mescola parola, parola mancante e mescola frase. Scegli quello che preferisci e tocca le parole o frasi che vuoi utilizzare.";
+"You can choose between three different types of exercise: Word Scramble, Fill the Gap and Sentence Scramble. Just choose the one you like and tap the words or sentences you want to use." = "Puoi scegliere tra tre diverse tipologie di esercizi: mescola parola, parola mancante e mescola frase. Scegli quello che preferisci e tocca le parole o frasi che vuoi utilizzare.";
 
 "Word Scramble" = "Mescola Parola";
 
