@@ -17,7 +17,10 @@ struct OnboardingView: View {
 						   nextButton: true,
 						   skipButton: true,
 						   startButton: false,
-						   selection: $selection)
+						   title: "Welcome to TeachHear!",
+						   text: """
+Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in.
+""", selection: $selection)
 				.tag(0)
 			
 			OnboardingPage(imageName: "NoteTaking",
@@ -25,7 +28,10 @@ struct OnboardingView: View {
 						   nextButton: true,
 						   skipButton: true,
 						   startButton: false,
-						   selection: $selection)
+						   title: "Create your exercise",
+						   text: """
+You can choose between three different types of exercise: word scramble, fill the gap and sentence scramble. Just choose the one you like and tap the words or sentences you want to use.
+""", selection: $selection)
 				.tag(1)
 			
 			OnboardingPage(imageName: "Teacher",
@@ -33,7 +39,10 @@ struct OnboardingView: View {
 						   nextButton: false,
 						   skipButton: false,
 						   startButton: true,
-						   selection: $selection)
+						   title: "Share it during your classes",
+						   text: """
+ When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a pdf or share your screen during your online classes.
+ """, selection: $selection)
 				.tag(2)
 			
 		}
