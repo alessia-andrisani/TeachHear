@@ -30,7 +30,7 @@ Hello teacher! In TeachHear you can create exercises for your language classes u
 						   startButton: false,
 						   title: "Create your exercise",
 						   text: """
-You can choose between three different types of exercise: word scramble, fill the gap and sentence scramble. Just choose the one you like and tap the words or sentences you want to use.
+You can choose between three different types of exercise: Word Scramble, Fill the Gap and Sentence Scramble. Just choose the one you like and tap the words or sentences you want to use.
 """, selection: $selection)
 				.tag(1)
 			
