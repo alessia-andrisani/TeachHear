@@ -62,6 +62,7 @@
 		50547D3827BF936A00970CF8 /* RecentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSection.swift; sourceTree = "<group>"; };
 		50547D3A27BF93E300970CF8 /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
 		50C1258C27BEA35A00496708 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		50C65B3527CE8F420068ECCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50DB599527BBB8EE00E6A635 /* TeachHear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachHear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachHearApp.swift; sourceTree = "<group>"; };
 		50DB599A27BBB8EE00E6A635 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -414,6 +415,7 @@
 			children = (
 				50FB951F27CE4248001E9A0A /* it */,
 				50FB952127CE7EC8001E9A0A /* fr */,
+				50C65B3527CE8F420068ECCC /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
