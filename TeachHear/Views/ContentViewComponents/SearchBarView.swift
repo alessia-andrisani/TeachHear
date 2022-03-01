@@ -19,26 +19,24 @@ struct SearchBarView: View {
     var body: some View {
         HStack {
             TextField("Type artist and song name...", text: $userInput)
+                .onSubmit {
+                    searchButton.toggle()
+                }.modifier(TextFieldClearButton(userInput: $userInput))
+                .textFieldStyle(.roundedBorder)
                 .disableAutocorrection(true)
                 .padding(.top)
-                .padding(.horizontal)
+                .padding(.leading)
             
             Spacer()
-            
-            Button {
-                userInput = ""
-                IDTTrackManager.listAppear = false
-            } label: {
-                Image(systemName: "xmark.circle")
-                    .foregroundColor(Color(uiColor: .systemGray2))
-            }
             
             Button {
                 searchButton.toggle()
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(uiColor: .systemGray2))
-            }.keyboardShortcut(.defaultAction)
+            } .padding(.top)
+                .padding(.leading, -3)
+                .buttonStyle(.plain)
             
             Spacer()
             
@@ -65,6 +63,8 @@ struct SearchBarView: View {
         
     }
 }
+
+
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {

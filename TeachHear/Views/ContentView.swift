@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var moc
-    @EnvironmentObject var IDTTrackManager: IDTrackManager
+    @EnvironmentObject var IDTrackManager: IDTrackManager
     @StateObject var APIMManager = APIManager()
 	
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<CoreSong>
@@ -35,6 +35,10 @@ struct ContentView: View {
                     TrendsSection()
                     
                     RecentsSection()
+                        }    .onTapGesture {
+                            if IDTrackManager.listAppear == true {
+                                IDTrackManager.listAppear = false
+                            }
                         }
                         ResultsList()
                       
@@ -45,6 +49,10 @@ struct ContentView: View {
 			.navigationTitle("Exercises")
 			.navigationBarTitleDisplayMode(.inline)
 			.background(Color(uiColor: .systemGroupedBackground))
+            .alert(isPresented: $IDTrackManager.alertAppear) {
+                Alert (title: Text("Warning"), message: Text("Your serch threw no results"), dismissButton: .default(Text("Ok")))
+                
+            }
 		}
 		.navigationViewStyle(.stack)
 		.fullScreenCover(isPresented: $showOnboarding) {

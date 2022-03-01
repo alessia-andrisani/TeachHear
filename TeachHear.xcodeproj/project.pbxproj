@@ -36,6 +36,7 @@
 		6C3C534D27C4EA3B00FA3CF8 /* SecondaryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */; };
 		6CD6ADBE27CBA1FE00EECBD2 /* IDTrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6ADBD27CBA1FE00EECBD2 /* IDTrackManager.swift */; };
 		6CD6ADC227CCDEE200EECBD2 /* SongInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6ADC127CCDEE200EECBD2 /* SongInfo.swift */; };
+		6CE0BAAE27CE61C700C8447C /* ClearTextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0BAAD27CE61C700C8447C /* ClearTextFieldButton.swift */; };
 		71050B4027C7A696009409FA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050B3E27C7A696009409FA /* OnboardingView.swift */; };
 		71050B4127C7A696009409FA /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050B3F27C7A696009409FA /* OnboardingPage.swift */; };
 		71C603C627C8EC89008CE482 /* YouTubeStore+APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C603C527C8EC89008CE482 /* YouTubeStore+APIKey.swift */; };
@@ -86,6 +87,7 @@
 		6C3C534C27C4EA3B00FA3CF8 /* SecondaryDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryDataModel.swift; sourceTree = "<group>"; };
 		6CD6ADBD27CBA1FE00EECBD2 /* IDTrackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTrackManager.swift; sourceTree = "<group>"; };
 		6CD6ADC127CCDEE200EECBD2 /* SongInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfo.swift; sourceTree = "<group>"; };
+		6CE0BAAD27CE61C700C8447C /* ClearTextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearTextFieldButton.swift; sourceTree = "<group>"; };
 		71050B3E27C7A696009409FA /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		71050B3F27C7A696009409FA /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		71C603C527C8EC89008CE482 /* YouTubeStore+APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubeStore+APIKey.swift"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				50DB59B727BBC07400E6A635 /* FoldersSection.swift */,
 				F538A85127BEC70800B6E4C1 /* Header.swift */,
 				50547D3827BF936A00970CF8 /* RecentsSection.swift */,
+				6CE0BAAD27CE61C700C8447C /* ClearTextFieldButton.swift */,
 				F5D182BB27C503F900E49365 /* SearchBarView.swift */,
 				F538A84F27BEC4DD00B6E4C1 /* SongItem.swift */,
 				50DB59B927BBC08D00E6A635 /* TrendsSection.swift */,
@@ -369,6 +372,7 @@
 				F538A84C27BCFCE400B6E4C1 /* LyricButton.swift in Sources */,
 				71DCCF8327C7C81500D18FB7 /* YouTubePlayer.swift in Sources */,
 				50C1258D27BEA35A00496708 /* FolderView.swift in Sources */,
+				6CE0BAAE27CE61C700C8447C /* ClearTextFieldButton.swift in Sources */,
 				F538A84E27BD1A8A00B6E4C1 /* FolderShape.swift in Sources */,
 				71C603C627C8EC89008CE482 /* YouTubeStore+APIKey.swift in Sources */,
 				6CD6ADBE27CBA1FE00EECBD2 /* IDTrackManager.swift in Sources */,
@@ -521,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TeachHear/Preview Content\"";
-				DEVELOPMENT_TEAM = JB3QK77KA5;
+				DEVELOPMENT_TEAM = 9S8YS24U6S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -533,7 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.TeachHear;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cas9Diego.TeachHear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -549,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TeachHear/Preview Content\"";
-				DEVELOPMENT_TEAM = JB3QK77KA5;
+				DEVELOPMENT_TEAM = 9S8YS24U6S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -561,7 +565,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.TeachHear;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cas9Diego.TeachHear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
