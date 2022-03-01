@@ -26,17 +26,8 @@ public class APIManager: ObservableObject {
 
         
         let firstDataURL = "https://api.musixmatch.com/ws/1.1/track.search?q=\(userInput)&apikey=\(LyricsApiKey().apiKey())"
-        
-  
-        
-        if firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q=xoloitzcuintle&apikey=\(LyricsApiKey().apiKey())"  || firstDataURL == "https://api.musixmatch.com/ws/1.1/track.search?q= xoloitzcuintle&apikey=\(LyricsApiKey().apiKey())"  {
-   
-            listAppearance = false
 
-        } else {
-            listAppearance = true
-        }
-      
+
 
         //URL
         if let url = URL(string: firstDataURL) {
@@ -44,27 +35,28 @@ public class APIManager: ObservableObject {
             
             //URL Session
             let session = URLSession(configuration: .default)
-            
+       
             //FEtching task
             let task = session.dataTask(with: url) { (data, response, error) in
                 //Error handle
-                
+     
                 if error != nil {
                     fatalError("\(String(describing: error?.localizedDescription))")
                 }
                 
                 //Parse JSON to a readable version
                 if let receivedData = data {
-                    
+                 
                     //Decoded
                     if let decodedata = self.decodeJASONData(receivedData: receivedData){
-      
+                 
                         //                        --------------------------------------------------
                         //This section is usefull because prevents a crash in case of user misspelling of words, or other specific scenarios, but needs further work
                         if decodedata.message.body.track_list.count <= 1 {
-    
+                            IDTrackManager.shared.alertAppear = true
                        
                         } else {
+                            self.listAppearance = true
                          
                             //Convert to usable form
                             let someData =
@@ -79,6 +71,8 @@ public class APIManager: ObservableObject {
                 }
             }
             task.resume()
+        } else {
+            IDTrackManager.shared.alertAppear = true
         }
         
     return

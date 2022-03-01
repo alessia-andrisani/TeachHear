@@ -30,7 +30,7 @@ struct ResultsList : View {
                                 let song = Song(id: "\(filteredInfo[index].trackID)",
                                                 title: filteredInfo[index].title,
                                                 originalLyrics: filteredInfo[index].lyrics ?? "No lyrics")
-                                let exercise = Exercise(title: "",
+                                let exercise = Exercise(title: filteredInfo[index].title,
                                                         song: song,
                                                         lyrics: filteredInfo[index].lyrics ?? "No lyrics",
                                                         date: .now)

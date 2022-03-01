@@ -15,6 +15,7 @@ public class IDTrackManager: ObservableObject {
     
     @Published var songProperties: [SongInfo]?
     @Published var listAppear: Bool? = false
+    @Published var alertAppear : Bool = false
     private init() { }
     
     var counter: Int = 1
@@ -22,6 +23,7 @@ public class IDTrackManager: ObservableObject {
     
     func fetchData (inputTittlesList: ArraySlice<Track>?, listOfTrackedSongs: ArraySlice<Track>?, listAppearance: Bool) async {
         songProperties = nil
+        alertAppear = false
         
         listAppear = listAppearance
         
@@ -35,6 +37,7 @@ public class IDTrackManager: ObservableObject {
         
         for i in 0...counter {
             //ListOfTrackedSongs is an array of arrays, so separate each array  inside the group of arrays.
+            
             let splitElementsInArray = listOfTrackedSongs![i]
             if songProperties == nil {
                 songProperties = []
@@ -49,17 +52,19 @@ public class IDTrackManager: ObservableObject {
                 songProperties![i].songURL = "no URL"
                 
             } else {
+       
                 //URL
-                if let url = URL(string: songProperties?[i].songURL ?? "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=\(LyricsApiKey().apiKey())")
+                if let url = URL(string: songProperties?[i].songURL ?? "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=&apikey=\(LyricsApiKey().apiKey())")
                     
                 {
                     //With the if statement below we check that we have a valir URL
-                    if songProperties?[i].songURL == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=0&apikey=\(LyricsApiKey().apiKey())"  {
+                    if songProperties?[i].songURL == "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=&apikey=\(LyricsApiKey().apiKey())"  {
                         
                         passsData(lyricsData: "ERROR", i: 1)
                         
                         
                     } else {
+               
                         //URL Session
                         let session = URLSession(configuration: .default)
                         //FEtching task
@@ -73,10 +78,12 @@ public class IDTrackManager: ObservableObject {
                             
                             //Parse JSON to a readable version
                             if let receivedData = data {
+                       
+                                
                                 //Decoded
                                 if let decodedata = self.decodeJASONData(receivedData: receivedData){
                                     //Convert to usable form
-                                    
+                                   
                                     let lyricsData = self.convertDecodedDataToUsableForm(decodedData: decodedata)
                                     
                                     if lyricsData.statusCode != 200{
@@ -85,8 +92,15 @@ public class IDTrackManager: ObservableObject {
                                         
                                     } else {
                                         //Pass the data to the main view
-                                        
+                                  
                                         self.songProperties![i].lyrics = lyricsData.songLyrics
+                        
+                                        
+                                        if i == self.counter {
+                                            if self.songProperties?.filter({ $0.lyrics != nil && $0.lyrics != "" }).count ?? 2 < 1 || self.songProperties == nil {
+                                        self.alertAppear = true
+                                            }
+                                    }
                                         
                                     }
                                     
