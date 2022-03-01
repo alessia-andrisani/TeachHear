@@ -14,8 +14,8 @@ struct OnboardingPage: View {
 	let skipButton: Bool
 	let startButton: Bool
 	
-	let title: String
-	let text: String
+	let title: LocalizedStringKey
+	let text: LocalizedStringKey
 	
 	@Binding var selection: Int
 	
@@ -133,7 +133,7 @@ struct OnboardingPage: View {
 
 struct OnboardingPage_Previews: PreviewProvider {
 	static var previews: some View {
-		OnboardingPage(imageName: "MusicDancer", previousButton: true, nextButton: true, skipButton: true, startButton: false, title: "Welcome to TeachHear", text: "Lorem Ipsum", selection: .constant(0))
+		OnboardingPage(imageName: "MusicDancer", previousButton: true, nextButton: true, skipButton: true, startButton: false, title: "Welcome to TeachHear", text: "Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in.", selection: .constant(0))
 			.previewInterfaceOrientation(.landscapeRight)
 	}
 }
