@@ -14,7 +14,7 @@ struct LyricsButtonStyle: ButtonStyle {
 		configuration.label
 			.font(.largeTitle.bold())
 			.frame(minHeight: 44)
-			.foregroundColor(isHighlighted ? .indigo : .primary)
+			.foregroundColor(isHighlighted ? .accentColor : .primary)
 	}
 }
 

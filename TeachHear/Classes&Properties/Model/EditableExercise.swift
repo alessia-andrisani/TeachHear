@@ -55,9 +55,11 @@ class EditableExercise: ObservableObject {
 		}
 		
 		self.words = splitIntoArrays(lyrics)
+		self.originalLyrics = originalLyrics
 		self.originalWords = splitIntoArrays(originalLyrics)
 	}
 	
+	let originalLyrics: String
 	let originalWords: [[String]]
 	
 	@Published var id: UUID

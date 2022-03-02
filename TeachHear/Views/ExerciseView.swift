@@ -16,7 +16,7 @@ struct ExerciseView: View {
 	
 	@EnvironmentObject private var exerciseStore: ExerciseStore
 	
-	@ObservedObject private var exercise: EditableExercise
+	@StateObject private var exercise: EditableExercise
 	
 	@State private var showingOptions = false
 	
@@ -60,14 +60,12 @@ struct ExerciseView: View {
 									Button("Add to recents") {
 										let song = Song(id: "",
 														title: "",
-														originalLyrics: exercise.originalWords.toString())
+														originalLyrics: exercise.originalLyrics)
 										let newExercise = Exercise(title: exercise.title,
 																   song: song,
 																   lyrics: exercise.words.toString(),
 																   date: Date.now)
-										
 										exerciseStore.exercises.append(newExercise)
-										
 										dismiss()
 									}
 									
@@ -91,7 +89,8 @@ struct ExerciseView: View {
 								.offset(y: 16)
 						}
 						
-						LyricsView(exercise: ObservedObject<EditableExercise>(initialValue: exercise))
+						LyricsView()
+							.environmentObject(exercise)
 					}
 					.frame(width: UIScreen.main.bounds.width * 2 / 3)
 					.background(Color(uiColor: .secondarySystemGroupedBackground))
@@ -106,7 +105,7 @@ struct ExerciseView: View {
 		}
 		.background(Color.indigo.opacity(0.35))
 		.navigationBarTitleDisplayMode(.inline)
-		.navigationTitle(exercise.isNew ? "New Exercise": "Exercise")  
+		.navigationTitle(exercise.isNew ? String(localized: "New Exercise") : exercise.title)
 	}
 }
 

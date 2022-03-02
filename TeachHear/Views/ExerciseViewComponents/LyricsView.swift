@@ -8,21 +8,13 @@
 import SwiftUI
 
 struct LyricsView: View {
-	init(exercise: ObservedObject<EditableExercise>) {
-		_exercise = exercise
-		
-		_previousType = .init(initialValue: exercise.wrappedValue.type)
-	}
+	@EnvironmentObject private var exercise: EditableExercise
 	
-	@ObservedObject private var exercise: EditableExercise
-	
-	@State private var previousType: ExerciseType
+	@State private var previousType: ExerciseType?
 	
 	var body: some View {
 		VStack(alignment: .leading) {
-			let lines = 0..<(exercise.originalWords.count)
-			
-			ForEach(lines, id: \.self) { lineIndex in
+			ForEach(exercise.words.indices, id: \.self) { lineIndex in
 				HStack(spacing: .zero) {
 					ForEach(exercise.words[lineIndex].indices, id: \.self) { wordIndex in
 						let word = exercise.words[lineIndex][wordIndex]
@@ -32,39 +24,51 @@ struct LyricsView: View {
 								.frame(height: 10)
 						} else {
 							Button(word + " ") {
-								scramble(lineIndex, wordIndex)
+								toggleWord(lineIndex, wordIndex)
 							}
-							.buttonStyle(.lyrics(isHighlighted: isWordChanged(lineIndex, wordIndex)))
+							.buttonStyle(.lyrics(isHighlighted: isWordModified(lineIndex, wordIndex)))
 							.disabled(!exercise.isNew)  // TODO: The highlighting does not appear with !isNew
 						}
 					}
 				}
 			}
-			.disabled(!exercise.isNew)
 		}
 		.padding(20)
 		.onChange(of: exercise.type) { newType in
-//			if newType == .sentenceScramble || previousType == .sentenceScramble {
+			if newType == .sentenceScramble || previousType == .sentenceScramble {
 				exercise.words = exercise.originalWords
-//			}
+			} else {
+				for lineIndex in exercise.words.indices {
+					for wordIndex in exercise.words[lineIndex].indices where isWordModified(lineIndex, wordIndex) {
+						modifyWord(lineIndex, wordIndex)
+					}
+				}
+			}
 			
 			previousType = newType
 		}
 	}
 	
-	private func scramble(_ lineIndex: Int, _ wordIndex: Int) {
-		if isWordChanged(lineIndex, wordIndex) {
+	private func toggleWord(_ lineIndex: Int, _ wordIndex: Int) {
+		if isWordModified(lineIndex, wordIndex) {
 			resetWord(lineIndex, wordIndex)
 		} else {
-			switch exercise.type {
-				case .wordScramble: exercise.words[lineIndex][wordIndex].wordScrambled()
-				case .fillTheGap: exercise.words[lineIndex][wordIndex].fillTheGapped()
-				case .sentenceScramble: exercise.words[lineIndex].sentenceScrambled()
-			}
+			modifyWord(lineIndex, wordIndex)
 		}
 	}
 	
-	private func isWordChanged(_ lineIndex: Int, _ wordIndex: Int) -> Bool {
+	private func modifyWord(_ lineIndex: Int, _ wordIndex: Int) {
+		switch exercise.type {
+			case .wordScramble:
+				exercise.words[lineIndex][wordIndex] = exercise.originalWords[lineIndex][wordIndex].wordScrambled()
+			case .fillTheGap:
+				exercise.words[lineIndex][wordIndex] = exercise.originalWords[lineIndex][wordIndex].fillTheGapped()
+			case .sentenceScramble:
+				exercise.words[lineIndex] = exercise.originalWords[lineIndex].sentenceScrambled()
+		}
+	}
+	
+	private func isWordModified(_ lineIndex: Int, _ wordIndex: Int) -> Bool {
 		if exercise.type == .sentenceScramble {
 			return exercise.words[lineIndex] != exercise.originalWords[lineIndex]
 		} else {
@@ -83,7 +87,8 @@ struct LyricsView: View {
 
 struct LyricsView_Previews: PreviewProvider {
 	static var previews: some View {
-		LyricsView(exercise: .init(initialValue: .exampleExercise))
+		LyricsView()
+			.environmentObject(EditableExercise.exampleExercise)
 			.previewDevice("iPad Pro (11-inch) (3rd generation)")
 			.previewInterfaceOrientation(.landscapeLeft)
 	}

@@ -47,29 +47,29 @@ extension String {
 		!dropFirst().allSatisfy { $0 == first }
 	}
 	
-	mutating func wordScrambled() {
+	func wordScrambled() -> String {
 		let shuffled = String(shuffled())
 		
 		if count > 1 && shuffled == self && containsVaryingCharacters() {
-			wordScrambled()
+			return wordScrambled()
 		} else {
-			self = shuffled.lowercased()
+			return shuffled.lowercased()
 		}
 	}
 	
-	mutating func fillTheGapped() {
-		self = String(map { _ in return "_" })
+	func fillTheGapped() -> String {
+		String(map { _ in return "_" })
 	}
 }
 
 extension Array where Element == String {
-	mutating func sentenceScrambled()  {
+	func sentenceScrambled() -> [String] {
 		let shuffled = shuffled()
 		
 		if count > 1 && self == shuffled {
-			sentenceScrambled()
+			return sentenceScrambled()
 		} else {
-			self = shuffled.map { $0.lowercased() }
+			return shuffled.map { $0.lowercased() }
 		}
 	}
 }
