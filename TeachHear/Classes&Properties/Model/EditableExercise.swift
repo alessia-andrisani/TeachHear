@@ -49,8 +49,8 @@ class EditableExercise: ObservableObject {
 		self.isNew = isNew
 		
 		func splitIntoArrays(_ text: String) -> [[String]] {
-			let lyricsWithSections = lyrics.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")  // Inserts a invisible character to keep the sections of the text
-			let lines = lyricsWithSections.split(separator: "\n")
+			let textWithSections = text.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")  // Inserts a invisible character to keep the sections of the text
+			let lines = textWithSections.split(separator: "\n")
 			return lines.map { $0.split(separator: " ").map { String($0) } }
 		}
 		
