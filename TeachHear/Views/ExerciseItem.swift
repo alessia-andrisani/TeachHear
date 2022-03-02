@@ -13,8 +13,11 @@ struct ExerciseItem: View {
     var body: some View {
 		NavigationLink(destination: ExerciseView(EditableExercise(exercise, isNew: false))) {
 			HStack {
-				Color.indigo
-					.cornerRadius(10)
+                Image("Poster")
+                    .resizable()
+					.frame(height: 148)
+                    .scaledToFit()
+                    .cornerRadius(10)
 					.aspectRatio(1, contentMode: .fill)
 					.frame(width: 148)
 				

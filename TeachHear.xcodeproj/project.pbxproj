@@ -81,6 +81,7 @@
 		50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStore.swift; sourceTree = "<group>"; };
 		50FB951F27CE4248001E9A0A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50FB952127CE7EC8001E9A0A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50FFE7D827CF794B00747088 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsAPIKey.swift; sourceTree = "<group>"; };
 		6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6C3C534027C4EA1200FA3CF8 /* FirstData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstData.swift; sourceTree = "<group>"; };
@@ -420,6 +421,7 @@
 				50FB951F27CE4248001E9A0A /* it */,
 				50FB952127CE7EC8001E9A0A /* fr */,
 				50C65B3527CE8F420068ECCC /* en */,
+				50FFE7D827CF794B00747088 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -41,7 +41,7 @@ You can choose between three different types of exercise: Word Scramble, Fill th
 						   startButton: true,
 						   title: "Share it during your classes",
 						   text: """
- When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a pdf or share your screen during your online classes.
+ When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a PDF or share your screen during your online classes.
  """, selection: $selection)
 				.tag(2)
 			

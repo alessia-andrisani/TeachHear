@@ -38,6 +38,9 @@
 "Next %@" = "Avanti";
 
 /* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
 "Recents" = "Recenti";
 
 /* No comment provided by engineer. */
@@ -65,13 +68,16 @@
 "Type artist and song name..." = "Artista e titolo della canzone...";
 
 /* No comment provided by engineer. */
+"Warning" = "Attenzione";
+
+/* No comment provided by engineer. */
 "Welcome to TeachHear" = "Benvenuto in TeachHear!";
 
 /* No comment provided by engineer. */
 "Welcome to TeachHear!" = "Benvenuto in TeachHear!";
 
 /* No comment provided by engineer. */
-"When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a pdf or share your screen during your online classes." = "Quando hai completato l'esercizio puoi salvarlo in una cartella e rinominarlo. Dopo puoi inviarlo ai tuoi studenti come PDF o condividere lo schermo durante le videolezioni.";
+"When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a PDF or share your screen during your online classes." = "Quando hai completato l'esercizio puoi salvarlo in una cartella e rinominarlo. Dopo puoi inviarlo ai tuoi studenti come PDF o condividere lo schermo durante le videolezioni.";
 
 /* No comment provided by engineer. */
 "Where do you want to save the exercise?" = "Dove vuoi salvare l'esercizio?";
@@ -79,10 +85,12 @@
 /* No comment provided by engineer. */
 "You can choose between three different types of exercise: Word Scramble, Fill the Gap and Sentence Scramble. Just choose the one you like and tap the words or sentences you want to use." = "Puoi scegliere tra tre diverse tipologie di esercizi: mescola parola, parola mancante e mescola frase. Scegli quello che preferisci e tocca le parole o frasi che vuoi utilizzare.";
 
+/* No comment provided by engineer. */
+"Your search threw no results" = "Nessun risultato trovato";
+
 "Word Scramble" = "Mescola Parola";
 
-"Fill The Gap" = "Parola Mancante";
+"Fill the Gap" = "Parola Mancante";
 
 "Sentence Scramble" = "Mescola Frase";
-
 

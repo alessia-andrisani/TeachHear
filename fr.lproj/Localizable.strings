@@ -5,7 +5,7 @@
 "Add to existing folder" = "Ajouter à un dossier existant";
 
 /* No comment provided by engineer. */
-"Add to recents" = "Ajouter au récents";
+"Add to recents" = "Ajouter aux récents";
 
 /* No comment provided by engineer. */
 "Create new folder" = "Créer un nouveau dossier";
@@ -17,7 +17,7 @@
 "Done" = "OK";
 
 /* No comment provided by engineer. */
-"Exercise Type:" = "Type d'exercice: ";
+"Exercise Type:" = "Type d'exercice : ";
 
 /* No comment provided by engineer. */
 "Exercises" = "Exercices";
@@ -29,13 +29,16 @@
 "Get Started" = "Commencer";
 
 /* No comment provided by engineer. */
-"Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in." = "Salut professeur! Dans TeachHear vous pouvez créer des exercices pour vos cours de langue utilisant les paroles des chansons. Commencez par chercher la chanson que vous voulez utiliser ou laissez vous inspirer par les tendances pour commencer tout de suite.";
+"Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in." = "Salut professeur ! Dans TeachHear vous pouvez créer des exercices pour vos cours de langue en utilisant les paroles des chansons. Commencez par chercher la chanson que vous voulez utiliser ou laissez vous inspirer par les tendances pour commencer tout de suite.";
 
 /* No comment provided by engineer. */
-"New Exercise" = "Nouveau Exercice";
+"New Exercise" = "Nouvel Exercice";
 
 /* No comment provided by engineer. */
 "Next %@" = "Suivant";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
 
 /* No comment provided by engineer. */
 "Recents" = "Récents";
@@ -44,7 +47,7 @@
 "Select the sentences you want to scramble:" = "Sélectionnez les phrases que vous voulez brouiller:";
 
 /* No comment provided by engineer. */
-"Select the words you want to hide:" = "Sélectionnez les mots que vous voulez cacher:";
+"Select the words you want to hide:" = "Sélectionnez les mots que vous voulez cacher :";
 
 /* No comment provided by engineer. */
 "Select the words you want to scramble:" = "Sélectionnez les mots que vous voulez brouiller:";
@@ -53,32 +56,37 @@
 "Share it during your classes" = "Partagez-le pendant vos cours";
 
 /* No comment provided by engineer. */
-"Skip" = "Sauter";
+"Skip" = "Passer";
 
 /* No comment provided by engineer. */
 "Trends" = "Tendances";
 
 /* No comment provided by engineer. */
-"Type artist and song name..." = "Artiste et titre de la chanson...";
+"Type artist and song name..." = "Artiste et titre de la chanson ...";
 
 /* No comment provided by engineer. */
-"Welcome to TeachHear" = "Soyez les bienvenus dans TeachHear!";
+"Warning" = "Attention";
 
 /* No comment provided by engineer. */
-"Welcome to TeachHear!" = "Soyez les bienvenus dans TeachHear!";
+"Welcome to TeachHear" = "Soyez les bienvenus sur TeachHear !";
 
 /* No comment provided by engineer. */
-"When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a pdf or share your screen during your online classes." = "Une fois l'exercice terminé, vous pouvez l'enregistrer dans un dossier et le renommer comme vous le souhaitez. Vous pouvez ensuite partager l'exercice avec vos étudiants au format PDF ou partager votre écran pendant les cours en ligne.";
+"Welcome to TeachHear!" = "Soyez les bienvenus sur TeachHear !";
 
 /* No comment provided by engineer. */
-"Where do you want to save the exercise?" = "Où voulez-vous enregistrer cet exercice?";
+"When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a PDF or share your screen during your online classes." = "Une fois l'exercice terminé, vous pouvez l'enregistrer dans un dossier et le renommer comme vous le souhaitez. Vous pouvez ensuite partager l'exercice avec vos étudiants au format PDF ou partager votre écran pendant vos cours en ligne.";
+
+/* No comment provided by engineer. */
+"Where do you want to save the exercise?" = "Où voulez-vous enregistrer cet exercice ?";
 
 /* No comment provided by engineer. */
 "You can choose between three different types of exercise: Word Scramble, Fill the Gap and Sentence Scramble. Just choose the one you like and tap the words or sentences you want to use." = "Vous pouvez choisir parmi trois différents types d'exercice: Mots Mêlés, Remplir le blanc, Phrases Mêlées. Il suffit de choisir celui que vous préférez et de taper les mots ou les phrases que vous voulez utiliser.";
+
+/* No comment provided by engineer. */
+"Your search threw no results" = "Aucun résultat trouvé";
 
 "Word Scramble" = "Mots Mêlés";
 
 "Fill the Gap" = "Remplir le blanc";
 
 "Sentence Scramble" = "Phrases Mêlées";
-

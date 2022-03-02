@@ -13,7 +13,10 @@ struct SongItem: View {
     var body: some View {
 		NavigationLink(destination: ExerciseView(.exampleExercise)) {
 			VStack {
-				Color.indigo
+				Image("Poster")
+                    .resizable()
+					.frame(height: 148)
+                    .scaledToFit()
 					.cornerRadius(10)
 					.aspectRatio(1, contentMode: .fill)
 				

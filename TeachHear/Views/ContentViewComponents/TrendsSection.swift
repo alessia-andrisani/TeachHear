@@ -10,11 +10,11 @@ import SwiftUI
 struct TrendsSection: View {
 	var body: some View {
 		VStack(alignment: .leading) {
-			Header("Trends")
+			Header("Trends (Coming Soon)")
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {
-					ForEach(0..<10) { _ in
+					ForEach(0..<1) { _ in
 						SongItem()
 					}
 				}

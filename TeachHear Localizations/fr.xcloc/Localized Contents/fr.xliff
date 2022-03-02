@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="en.lproj/Localizable.strings" source-language="en" target-language="fr" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
+    </header>
+    <body>
+      <trans-unit id="%@ Previous" xml:space="preserve">
+        <source>%@ Previous</source>
+        <target>Précédent</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add to existing folder" xml:space="preserve">
+        <source>Add to existing folder</source>
+        <target>Ajouter à un dossier existant</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add to recents" xml:space="preserve">
+        <source>Add to recents</source>
+        <target>Ajouter au récents</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Create new folder" xml:space="preserve">
+        <source>Create new folder</source>
+        <target>Créer un nouveau dossier</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Create your exercise" xml:space="preserve">
+        <source>Create your exercise</source>
+        <target>Créez votre exercice</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Done" xml:space="preserve">
+        <source>Done</source>
+        <target>OK</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Exercise Type:" xml:space="preserve">
+        <source>Exercise Type:</source>
+        <target>Type d'exercice: </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Exercises" xml:space="preserve">
+        <source>Exercises</source>
+        <target>Exercices</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Folders" xml:space="preserve">
+        <source>Folders</source>
+        <target>Dossiers</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Get Started" xml:space="preserve">
+        <source>Get Started</source>
+        <target>Commencer</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in." xml:space="preserve">
+        <source>Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in.</source>
+        <target>Salut professeur! Dans TeachHear vous pouvez créer des exercices pour vos cours de langue utilisant les paroles des chansons. Commencez par chercher la chanson que vous voulez utiliser ou laissez vous inspirer par les tendances pour commencer tout de suite.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Exercise" xml:space="preserve">
+        <source>New Exercise</source>
+        <target>Nouveau Exercice</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Next %@" xml:space="preserve">
+        <source>Next %@</source>
+        <target>Suivant</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ok" xml:space="preserve">
+        <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Recents" xml:space="preserve">
+        <source>Recents</source>
+        <target>Récents</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Save Your Tears" xml:space="preserve">
+        <source>Save Your Tears</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Select the sentences you want to scramble:" xml:space="preserve">
+        <source>Select the sentences you want to scramble:</source>
+        <target>Sélectionnez les phrases que vous voulez brouiller:</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Select the words you want to hide:" xml:space="preserve">
+        <source>Select the words you want to hide:</source>
+        <target>Sélectionnez les mots que vous voulez cacher:</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Select the words you want to scramble:" xml:space="preserve">
+        <source>Select the words you want to scramble:</source>
+        <target>Sélectionnez les mots que vous voulez brouiller:</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Share it during your classes" xml:space="preserve">
+        <source>Share it during your classes</source>
+        <target>Partagez-le pendant vos cours</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Simple Present" xml:space="preserve">
+        <source>Simple Present</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Skip" xml:space="preserve">
+        <source>Skip</source>
+        <target>Sauter</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Test" xml:space="preserve">
+        <source>Test</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trends" xml:space="preserve">
+        <source>Trends</source>
+        <target>Tendances</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Type artist and song name..." xml:space="preserve">
+        <source>Type artist and song name...</source>
+        <target>Artiste et titre de la chanson...</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Warning" xml:space="preserve">
+        <source>Warning</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Welcome to TeachHear" xml:space="preserve">
+        <source>Welcome to TeachHear</source>
+        <target>Soyez les bienvenus dans TeachHear!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Welcome to TeachHear!" xml:space="preserve">
+        <source>Welcome to TeachHear!</source>
+        <target>Soyez les bienvenus dans TeachHear!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a pdf or share your screen during your online classes." xml:space="preserve">
+        <source>When your exercise is finished, you can save it in a folder and rename it as you like. You can then share the exercise with your students as a pdf or share your screen during your online classes.</source>
+        <target>Une fois l'exercice terminé, vous pouvez l'enregistrer dans un dossier et le renommer comme vous le souhaitez. Vous pouvez ensuite partager l'exercice avec vos étudiants au format PDF ou partager votre écran pendant les cours en ligne.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Where do you want to save the exercise?" xml:space="preserve">
+        <source>Where do you want to save the exercise?</source>
+        <target>Où voulez-vous enregistrer cet exercice?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You can choose between three different types of exercise: Word Scramble, Fill the Gap and Sentence Scramble. Just choose the one you like and tap the words or sentences you want to use." xml:space="preserve">
+        <source>You can choose between three different types of exercise: Word Scramble, Fill the Gap and Sentence Scramble. Just choose the one you like and tap the words or sentences you want to use.</source>
+        <target>Vous pouvez choisir parmi trois différents types d'exercice: Mots Mêlés, Remplir le blanc, Phrases Mêlées. Il suffit de choisir celui que vous préférez et de taper les mots ou les phrases que vous voulez utiliser.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Your serch threw no results" xml:space="preserve">
+        <source>Your serch threw no results</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="en.lproj/TeachHear-InfoPlist.strings" datatype="plaintext" source-language="en" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>TeachHear</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

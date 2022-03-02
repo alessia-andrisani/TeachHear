@@ -49,7 +49,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(uiColor: .systemGroupedBackground))
             .alert(isPresented: $IDTrackManager.alertAppear) {
-                Alert (title: Text("Warning"), message: Text("Your serch threw no results"), dismissButton: .default(Text("Ok")))
+                Alert (title: Text("Warning"), message: Text("Your search threw no results"), dismissButton: .default(Text("OK")))
                 
             }
         }
