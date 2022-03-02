@@ -7,82 +7,83 @@
 
 import SwiftUI
 
-
-
 struct LyricsView: View {
-	init(_ lyrics: String, exerciseType: Binding<ExerciseType>) {
-		let lyricsWithSections = lyrics.replacingOccurrences(of: "\n\n", with: "\n\u{200b}\n")  // Inserts a invisible character to keep the sections of the text
-		let lines = lyricsWithSections.split(separator: "\n")
-		let words = lines.map { $0.split(separator: " ") }
+	init(exercise: ObservedObject<EditableExercise>) {
+		_exercise = exercise
 		
-		_exerciseType = exerciseType
-		_previousType = .init(initialValue: exerciseType.wrappedValue)
-		
-		_states = .init(initialValue: lines.indices
-							.map { words[$0] }
-							.map { line in line.map { _ in return false } })
-		
-		self.words = words
+		_previousType = .init(initialValue: exercise.wrappedValue.type)
 	}
 	
-	@Binding private var exerciseType: ExerciseType
+	@ObservedObject private var exercise: EditableExercise
 	
 	@State private var previousType: ExerciseType
-	@State private var states: [[Bool]]
-	
-	private let words: [[Substring.SubSequence]]
 	
 	var body: some View {
 		VStack(alignment: .leading) {
-			let range = 0..<(words.count)
+			let lines = 0..<(exercise.originalWords.count)
 			
-			ForEach(range, id: \.self) { lineIndex in
+			ForEach(lines, id: \.self) { lineIndex in
 				HStack(spacing: .zero) {
-					let indices = exerciseType == .sentenceScramble && states[lineIndex][0] ? words[lineIndex].indices.shuffled() : Array(words[lineIndex].indices)
-					
-					ForEach(indices, id: \.self) { wordIndex in
-						let word = String(words[lineIndex][wordIndex])
+					ForEach(exercise.words[lineIndex].indices, id: \.self) { wordIndex in
+						let word = exercise.words[lineIndex][wordIndex]
 						
 						if word == "\u{200b}" {
 							Spacer()
 								.frame(height: 10)
 						} else {
-							let word: String = {
-								if states[lineIndex][wordIndex] == true {
-									switch exerciseType {
-										case .wordScramble: return word.wordScramble()
-										case .fillTheGap: return word.fillTheGap()
-										case .sentenceScramble: return word.lowercased()
-									}
-								} else {
-									return word
-								}
-							}() + " "
-							
-							let selectionIndex = exerciseType == .sentenceScramble ? 0 : wordIndex
-							
-							LyricButton(word, isHighlighted: $states[lineIndex][selectionIndex])
+							Button(word + " ") {
+								scramble(lineIndex, wordIndex)
+							}
+							.buttonStyle(.lyrics(isHighlighted: isWordChanged(lineIndex, wordIndex)))
+							.disabled(!exercise.isNew)  // TODO: The highlighting does not appear with !isNew
 						}
 					}
 				}
 			}
+			.disabled(!exercise.isNew)
 		}
 		.padding(20)
-		.onChange(of: exerciseType) { newType in
-			if newType == .sentenceScramble || previousType == .sentenceScramble {
-				for index in states.indices {
-					states[index] = states[index].map { _ in return false }
-				}
-			}
+		.onChange(of: exercise.type) { newType in
+//			if newType == .sentenceScramble || previousType == .sentenceScramble {
+				exercise.words = exercise.originalWords
+//			}
 			
 			previousType = newType
+		}
+	}
+	
+	private func scramble(_ lineIndex: Int, _ wordIndex: Int) {
+		if isWordChanged(lineIndex, wordIndex) {
+			resetWord(lineIndex, wordIndex)
+		} else {
+			switch exercise.type {
+				case .wordScramble: exercise.words[lineIndex][wordIndex].wordScrambled()
+				case .fillTheGap: exercise.words[lineIndex][wordIndex].fillTheGapped()
+				case .sentenceScramble: exercise.words[lineIndex].sentenceScrambled()
+			}
+		}
+	}
+	
+	private func isWordChanged(_ lineIndex: Int, _ wordIndex: Int) -> Bool {
+		if exercise.type == .sentenceScramble {
+			return exercise.words[lineIndex] != exercise.originalWords[lineIndex]
+		} else {
+			return exercise.words[lineIndex][wordIndex] != exercise.originalWords[lineIndex][wordIndex]
+		}
+	}
+	
+	private func resetWord(_ lineIndex: Int, _ wordIndex: Int) {
+		if exercise.type == .sentenceScramble {
+			exercise.words[lineIndex] = exercise.originalWords[lineIndex]
+		} else {
+			exercise.words[lineIndex][wordIndex] = exercise.originalWords[lineIndex][wordIndex]
 		}
 	}
 }
 
 struct LyricsView_Previews: PreviewProvider {
 	static var previews: some View {
-        LyricsView(.exampleLyrics, exerciseType: .constant(.wordScramble))
+		LyricsView(exercise: .init(initialValue: .exampleExercise))
 			.previewDevice("iPad Pro (11-inch) (3rd generation)")
 			.previewInterfaceOrientation(.landscapeLeft)
 	}

@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct ExerciseView: View {
-	init(_ exercise: Exercise, isNew: Bool = false) {
-		self.exercise = exercise
-		self.isNew = isNew
+	init(_ exercise: EditableExercise) {
+		_exercise = .init(wrappedValue: exercise)
 	}
 	
-	private let exercise: Exercise
-	private let isNew: Bool
+	@Environment(\.dismiss) private var dismiss
 	
-	@State private var selectedExerciseType = ExerciseType.wordScramble
+	@EnvironmentObject private var exerciseStore: ExerciseStore
+	
+	@ObservedObject private var exercise: EditableExercise
 	
 	@State private var showingOptions = false
-	@EnvironmentObject var exerciseStore: ExerciseStore
-	@Environment(\.dismiss) var dismiss
 	
 	var body: some View {
 		ScrollView {
@@ -28,7 +26,7 @@ struct ExerciseView: View {
 				Spacer()
 				
 				VStack(spacing: 16) {
-					if isNew {
+					if exercise.isNew {
 						VStack(alignment: .leading) {
 							Text("Exercise Type:")
 								.font(.title2.weight(.semibold))
@@ -37,7 +35,7 @@ struct ExerciseView: View {
 							ScrollView(.horizontal) {
 								HStack {
 									ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
-										ExerciseTypeButton(exerciseType, selected: $selectedExerciseType)
+										ExerciseTypeButton(exerciseType, selected: $exercise.type)
 									}
 								}
 								.padding(.horizontal)
@@ -50,18 +48,27 @@ struct ExerciseView: View {
 						.toolbar {
 							ToolbarItem {
 								Button("Done") {
-									showingOptions = true
+									if exercise.isNew {
+										showingOptions = true
+									} else {
+										dismiss()
+									}
 								}
-								.confirmationDialog("Where do you want to save the exercise?", isPresented: $showingOptions, titleVisibility: .hidden) {
-									
+								.confirmationDialog("Where do you want to save the exercise?",
+													isPresented: $showingOptions,
+													titleVisibility: .hidden) {
 									Button("Add to recents") {
-										let newExercise = Exercise(title: "Present Simple", song: Song(id: "", title: "Bella Ciao", originalLyrics: .exampleLyrics), lyrics: .exampleLyrics, date: Date.now)
+										let song = Song(id: "",
+														title: "Bella Ciao",
+														originalLyrics: exercise.originalWords.toString())
+										let newExercise = Exercise(title: exercise.title,
+																   song: song,
+																   lyrics: exercise.words.toString(),
+																   date: Date.now)
 										
 										exerciseStore.exercises.append(newExercise)
 										
 										dismiss()
-										
-										
 									}
 									
 									Button("Create new folder") {
@@ -71,22 +78,20 @@ struct ExerciseView: View {
 									Button("Add to existing folder") {
 										// TODO: Add action here
 									}
-	
 								}
 							}
 						}
 					}
 					
 					VStack(alignment: .leading) {
-						if isNew {
-							Text(selectedExerciseType.instructions)
+						if exercise.isNew {
+							Text(exercise.type.instructions)
 								.font(.title2.weight(.semibold))
 								.padding(.leading, 32)
 								.offset(y: 16)
 						}
 						
-						LyricsView(exercise.lyrics, exerciseType: $selectedExerciseType)
-							.disabled(!isNew)
+						LyricsView(exercise: ObservedObject<EditableExercise>(initialValue: exercise))
 					}
 					.frame(width: UIScreen.main.bounds.width * 2 / 3)
 					.background(Color(uiColor: .secondarySystemGroupedBackground))
@@ -101,7 +106,7 @@ struct ExerciseView: View {
 		}
 		.background(Color.indigo.opacity(0.35))
 		.navigationBarTitleDisplayMode(.inline)
-		.navigationTitle("New Exercise")
+		.navigationTitle("New Exercise")  // TODO: Should not be "New" if !isNew
 	}
 }
 

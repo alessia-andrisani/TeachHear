@@ -17,7 +17,7 @@ struct RecentsSection: View {
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {
-					ForEach(exerciseStore.exercises) { exercise in
+					ForEach(exerciseStore.exercises.sorted { $0.date > $1.date }) { exercise in
 						ExerciseItem(exercise: exercise)
 					}
 				}

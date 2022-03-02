@@ -53,6 +53,7 @@
 		F538A85227BEC70800B6E4C1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A85127BEC70800B6E4C1 /* Header.swift */; };
 		F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53B0CF527BFA44700A6FC68 /* FolderItem.swift */; };
 		F53B0CF827BFAD6B00A6FC68 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53B0CF727BFAD6B00A6FC68 /* String.swift */; };
+		F5681CC427CF6F4C00DB1932 /* EditableExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */; };
 		F5D182BC27C503F900E49365 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D182BB27C503F900E49365 /* SearchBarView.swift */; };
 		F5D182BE27C5040A00E49365 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D182BD27C5040A00E49365 /* ExerciseView.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		F538A85127BEC70800B6E4C1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F53B0CF527BFA44700A6FC68 /* FolderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderItem.swift; sourceTree = "<group>"; };
 		F53B0CF727BFAD6B00A6FC68 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableExercise.swift; sourceTree = "<group>"; };
 		F5D182BB27C503F900E49365 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F5D182BD27C5040A00E49365 /* ExerciseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,10 +229,11 @@
 		50FACF8D27C53E33004FDD40 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				50FACF8E27C53E3D004FDD40 /* View Model */,
+				F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */,
 				50FACF8927C53E19004FDD40 /* Exercise.swift */,
 				F5330E9127C3E9D400B1B204 /* ExerciseType.swift */,
 				71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */,
-				50FACF8E27C53E3D004FDD40 /* View Model */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				6CD6ADBE27CBA1FE00EECBD2 /* IDTrackManager.swift in Sources */,
 				502333AE27BD445B008E4884 /* ExerciseTypeButton.swift in Sources */,
 				50FACF8A27C53E19004FDD40 /* Exercise.swift in Sources */,
+				F5681CC427CF6F4C00DB1932 /* EditableExercise.swift in Sources */,
 				71DCCF8527C7CF9B00D18FB7 /* YouTubeStore.swift in Sources */,
 				6C3C534327C4EA1900FA3CF8 /* FirstDataModel.swift in Sources */,
 				50FACF8527C525AD004FDD40 /* CoreSong+CoreDataClass.swift in Sources */,
@@ -547,7 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TeachHear/Preview Content\"";
-				DEVELOPMENT_TEAM = 9S8YS24U6S;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -559,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cas9Diego.TeachHear;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.TeachHear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -575,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TeachHear/Preview Content\"";
-				DEVELOPMENT_TEAM = 9S8YS24U6S;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -587,7 +591,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cas9Diego.TeachHear;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.TeachHear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

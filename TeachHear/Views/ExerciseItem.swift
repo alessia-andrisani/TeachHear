@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ExerciseItem: View {
-	
-	var exercise: Exercise
+	let exercise: Exercise
 	
     var body: some View {
-        NavigationLink(destination: ExerciseView(exercise)) {
+		NavigationLink(destination: ExerciseView(EditableExercise(exercise, isNew: false))) {
 			HStack {
 				Color.indigo
 					.cornerRadius(10)
@@ -36,13 +35,12 @@ struct ExerciseItem: View {
 				Color(uiColor: .secondarySystemGroupedBackground)
 					.cornerRadius(20)
 			}
-
 		}
     }
 }
 
 struct ExerciseItem_Previews: PreviewProvider {
     static var previews: some View {
-		ExerciseItem(exercise: Exercise(title: "", song: Song(id: "", title: "", originalLyrics: ""), lyrics: "", date: Date.now))
+		ExerciseItem(exercise: .exampleExercise)
     }
 }

@@ -43,34 +43,40 @@ extension String {
 	Morto per la libertà
 	"""
 	
-	fileprivate func containsMultipleCharacters() -> Bool {
-		!self.dropFirst().allSatisfy { $0 == self.first }
+	fileprivate func containsVaryingCharacters() -> Bool {
+		!dropFirst().allSatisfy { $0 == first }
 	}
 	
-	func wordScramble() -> String {
+	mutating func wordScrambled() {
 		let shuffled = String(shuffled())
 		
-		if count != 1 && shuffled == self && containsMultipleCharacters() {
-			return wordScramble()
+		if count > 1 && shuffled == self && containsVaryingCharacters() {
+			wordScrambled()
 		} else {
-			return shuffled.lowercased()
+			self = shuffled.lowercased()
 		}
 	}
 	
-	func sentenceScramble() -> String {
-		let words = split(separator: " ")
-		let shuffled = words.shuffled()
+	mutating func fillTheGapped() {
+		self = String(map { _ in return "_" })
+	}
+}
+
+extension Array where Element == String {
+	mutating func sentenceScrambled()  {
+		let shuffled = shuffled()
 		
-		if shuffled == words {
-			return sentenceScramble()
+		if count > 1 && self == shuffled {
+			sentenceScrambled()
 		} else {
-			return shuffled
-				.map { $0.lowercased() }
-				.reduce("", { $0.isEmpty ? $1 : ($0 + " " + $1) })
+			self = shuffled.map { $0.lowercased() }
 		}
 	}
-	
-	func fillTheGap() -> String {
-		String(self.map { _ in return "_" })
+}
+
+extension Array where Element == Array<String> {
+	func toString() -> String {
+		map { $0.joined(separator: " ") }
+		.joined(separator: "\n")
 	}
 }

@@ -22,15 +22,21 @@ extension CoreExercise {
     @NSManaged public var title: String?
     @NSManaged public var song: CoreSong?
 	
-	public var wrappedTitle: String {
-		
+	var wrappedDate: Date {
+		date ?? .now
+	}
+	
+	var wrappedID: UUID {
+		id ?? UUID()
+	}
+	
+	var wrappedTitle: String {
 		title ?? "No Title"
 	}
 	
-	public var wrappedLyrics: String {
+	var wrappedLyrics: String {
 		lyrics ?? "No Lyrics"
 	}
-
 }
 
 extension CoreExercise : Identifiable {
