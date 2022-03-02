@@ -203,7 +203,6 @@
 				50FACF8227C525AD004FDD40 /* CoreSong+CoreDataProperties.swift */,
 				50FACF8327C525AD004FDD40 /* CoreExercise+CoreDataClass.swift */,
 				50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */,
-				F5330E9127C3E9D400B1B204 /* ExerciseType.swift */,
 				50FACF8D27C53E33004FDD40 /* Model */,
 			);
 			path = "Classes&Properties";
@@ -229,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				50FACF8927C53E19004FDD40 /* Exercise.swift */,
+				F5330E9127C3E9D400B1B204 /* ExerciseType.swift */,
 				71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */,
 				50FACF8E27C53E3D004FDD40 /* View Model */,
 			);
