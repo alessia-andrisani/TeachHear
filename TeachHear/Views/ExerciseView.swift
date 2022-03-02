@@ -59,7 +59,7 @@ struct ExerciseView: View {
 													titleVisibility: .hidden) {
 									Button("Add to recents") {
 										let song = Song(id: "",
-														title: "Bella Ciao",
+														title: "",
 														originalLyrics: exercise.originalWords.toString())
 										let newExercise = Exercise(title: exercise.title,
 																   song: song,
@@ -106,7 +106,7 @@ struct ExerciseView: View {
 		}
 		.background(Color.indigo.opacity(0.35))
 		.navigationBarTitleDisplayMode(.inline)
-		.navigationTitle("New Exercise")  // TODO: Should not be "New" if !isNew
+		.navigationTitle(exercise.isNew ? "New Exercise": "Exercise")  
 	}
 }
 
