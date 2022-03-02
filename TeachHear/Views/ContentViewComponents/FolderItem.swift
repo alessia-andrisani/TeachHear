@@ -14,7 +14,7 @@ struct FolderItem: View {
 		NavigationLink(destination: FolderView()) {
 			Image("Folder")
 				.overlay {
-					Text("Simple Present")
+					Text("My Exercises")
 						.font(.title3.bold())
 						.foregroundColor(.indigo)
 						.padding(.top, 20)

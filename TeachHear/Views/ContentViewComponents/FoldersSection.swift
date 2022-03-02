@@ -28,7 +28,7 @@ struct FoldersSection: View {
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {
-					ForEach(0..<10) { _ in
+					ForEach(0..<1) { _ in
 						FolderItem()
 					}
 				}

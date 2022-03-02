@@ -20,7 +20,7 @@ struct SongItem: View {
 					.cornerRadius(10)
 					.aspectRatio(1, contentMode: .fill)
 				
-				Text("Save Your Tears")  // TODO: Use song.wrappedTitle
+				Text("Bella Ciao")  // TODO: Use song.wrappedTitle
 					.font(.title3.weight(.semibold))
 					.foregroundColor(.primary)
 					.padding(.top, 8)
