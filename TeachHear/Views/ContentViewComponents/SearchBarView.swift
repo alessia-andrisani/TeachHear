@@ -18,31 +18,30 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(Color(uiColor: .systemGray2))
+            
             TextField("Type artist and song name...", text: $userInput)
                 .onSubmit {
                     searchButton.toggle()
-                }.modifier(TextFieldClearButton(userInput: $userInput))
-                .textFieldStyle(.roundedBorder)
+                }
                 .disableAutocorrection(true)
-                .padding(.top)
-                .padding(.leading)
             
-            Spacer()
-            
+            if !userInput.isEmpty {
             Button {
-                searchButton.toggle()
+                userInput = ""
             } label: {
-                Image(systemName: "magnifyingglass")
+                Image(systemName: "xmark.circle.fill")
                     .foregroundColor(Color(uiColor: .systemGray2))
-            } .padding(.top)
-                .padding(.leading, -3)
-                .buttonStyle(.plain)
+            }
+            .padding(.trailing, 8)
+            }
             
-            Spacer()
-            
-            Spacer()
-   
         }
+        .padding()
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .cornerRadius(.infinity)
+        .padding()
         .onChange(of: searchButton, perform:  { value in
             let pronnedInput = userInput.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
             

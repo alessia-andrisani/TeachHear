@@ -26,21 +26,39 @@ struct ContentView: View {
                     }
                     
                     
-                    ZStack{
+                    ZStack(alignment: .top) {
                         
                         VStack{
                             
-                            FoldersSection()
+                                FoldersSection()
+                                    .onTapGesture {
+                                        if IDTrackManager.listAppear == true {
+                                            IDTrackManager.listAppear = false
+                                        }
+                                }
+                 
                             
                             TrendsSection()
+                                .onTapGesture {
+                                    if IDTrackManager.listAppear == true {
+                                        IDTrackManager.listAppear = false
+                                    }
+                            
+                                }
                             
                             RecentsSection()
+                                .onTapGesture {
+                                    if IDTrackManager.listAppear == true {
+                                        IDTrackManager.listAppear = false
+                                    }
+                                
+                                }
                         }
                         ResultsList()
-                            .padding(.top, -21.2)
+//                            .padding(.bottom, -360)
+                        
                     }
                 }
-                
             }
             .navigationTitle("Exercises")
             .navigationBarTitleDisplayMode(.inline)

@@ -37,11 +37,14 @@ struct ResultsList: View {
 							}
 						}
 					}
-					.listStyle(.plain)
+                    .cornerRadius(10)
 					.padding(.horizontal)
 					.ignoresSafeArea()
 				}
 			}
-		}
-	}
+        }
+        .frame(width: UIScreen.main.bounds.width,
+               height: UIScreen.main.bounds.height / 4,
+               alignment: .top)
+    }
 }
