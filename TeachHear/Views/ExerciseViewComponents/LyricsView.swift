@@ -27,7 +27,8 @@ struct LyricsView: View {
 								toggleWord(lineIndex, wordIndex)
 							}
 							.buttonStyle(.lyrics(isHighlighted: isWordModified(lineIndex, wordIndex)))
-							.disabled(!exercise.isNew)  // TODO: The highlighting does not appear with !isNew
+							.lineLimit(1)
+							.disabled(!exercise.isNew)
 						}
 					}
 				}

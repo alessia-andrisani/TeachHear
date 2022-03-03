@@ -20,65 +20,36 @@ struct ExerciseView: View {
 	
 	@State private var showingOptions = false
 	
+	private let shortScreenSide: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+	
+	private var exerciseTypePicker: some View {
+		VStack(alignment: .leading) {
+			Text("Exercise Type:")
+				.font(.title2.weight(.semibold))
+				.padding(.leading, 32)
+			
+			ScrollView(.horizontal, showsIndicators: false) {
+				HStack {
+					ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
+						ExerciseTypeButton(exerciseType, selected: $exercise.type)
+					}
+				}
+				.padding(.horizontal)
+			}
+		}
+		.padding(.vertical)
+		.background(Color(uiColor: .secondarySystemGroupedBackground))
+		.cornerRadius(30)
+	}
+	
 	var body: some View {
 		ScrollView {
 			HStack {
 				Spacer()
 				
-				VStack(spacing: 16) {
+				VStack {
 					if exercise.isNew {
-						VStack(alignment: .leading) {
-							Text("Exercise Type:")
-								.font(.title2.weight(.semibold))
-								.padding(.leading, 32)
-							
-							ScrollView(.horizontal) {
-								HStack {
-									ForEach(ExerciseType.allCases, id: \.self) { exerciseType in
-										ExerciseTypeButton(exerciseType, selected: $exercise.type)
-									}
-								}
-								.padding(.horizontal)
-							}
-						}
-						.padding(.vertical)
-						.background(Color(uiColor: .secondarySystemGroupedBackground))
-						.cornerRadius(30)
-						
-						.toolbar {
-							ToolbarItem {
-								Button("Done") {
-									if exercise.isNew {
-										showingOptions = true
-									} else {
-										dismiss()
-									}
-								}
-								.confirmationDialog("Where do you want to save the exercise?",
-													isPresented: $showingOptions,
-													titleVisibility: .hidden) {
-									Button("Add to recents") {
-										let song = Song(id: "",
-														title: "",
-														originalLyrics: exercise.originalLyrics)
-										let newExercise = Exercise(title: exercise.title,
-																   song: song,
-																   lyrics: exercise.words.toString(),
-																   date: Date.now)
-										exerciseStore.exercises.append(newExercise)
-										dismiss()
-									}
-									
-									Button("Create new folder") {
-										// TODO: Add action here
-									}
-									
-									Button("Add to existing folder") {
-										// TODO: Add action here
-									}
-								}
-							}
-						}
+						exerciseTypePicker
 					}
 					
 					VStack(alignment: .leading) {
@@ -92,13 +63,11 @@ struct ExerciseView: View {
 						LyricsView()
 							.environmentObject(exercise)
 					}
-					.frame(width: UIScreen.main.bounds.width * 2 / 3)
 					.background(Color(uiColor: .secondarySystemGroupedBackground))
 					.cornerRadius(30)
-					.padding(.bottom)
-					
 				}
-				.frame(width: UIScreen.main.bounds.width * 2 / 3)
+				.padding([.horizontal, .bottom])
+				.frame(width: shortScreenSide)
 				
 				Spacer()
 			}
@@ -106,6 +75,40 @@ struct ExerciseView: View {
 		.background(Color.indigo.opacity(0.35))
 		.navigationBarTitleDisplayMode(.inline)
 		.navigationTitle(exercise.isNew ? String(localized: "New Exercise") : exercise.title)
+		.toolbar {
+			ToolbarItem {
+				Button("Done") {
+					if exercise.isNew {
+						showingOptions = true
+					} else {
+						dismiss()
+					}
+				}
+				.confirmationDialog("Where do you want to save the exercise?",
+									isPresented: $showingOptions,
+									titleVisibility: .hidden) {
+					Button("Add to recents") {
+						let song = Song(id: "",
+										title: "",
+										originalLyrics: exercise.originalLyrics)
+						let newExercise = Exercise(title: exercise.title,
+												   song: song,
+												   lyrics: exercise.words.toString(),
+												   date: Date.now)
+						exerciseStore.exercises.append(newExercise)
+						dismiss()
+					}
+					
+					Button("Create new folder") {
+						// TODO: Add action here
+					}
+					
+					Button("Add to existing folder") {
+						// TODO: Add action here
+					}
+				}
+			}
+		}
 	}
 }
 
