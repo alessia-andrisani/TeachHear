@@ -44,14 +44,14 @@ struct SearchBarView: View {
    
         }
         .onChange(of: searchButton, perform:  { value in
-            let pronnedInput = userInput.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+            let pronnedInput = userInput.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
             
             if userInput == "" {
                 
             } else {
             
                 Task {
-                    await APIMManager.fetchData(userInput: pronnedInput)
+                    await APIMManager.fetchData(userInput: pronnedInput!)
             }
             }
         })
