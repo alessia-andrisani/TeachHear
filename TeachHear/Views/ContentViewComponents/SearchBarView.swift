@@ -41,7 +41,7 @@ struct SearchBarView: View {
             Spacer()
             
             Spacer()
-                .padding()
+   
         }
         .onChange(of: searchButton, perform:  { value in
             let pronnedInput = userInput.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)

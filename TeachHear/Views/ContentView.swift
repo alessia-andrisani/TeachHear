@@ -35,12 +35,9 @@ struct ContentView: View {
                             TrendsSection()
                             
                             RecentsSection()
-                        }    .onTapGesture {
-                            if IDTrackManager.listAppear == true {
-                                IDTrackManager.listAppear = false
-                            }
                         }
                         ResultsList()
+                            .padding(.top, -21.2)
                     }
                 }
                 
