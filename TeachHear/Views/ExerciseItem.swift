@@ -25,20 +25,22 @@ struct ExerciseItem: View {
 					Text(exercise.title)  // TODO: Use song.wrappedTitle
 						.font(.title3.weight(.semibold))
 						.foregroundColor(.primary)
+						.multilineTextAlignment(.leading)
 					
 					Text(exercise.song.title)  // TODO: Use song.wrappedTitle
 						.font(.body.weight(.semibold))
 						.foregroundColor(.secondary)
-					
 				}
-				.padding(.horizontal, 3)
+				.padding(.leading, 8)
 			}
 			.padding()
+			.frame(width: 400, alignment: .leading)
 			.background {
 				Color(uiColor: .secondarySystemGroupedBackground)
 					.cornerRadius(20)
 			}
 		}
+		
     }
 }
 
