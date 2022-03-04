@@ -20,19 +20,6 @@ class EditableExercise: ObservableObject {
 				  isNew: false)
 	}
 	
-	convenience init(_ exercise: Exercise,
-					 type: ExerciseType = .wordScramble,
-					 isNew: Bool = true) {  // TODO: Should be eplaced with CoreData object later
-		self.init(id: exercise.id,
-				  date: exercise.date,
-				  title: exercise.title,
-				  type: type,
-//				  song: exercise.song,
-				  lyrics: exercise.lyrics,
-				  originalLyrics: exercise.song.originalLyrics,
-				  isNew: isNew)
-	}
-	
 	init(id: UUID,
 		 date: Date,
 		 title: String,

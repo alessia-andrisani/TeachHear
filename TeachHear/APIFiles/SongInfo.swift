@@ -7,11 +7,10 @@
 
 import Foundation
 
-struct SongInfo {
-    var title: String
-    var trackID: Int
-    var hasLyrics: Int
-    var songURL: String
-    var lyrics: String? = nil
-    }
-
+struct SongInfo: Hashable {
+	var title: String
+	var trackID: Int
+	var hasLyrics: Int
+	var songURL: String
+	var lyrics: String? = nil
+}

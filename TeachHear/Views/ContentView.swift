@@ -12,7 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var IDTrackManager: IDTrackManager
     @StateObject var APIMManager = APIManager()
     
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.title)], predicate: nil) private var songs: FetchedResults<CoreSong>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)], predicate: nil) private var exercises: FetchedResults<CoreExercise>
     
     @AppStorage("showOnboarding") private var showOnboarding = true
     

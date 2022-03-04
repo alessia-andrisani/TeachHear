@@ -23,8 +23,6 @@
 		50FACF8627C525AD004FDD40 /* CoreSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8227C525AD004FDD40 /* CoreSong+CoreDataProperties.swift */; };
 		50FACF8727C525AD004FDD40 /* CoreExercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8327C525AD004FDD40 /* CoreExercise+CoreDataClass.swift */; };
 		50FACF8827C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */; };
-		50FACF8A27C53E19004FDD40 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8927C53E19004FDD40 /* Exercise.swift */; };
-		50FACF8C27C53E2B004FDD40 /* ExerciseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */; };
 		50FB952027CE4248001E9A0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50FB951E27CE4248001E9A0A /* Localizable.strings */; };
 		6C36CA7C27C9255600E0F39E /* LyricsAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */; };
 		6C3C533F27C4E9FB00FA3CF8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C533E27C4E9FB00FA3CF8 /* APIManager.swift */; };
@@ -76,8 +74,6 @@
 		50FACF8227C525AD004FDD40 /* CoreSong+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreSong+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50FACF8327C525AD004FDD40 /* CoreExercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreExercise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreExercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		50FACF8927C53E19004FDD40 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStore.swift; sourceTree = "<group>"; };
 		50FB951F27CE4248001E9A0A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50FB952127CE7EC8001E9A0A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50FFE7D827CF794B00747088 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -229,7 +225,6 @@
 			children = (
 				50FACF8E27C53E3D004FDD40 /* View Model */,
 				F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */,
-				50FACF8927C53E19004FDD40 /* Exercise.swift */,
 				F5330E9127C3E9D400B1B204 /* ExerciseType.swift */,
 				71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */,
 			);
@@ -239,7 +234,6 @@
 		50FACF8E27C53E3D004FDD40 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				50FACF8B27C53E2B004FDD40 /* ExerciseStore.swift */,
 				71DCCF8427C7CF9B00D18FB7 /* YouTubeStore.swift */,
 				71C603C527C8EC89008CE482 /* YouTubeStore+APIKey.swift */,
 			);
@@ -386,7 +380,6 @@
 				71C603C627C8EC89008CE482 /* YouTubeStore+APIKey.swift in Sources */,
 				6CD6ADBE27CBA1FE00EECBD2 /* IDTrackManager.swift in Sources */,
 				502333AE27BD445B008E4884 /* ExerciseTypeButton.swift in Sources */,
-				50FACF8A27C53E19004FDD40 /* Exercise.swift in Sources */,
 				F5681CC427CF6F4C00DB1932 /* EditableExercise.swift in Sources */,
 				71DCCF8527C7CF9B00D18FB7 /* YouTubeStore.swift in Sources */,
 				6C3C534327C4EA1900FA3CF8 /* FirstDataModel.swift in Sources */,
@@ -402,7 +395,6 @@
 				50FACF8727C525AD004FDD40 /* CoreExercise+CoreDataClass.swift in Sources */,
 				50FACF8827C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift in Sources */,
 				50FACF8627C525AD004FDD40 /* CoreSong+CoreDataProperties.swift in Sources */,
-				50FACF8C27C53E2B004FDD40 /* ExerciseStore.swift in Sources */,
 				6C3C534B27C4EA3600FA3CF8 /* ResultsList.swift in Sources */,
 				F5330E9227C3E9D400B1B204 /* ExerciseType.swift in Sources */,
 			);

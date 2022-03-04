@@ -12,6 +12,8 @@ import SwiftUI
 
 
 struct ResultsList: View {
+	@Environment(\.managedObjectContext) private var moc
+	
 	@EnvironmentObject var shared: IDTrackManager
 	
 	var body: some View {
@@ -21,19 +23,19 @@ struct ResultsList: View {
 					let filteredInfo = shared.songProperties!.filter{ $0.lyrics != nil && $0.lyrics != ""}
 					
 					List{
-						ForEach (0..<filteredInfo.count-1, id: \.self) { index in
+						ForEach(filteredInfo, id: \.trackID) { info in
 							NavigationLink {
-								let song = Song(id: "\(filteredInfo[index].trackID)",
-												title: filteredInfo[index].title,
-												originalLyrics: filteredInfo[index].lyrics ?? "No lyrics")
-								let exercise = Exercise(title: filteredInfo[index].title,
-														song: song,
-														lyrics: filteredInfo[index].lyrics ?? "No lyrics",
-														date: .now)
+								let exercise = EditableExercise(id: UUID(),
+																date: .now,
+																title: info.title,
+																type: .wordScramble,
+																lyrics: info.lyrics!,
+																originalLyrics: info.lyrics!,
+																isNew: true)
 								
-								ExerciseView(EditableExercise(exercise))
+								ExerciseView(exercise)
 							} label: {
-								Text(filteredInfo[index].title)
+								Text(info.title)
 							}
 						}
 					}

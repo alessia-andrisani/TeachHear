@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct FolderView: View {
-	private let columns: [GridItem] =  [GridItem(.adaptive(minimum: 400))]
+	@Environment(\.managedObjectContext) private var moc
 	
-	@EnvironmentObject var exerciseStore: ExerciseStore
+	@FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) private var exercises: FetchedResults<CoreExercise>
 	
     var body: some View {
 		ScrollView(.vertical, showsIndicators: true) {
+			let columns = [GridItem(.adaptive(minimum: 400))]
+			
 			LazyVGrid(columns: columns, spacing: 50) {
-				ForEach(exerciseStore.exercises) { exercise in
+				ForEach(exercises) { exercise in
 					ExerciseItem(exercise: exercise)
 				}
 			}

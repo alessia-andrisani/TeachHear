@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct RecentsSection: View {
+	@Environment(\.managedObjectContext) private var moc
 	
-	@EnvironmentObject var exerciseStore: ExerciseStore
-	
+	@FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) private var exercises: FetchedResults<CoreExercise>
+
     var body: some View {
 		VStack(alignment: .leading) {
 			Header("Recents")
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {
-					ForEach(exerciseStore.exercises.sorted { $0.date > $1.date }) { exercise in
+					ForEach(exercises) { exercise in
 						ExerciseItem(exercise: exercise)
 					}
 				}
 				.padding(.horizontal, 20)
 			}
 		}
-
     }
 }
 

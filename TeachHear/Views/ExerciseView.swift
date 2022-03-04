@@ -12,13 +12,13 @@ struct ExerciseView: View {
 		_exercise = .init(wrappedValue: exercise)
 	}
 	
+	@Environment(\.managedObjectContext) private var moc
 	@Environment(\.dismiss) private var dismiss
-	
-	@EnvironmentObject private var exerciseStore: ExerciseStore
 	
 	@StateObject private var exercise: EditableExercise
 	
 	@State private var showingOptions = false
+	
 	
 	private let shortScreenSide: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
 	
@@ -40,6 +40,14 @@ struct ExerciseView: View {
 		.padding(.vertical)
 		.background(Color(uiColor: .secondarySystemGroupedBackground))
 		.cornerRadius(30)
+	}
+	
+	fileprivate func extractedFunc() {
+		if exercise.isNew {
+			showingOptions = true
+		} else {
+			dismiss()
+		}
 	}
 	
 	var body: some View {
@@ -78,25 +86,13 @@ struct ExerciseView: View {
 		.toolbar {
 			ToolbarItem {
 				Button("Done") {
-					if exercise.isNew {
-						showingOptions = true
-					} else {
-						dismiss()
-					}
+					extractedFunc()
 				}
 				.confirmationDialog("Where do you want to save the exercise?",
 									isPresented: $showingOptions,
 									titleVisibility: .hidden) {
 					Button("Add to recents") {
-						let song = Song(id: "",
-										title: "",
-										originalLyrics: exercise.originalLyrics)
-						let newExercise = Exercise(title: exercise.title,
-												   song: song,
-												   lyrics: exercise.words.toString(),
-												   date: Date.now)
-						exerciseStore.exercises.append(newExercise)
-						dismiss()
+						saveToRecents()
 					}
 					
 					Button("Create new folder") {
@@ -109,6 +105,33 @@ struct ExerciseView: View {
 				}
 			}
 		}
+	}
+	
+	private func saveContext() {
+		do {
+			try moc.save()
+		} catch {
+			let error = error as NSError
+			fatalError("Unresolver error: \(error)")
+		}
+	}
+	
+	private func saveToRecents() {
+		let newSong = CoreSong(context: moc)
+		newSong.setValues(id: UUID().uuidString,
+						  lyrics: exercise.originalLyrics,
+						  title: exercise.title)
+		
+		let newExercise = CoreExercise(context: moc)
+		newExercise.setValues(date: .now,
+							  id: UUID(),
+							  lyrics: exercise.words.toString(),
+							  title: exercise.title,
+							  song: newSong)
+		
+		saveContext()
+		
+		dismiss()
 	}
 }
 

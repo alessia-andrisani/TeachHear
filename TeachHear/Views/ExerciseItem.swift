@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ExerciseItem: View {
-	let exercise: Exercise
+	let exercise: CoreExercise
 	
     var body: some View {
-		NavigationLink(destination: ExerciseView(EditableExercise(exercise, isNew: false))) {
+		NavigationLink(destination: ExerciseView(EditableExercise(exercise))) {
 			HStack {
                 Image("Poster")
                     .resizable()
@@ -22,14 +22,16 @@ struct ExerciseItem: View {
 					.frame(width: 148)
 				
 				VStack(alignment: .leading) {
-					Text(exercise.title)  // TODO: Use song.wrappedTitle
+					Text(exercise.wrappedTitle)
 						.font(.title3.weight(.semibold))
 						.foregroundColor(.primary)
 						.multilineTextAlignment(.leading)
 					
-					Text(exercise.song.title)  // TODO: Use song.wrappedTitle
-						.font(.body.weight(.semibold))
-						.foregroundColor(.secondary)
+					if let title = exercise.song?.title {
+						Text(title)
+							.font(.body.weight(.semibold))
+							.foregroundColor(.secondary)
+					}
 				}
 				.padding(.leading, 8)
 			}
@@ -44,8 +46,8 @@ struct ExerciseItem: View {
     }
 }
 
-struct ExerciseItem_Previews: PreviewProvider {
-    static var previews: some View {
-		ExerciseItem(exercise: .exampleExercise)
-    }
-}
+//struct ExerciseItem_Previews: PreviewProvider {
+//    static var previews: some View {
+//		ExerciseItem(exercise: .exampleExercise)
+//    }
+//}
