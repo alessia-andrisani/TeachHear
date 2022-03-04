@@ -20,7 +20,7 @@ struct ExerciseView: View {
 	@State private var showingOptions = false
 	
 	
-	private let shortScreenSide: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+	private let shortScreenSide: CGFloat = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
 	
 	private var exerciseTypePicker: some View {
 		VStack(alignment: .leading) {
