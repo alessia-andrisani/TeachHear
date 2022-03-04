@@ -119,6 +119,7 @@ struct OnboardingPage: View {
 							}
 							
 						}
+						.padding(.bottom)
 					}
 					.frame(width: UIScreen.main.bounds.width * 1 / 2.2, alignment: .leading)
 					.padding(.horizontal)
