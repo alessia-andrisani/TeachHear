@@ -19,53 +19,45 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
-                    
-                    ZStack {
-                        SearchBarView()
-                    }
-                    
+                VStack(spacing: 30) {
+					SearchBarView()
                     
                     ZStack(alignment: .top) {
-                        
-                        VStack{
-                            
-                                FoldersSection()
-                                    .onTapGesture {
-                                        if IDTrackManager.listAppear == true {
-                                            IDTrackManager.listAppear = false
-                                        }
-                                }
-                 
-                            
-                            TrendsSection()
-                                .onTapGesture {
-                                    if IDTrackManager.listAppear == true {
-                                        IDTrackManager.listAppear = false
-                                    }
-                            
-                                }
-                            
-                            RecentsSection()
-                                .onTapGesture {
-                                    if IDTrackManager.listAppear == true {
-                                        IDTrackManager.listAppear = false
-                                    }
-                                
-                                }
-                        }
-                        ResultsList()
-//                            .padding(.bottom, -360)
-                        
+						VStack(spacing: 30) {
+							FoldersSection()
+								.onTapGesture {
+									if IDTrackManager.listAppear == true {
+										IDTrackManager.listAppear = false
+									}
+								}
+							
+							TrendsSection()
+								.onTapGesture {
+									if IDTrackManager.listAppear == true {
+										IDTrackManager.listAppear = false
+									}
+									
+								}
+							
+							RecentsSection()
+								.padding(.bottom, 30)
+								.onTapGesture {
+									if IDTrackManager.listAppear == true {
+										IDTrackManager.listAppear = false
+									}
+									
+								}
+						}
+						
+						ResultsList()
                     }
                 }
             }
             .navigationTitle("Exercises")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(uiColor: .systemGroupedBackground))
-            .alert(isPresented: $IDTrackManager.alertAppear) {
-                Alert (title: Text("Warning"), message: Text("Your search threw no results"), dismissButton: .default(Text("OK")))
-                
+            .alert("Your search threw no results", isPresented: $IDTrackManager.alertAppear) {
+				Button("OK") { }
             }
         }
         .navigationViewStyle(.stack)

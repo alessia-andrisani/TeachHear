@@ -9,8 +9,7 @@ import SwiftUI
 
 struct FoldersSection: View {
 	var body: some View {
-		VStack(alignment: .leading) {
-			
+		VStack(alignment: .leading, spacing: 10) {
 			HStack {
 				Header("Folders")
 				
@@ -24,7 +23,6 @@ struct FoldersSection: View {
 				}
 				.padding(.trailing, 30)
 			}
-
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(spacing: 20) {

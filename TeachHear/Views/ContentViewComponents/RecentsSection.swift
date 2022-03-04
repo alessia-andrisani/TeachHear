@@ -13,7 +13,7 @@ struct RecentsSection: View {
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) private var exercises: FetchedResults<CoreExercise>
 
     var body: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .leading, spacing: 10) {
 			Header("Recents")
 			
 			ScrollView(.horizontal, showsIndicators: false) {

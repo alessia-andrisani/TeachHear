@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrendsSection: View {
 	var body: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .leading, spacing: 10) {
 			Header("Trends (Coming Soon)")
 			
 			ScrollView(.horizontal, showsIndicators: false) {
