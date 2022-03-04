@@ -87,7 +87,7 @@ struct ExerciseView: View {
 			}
 		}
 		.toolbar {
-			ToolbarItem {
+			ToolbarItem(placement: .confirmationAction) {
 				if exercise.isNew {
 					Button("Done") {
 						showSaveDialog = true
