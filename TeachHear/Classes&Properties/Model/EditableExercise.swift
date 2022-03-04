@@ -8,12 +8,11 @@
 import Foundation
 
 class EditableExercise: ObservableObject {
-	convenience init(_ exercise: CoreExercise,
-					 type: ExerciseType = .wordScramble) {  // TODO: Add type to CoreExercise
+	convenience init(_ exercise: CoreExercise) {
 		self.init(id: exercise.wrappedID,
 				  date: exercise.wrappedDate,
 				  title: exercise.wrappedTitle,
-				  type: type,
+				  type: ExerciseType(rawValue: exercise.type ?? "Word Scramble") ?? .wordScramble,
 //				  song: exercise.song!,
 				  lyrics: exercise.wrappedLyrics,
 				  originalLyrics: exercise.song?.wrappedLyrics ?? "",

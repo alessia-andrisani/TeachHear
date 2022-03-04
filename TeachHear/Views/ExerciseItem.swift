@@ -27,8 +27,8 @@ struct ExerciseItem: View {
 						.foregroundColor(.primary)
 						.multilineTextAlignment(.leading)
 					
-					if let title = exercise.song?.title {
-						Text(title)
+					if let exerciseType = exercise.type {
+						Text(exerciseType)
 							.font(.body.weight(.semibold))
 							.foregroundColor(.secondary)
 					}

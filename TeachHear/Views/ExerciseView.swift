@@ -42,14 +42,6 @@ struct ExerciseView: View {
 		.cornerRadius(30)
 	}
 	
-	fileprivate func extractedFunc() {
-		if exercise.isNew {
-			showingOptions = true
-		} else {
-			dismiss()
-		}
-	}
-	
 	var body: some View {
 		ScrollView {
 			HStack {
@@ -86,7 +78,11 @@ struct ExerciseView: View {
 		.toolbar {
 			ToolbarItem {
 				Button("Done") {
-					extractedFunc()
+					if exercise.isNew {
+						showingOptions = true
+					} else {
+						dismiss()
+					}
 				}
 				.confirmationDialog("Where do you want to save the exercise?",
 									isPresented: $showingOptions,
@@ -127,7 +123,8 @@ struct ExerciseView: View {
 							  id: UUID(),
 							  lyrics: exercise.words.toString(),
 							  title: exercise.title,
-							  song: newSong)
+							  song: newSong,
+							  type: exercise.type.rawValue)
 		
 		saveContext()
 		

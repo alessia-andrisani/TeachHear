@@ -21,6 +21,7 @@ extension CoreExercise {
     @NSManaged public var lyrics: String?
     @NSManaged public var title: String?
     @NSManaged public var song: CoreSong?
+	@NSManaged public var type: String?
 	
 	var wrappedDate: Date {
 		date ?? .now
