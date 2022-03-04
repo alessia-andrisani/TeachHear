@@ -1,6 +1,6 @@
 //
 //  YouTubePlayer.swift
-//  YouTubePlayerSwiftUI
+//  TeachHear
 //
 //  Created by Antonio Scognamiglio on 21/02/22.
 //

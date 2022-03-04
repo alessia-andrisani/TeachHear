@@ -125,6 +125,7 @@
 				502333AD27BD445B008E4884 /* ExerciseTypeButton.swift */,
 				F538A84827BCF22800B6E4C1 /* LyricsView.swift */,
 				F538A84B27BCFCE400B6E4C1 /* LyricsButtonStyle.swift */,
+				71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */,
 			);
 			path = ExerciseViewComponents;
 			sourceTree = "<group>";
@@ -187,8 +188,6 @@
 				50DB599A27BBB8EE00E6A635 /* ContentView.swift */,
 				F5D182BD27C5040A00E49365 /* ExerciseView.swift */,
 				50C1258C27BEA35A00496708 /* FolderView.swift */,
-				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
-				71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +207,7 @@
 		50DB59BF27BBC18300E6A635 /* ContentViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				50547D3A27BF93E300970CF8 /* ExerciseItem.swift */,
 				F53B0CF527BFA44700A6FC68 /* FolderItem.swift */,
 				F538A84D27BD1A8A00B6E4C1 /* FolderShape.swift */,
 				50DB59B727BBC07400E6A635 /* FoldersSection.swift */,
