@@ -15,10 +15,9 @@ struct SongItem: View {
 			VStack {
 				Image("Poster")
                     .resizable()
-					.frame(height: 148)
-                    .scaledToFit()
+					.aspectRatio(1, contentMode: .fit)
+					.frame(width: 148, height: 148)
 					.cornerRadius(10)
-					.aspectRatio(1, contentMode: .fill)
 				
 				Text("Bella Ciao")  // TODO: Use song.wrappedTitle
 					.font(.title3.weight(.semibold))
@@ -26,12 +25,8 @@ struct SongItem: View {
 					.padding(.top, 8)
 			}
 			.padding()
-			.frame(width: 180)
-			.background {
-				Color(uiColor: .secondarySystemGroupedBackground)
-					.cornerRadius(20)
-			}
-//			.shadow(color: Color(uiColor: .systemGray5), radius: 5, x: 2, y: 5)
+			.background(Color(uiColor: .secondarySystemGroupedBackground))
+			.cornerRadius(20)
 		}
     }
 }
