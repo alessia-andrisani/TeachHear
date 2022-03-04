@@ -16,6 +16,7 @@ struct TeachHearApp: App {
             ContentView()
 				.environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(IDTrackManager.shared)
+				.environmentObject(YouTubeStore.shared)
         }
     }
 }

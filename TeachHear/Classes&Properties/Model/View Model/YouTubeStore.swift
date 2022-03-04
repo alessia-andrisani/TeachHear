@@ -7,8 +7,12 @@
 
 import Foundation
 
-class YouTubeStore: ObservableObject {	
-	@Published var trackID = ""
+class YouTubeStore: ObservableObject {
+	static var shared = YouTubeStore()
+	
+	private init() { }
+	
+	@Published var trackID: String? = nil
 	
 	func search(for searchText: String) {
 		guard let query = searchText

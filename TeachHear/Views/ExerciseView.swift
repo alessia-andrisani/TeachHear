@@ -15,10 +15,11 @@ struct ExerciseView: View {
 	@Environment(\.managedObjectContext) private var moc
 	@Environment(\.dismiss) private var dismiss
 	
+	@EnvironmentObject private var youTubeStore: YouTubeStore
+	
 	@StateObject private var exercise: EditableExercise
 	
-	@State private var showingOptions = false
-	
+	@State private var showSaveDialog = false
 	
 	private let shortScreenSide: CGFloat = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
 	
@@ -75,28 +76,54 @@ struct ExerciseView: View {
 		.background(Color.indigo.opacity(0.35))
 		.navigationBarTitleDisplayMode(.inline)
 		.navigationTitle(exercise.isNew ? String(localized: "New Exercise") : exercise.title)
+		.overlay(alignment: .bottomTrailing) {
+			if let trackID = youTubeStore.trackID {
+				YouTubePlayer(trackID: trackID)
+					.frame(width: UIScreen.main.bounds.width / 3.25,
+						   height: UIScreen.main.bounds.height / 3.25)
+					.cornerRadius(20)
+					.padding(.trailing, 40)
+					.padding(.bottom, 30)
+			}
+		}
 		.toolbar {
 			ToolbarItem {
-				Button("Done") {
-					if exercise.isNew {
-						showingOptions = true
-					} else {
-						dismiss()
+				if exercise.isNew {
+					Button("Done") {
+						showSaveDialog = true
+					}
+					.confirmationDialog("Where do you want to save the exercise?",
+										isPresented: $showSaveDialog,
+										titleVisibility: .hidden) {
+						Button("Add to recents") {
+							saveToRecents()
+						}
+						
+						Button("Create new folder") {
+							// TODO: Add action here
+						}
+						
+						Button("Add to existing folder") {
+							// TODO: Add action here
+						}
 					}
 				}
-				.confirmationDialog("Where do you want to save the exercise?",
-									isPresented: $showingOptions,
-									titleVisibility: .hidden) {
-					Button("Add to recents") {
-						saveToRecents()
+			}
+			
+			ToolbarItem {
+				if youTubeStore.trackID == nil {
+					Button {
+						youTubeStore.search(for: exercise.title)
+					} label: {
+						Image(systemName: "play.fill")
 					}
-					
-					Button("Create new folder") {
-						// TODO: Add action here
-					}
-					
-					Button("Add to existing folder") {
-						// TODO: Add action here
+				} else {
+					Button {
+						withAnimation {
+							youTubeStore.trackID = nil
+						}
+					} label: {
+						Image(systemName: "stop.fill")
 					}
 				}
 			}
@@ -136,5 +163,6 @@ struct ExerciseView_Previews: PreviewProvider {
 	static var previews: some View {
 		ExerciseView(.exampleExercise)
 			.previewInterfaceOrientation(.landscapeLeft)
+			.environmentObject(YouTubeStore.shared)
 	}
 }
