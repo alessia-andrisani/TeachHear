@@ -32,6 +32,9 @@
 "Hello teacher! In TeachHear you can create exercises for your language classes using song lyrics. Start by searching for a song that you want to use or just get inspired by our trends section to dive right in." = "¡Hola profesor/a! En TeachHear puedes crear ejercicios para tus clases de idiomas utilizando letras de canciones. Empieza buscando la canción que quieras utilizar o déjate inspirar por las tendencias.";
 
 /* No comment provided by engineer. */
+"My Exercises" = "Mis Ejercicios";
+
+/* No comment provided by engineer. */
 "New Exercise" = "Nuevo ejercicio";
 
 /* No comment provided by engineer. */
@@ -63,9 +66,6 @@
 
 /* No comment provided by engineer. */
 "Type artist and song name..." = "Artista y título de la canción...";
-
-/* No comment provided by engineer. */
-"Warning" = "Atención";
 
 /* No comment provided by engineer. */
 "Welcome to TeachHear" = "¡Bienvenido a TeachHear";
