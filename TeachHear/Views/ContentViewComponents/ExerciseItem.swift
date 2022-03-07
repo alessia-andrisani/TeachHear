@@ -28,7 +28,7 @@ struct ExerciseItem: View {
 						.multilineTextAlignment(.leading)
 					
 					if let exerciseType = exercise.type {
-						Text(exerciseType)
+						Text(String(localized: String.LocalizationValue(exerciseType)))
 							.font(.body.weight(.semibold))
 							.foregroundColor(.secondary)
 					}
