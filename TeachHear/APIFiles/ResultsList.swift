@@ -40,6 +40,7 @@ struct ResultsList: View {
 						}
 					}
                     .cornerRadius(10)
+                    .listStyle(.plain)
 					.padding(.horizontal)
 					.ignoresSafeArea()
 				}

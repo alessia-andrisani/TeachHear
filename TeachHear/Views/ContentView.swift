@@ -50,6 +50,7 @@ struct ContentView: View {
 						}
 						
 						ResultsList()
+                            .padding(.top, -33)
                     }
                 }
             }
