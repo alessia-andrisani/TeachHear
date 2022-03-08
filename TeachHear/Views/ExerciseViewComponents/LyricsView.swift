@@ -33,6 +33,12 @@ struct LyricsView: View {
 					}
 				}
 			}
+			
+			Image("MusixmatchLogo")
+				.resizable()
+				.scaledToFit()
+				.frame(width: UIScreen.main.bounds.width/5)
+				.padding(.top, 20)
 		}
 		.padding(20)
 		.onChange(of: exercise.type) { newType in
