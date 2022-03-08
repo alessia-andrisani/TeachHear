@@ -64,9 +64,11 @@ struct ExerciseView: View {
 		.navigationTitle(exercise.isNew ? String(localized: "New Exercise") : exercise.title)
 		.overlay(alignment: .bottomTrailing) {
 			if let trackID = youTubeStore.trackID {
+				let width = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) / 3.25
+				
 				YouTubePlayer(trackID: trackID)
-					.frame(width: UIScreen.main.bounds.width / 3.25,
-						   height: UIScreen.main.bounds.height / 3.25)
+					.frame(width: width,
+						   height: width * 9 / 16)
 					.cornerRadius(20)
 					.padding(.trailing, 40)
 					.padding(.bottom, 30)
