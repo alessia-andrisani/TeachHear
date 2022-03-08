@@ -13,34 +13,48 @@ struct LyricsView: View {
 	@State private var previousType: ExerciseType?
 	
 	var body: some View {
-		VStack(alignment: .leading) {
-			ForEach(exercise.words.indices, id: \.self) { lineIndex in
-				HStack(spacing: .zero) {
-					ForEach(exercise.words[lineIndex].indices, id: \.self) { wordIndex in
-						let word = exercise.words[lineIndex][wordIndex]
-						
-						if word == "\u{200b}" {
-							Spacer()
-								.frame(height: 10)
-						} else {
-							Button(word + " ") {
-								toggleWord(lineIndex, wordIndex)
+		HStack {
+			VStack(alignment: .leading) {
+				if exercise.isNew {
+					Text(exercise.type.instructions)
+						.font(.title2.weight(.semibold))
+						.offset(y: -12)
+				}
+				
+				ForEach(exercise.words.indices, id: \.self) { lineIndex in
+					HStack(spacing: .zero) {
+						ForEach(exercise.words[lineIndex].indices, id: \.self) { wordIndex in
+							let word = exercise.words[lineIndex][wordIndex]
+							
+							if word == "\u{200b}" {
+								Spacer()
+									.frame(height: 10)
+							} else {
+								Button(word + " ") {
+									toggleWord(lineIndex, wordIndex)
+								}
+								.buttonStyle(.lyrics(isHighlighted: isWordModified(lineIndex, wordIndex)))
+								.lineLimit(1)
+								.disabled(!exercise.isNew)
 							}
-							.buttonStyle(.lyrics(isHighlighted: isWordModified(lineIndex, wordIndex)))
-							.lineLimit(1)
-							.disabled(!exercise.isNew)
 						}
 					}
 				}
+				
+				Link(destination: URL(string: "https://www.musixmatch.com")!) {
+					Image("MusixmatchLogo")
+						.resizable()
+						.scaledToFit()
+						.frame(width: UIScreen.main.bounds.width/5)
+				}
+				.padding(.top, 32)
 			}
+			.padding(32)
 			
-			Image("MusixmatchLogo")
-				.resizable()
-				.scaledToFit()
-				.frame(width: UIScreen.main.bounds.width/5)
-				.padding(.top, 20)
+			Spacer()
 		}
-		.padding(20)
+		.background(Color(uiColor: .secondarySystemGroupedBackground))
+		.cornerRadius(30)
 		.onChange(of: exercise.type) { newType in
 			if newType == .sentenceScramble || previousType == .sentenceScramble {
 				exercise.words = exercise.originalWords

@@ -12,7 +12,7 @@ struct LyricsButtonStyle: ButtonStyle {
 	
 	func makeBody(configuration: Configuration) -> some View {
 		configuration.label
-			.font(.largeTitle.bold())
+			.font(.largeTitle.weight(.semibold))
 			.frame(minHeight: 44)
 			.foregroundColor(isHighlighted ? .accentColor : .primary)
 	}

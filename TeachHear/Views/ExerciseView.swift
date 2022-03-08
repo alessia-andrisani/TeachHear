@@ -51,19 +51,8 @@ struct ExerciseView: View {
 						exerciseTypePicker
 					}
 					
-					VStack(alignment: .leading) {
-						if exercise.isNew {
-							Text(exercise.type.instructions)
-								.font(.title2.weight(.semibold))
-								.padding(.leading, 32)
-								.offset(y: 16)
-						}
-						
-						LyricsView()
-							.environmentObject(exercise)
-					}
-					.background(Color(uiColor: .secondarySystemGroupedBackground))
-					.cornerRadius(30)
+					LyricsView()
+						.environmentObject(exercise)
 				}
 				.padding([.horizontal, .bottom])
 				
