@@ -43,22 +43,40 @@ extension String {
 	Morto per la libertà
 	"""
 	
+	// TODO: It would be better if the punctuation characters were not part of the buttons
+	fileprivate func splitOffPunctuation() -> [String] {
+		if let punctuationCharacterRange = rangeOfCharacter(from: .punctuationCharacters,
+															options: .backwards) {
+			let punctuationCharacter = String(self[punctuationCharacterRange])
+			
+			if punctuationCharacterRange.upperBound == endIndex {
+				return ["", String(self.dropLast()), punctuationCharacter]
+			} else if punctuationCharacterRange.lowerBound == startIndex {
+				return [punctuationCharacter, String(self.dropFirst()), ""]
+			}
+		}
+		
+		return ["", self, ""]
+	}
+	
 	fileprivate func containsVaryingCharacters() -> Bool {
 		!dropFirst().allSatisfy { $0 == first }
 	}
 	
 	func wordScrambled() -> String {
-		let shuffled = String(shuffled())
+		let parts = splitOffPunctuation()
+		let shuffled = String(parts[1].shuffled())
 		
 		if count > 1 && shuffled == self && containsVaryingCharacters() {
 			return wordScrambled()
 		} else {
-			return shuffled.lowercased()
+			return parts[0] + shuffled.lowercased() + parts[2]
 		}
 	}
 	
 	func fillTheGapped() -> String {
-		String(map { _ in return "_" })
+		let parts = splitOffPunctuation()
+		return parts[0] + String(repeating: "_", count: parts[1].count) + parts[2]
 	}
 }
 
