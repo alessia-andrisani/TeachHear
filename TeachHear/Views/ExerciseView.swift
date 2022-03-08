@@ -21,8 +21,6 @@ struct ExerciseView: View {
 	
 	@State private var showSaveDialog = false
 	
-	private let shortScreenSide: CGFloat = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
-	
 	private var exerciseTypePicker: some View {
 		VStack(alignment: .leading) {
 			Text("Exercise Type:")
@@ -68,7 +66,6 @@ struct ExerciseView: View {
 					.cornerRadius(30)
 				}
 				.padding([.horizontal, .bottom])
-				.frame(width: shortScreenSide)
 				
 				Spacer()
 			}
