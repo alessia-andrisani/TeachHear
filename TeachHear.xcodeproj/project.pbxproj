@@ -105,6 +105,7 @@
 		F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableExercise.swift; sourceTree = "<group>"; };
 		F5D182BB27C503F900E49365 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F5D182BD27C5040A00E49365 /* ExerciseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		F5E915D527D7A250008833CE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +324,7 @@
 				it,
 				es,
 				fr,
+				de,
 			);
 			mainGroup = 50DB598C27BBB8EE00E6A635;
 			packageReferences = (
@@ -410,6 +412,7 @@
 				50FB952127CE7EC8001E9A0A /* fr */,
 				50C65B3527CE8F420068ECCC /* en */,
 				50FFE7D827CF794B00747088 /* es */,
+				F5E915D527D7A250008833CE /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
