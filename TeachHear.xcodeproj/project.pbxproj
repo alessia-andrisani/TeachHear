@@ -134,7 +134,6 @@
 		50DB598C27BBB8EE00E6A635 = {
 			isa = PBXGroup;
 			children = (
-				50FB951E27CE4248001E9A0A /* Localizable.strings */,
 				50DB599727BBB8EE00E6A635 /* TeachHear */,
 				50DB599627BBB8EE00E6A635 /* Products */,
 			);
@@ -151,12 +150,13 @@
 		50DB599727BBB8EE00E6A635 /* TeachHear */ = {
 			isa = PBXGroup;
 			children = (
-				6C3C533D27C4E9EE00FA3CF8 /* APIFiles */,
 				50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */,
+				6C3C533D27C4E9EE00FA3CF8 /* APIFiles */,
 				50DB59AA27BBBE0A00E6A635 /* CoreDataModel */,
 				50DB59B627BBC00700E6A635 /* Classes&Properties */,
 				50DB59AB27BBBE1400E6A635 /* Views */,
 				F53B0CF927BFAD7300A6FC68 /* Extensions */,
+				50FB951E27CE4248001E9A0A /* Localizable.strings */,
 				50DB599C27BBB8F000E6A635 /* Assets.xcassets */,
 				50DB599E27BBB8F000E6A635 /* Preview Content */,
 			);
