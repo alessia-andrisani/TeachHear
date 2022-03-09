@@ -12,8 +12,8 @@ struct SearchBarView: View {
 	
 	@StateObject var apiManager = APIManager()
 	
-	@State var userInput : String = ""
-	@State var searchButton : Bool = true
+	@State var userInput = ""
+	@State var searchButton = true
 	
 	var body: some View {
 		HStack {
@@ -33,9 +33,7 @@ struct SearchBarView: View {
 				}
 			
 			if !userInput.isEmpty {
-				Button {
-					userInput = ""
-				} label: {
+				Button(action: clearSearch) {
 					Image(systemName: "xmark.circle.fill")
 						.foregroundColor(Color(uiColor: .systemGray2))
 				}
@@ -47,11 +45,11 @@ struct SearchBarView: View {
 		.background(Color(uiColor: .secondarySystemGroupedBackground))
 		.cornerRadius(.infinity)
 		.padding(.horizontal, 20)
-		.onChange(of: userInput) { newValue in
-			if newValue.isEmpty {
-				idTrackManager.listAppear = false
-			}
-		}
+	}
+	
+	private func clearSearch() {
+		userInput = ""
+		idTrackManager.listAppear = nil
 	}
 }
 
