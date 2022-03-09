@@ -15,7 +15,6 @@ struct SongItem: View {
 			VStack {
 				Image("Poster")
                     .resizable()
-					.aspectRatio(1, contentMode: .fit)
 					.frame(width: 148, height: 148)
 					.cornerRadius(10)
 				

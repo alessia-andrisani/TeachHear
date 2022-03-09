@@ -15,11 +15,8 @@ struct ExerciseItem: View {
 			HStack {
                 Image("Poster")
                     .resizable()
-					.frame(height: 148)
-                    .scaledToFit()
-                    .cornerRadius(10)
-					.aspectRatio(1, contentMode: .fill)
-					.frame(width: 148)
+					.frame(width: 148, height: 148)
+					.cornerRadius(10)
 				
 				VStack(alignment: .leading) {
 					Text(exercise.wrappedTitle)
