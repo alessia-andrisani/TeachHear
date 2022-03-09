@@ -12,8 +12,6 @@ struct RecentsSection: View {
 	
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) private var exercises: FetchedResults<CoreExercise>
 	
-	
-	@State private var showingOptions = false
 	@State private var editMode = false
 	
 	var body: some View {
