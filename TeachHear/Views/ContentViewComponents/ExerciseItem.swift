@@ -26,7 +26,7 @@ struct ExerciseItem: View {
 					
 					if let exerciseType = exercise.type {
 						Text(String(localized: String.LocalizationValue(exerciseType)))
-							.font(.body.weight(.semibold))
+							.font(.body.weight(.medium))
 							.foregroundColor(.secondary)
 					}
 				}
