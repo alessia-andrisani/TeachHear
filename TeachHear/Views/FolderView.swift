@@ -12,47 +12,47 @@ struct FolderView: View {
 	
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) private var exercises: FetchedResults<CoreExercise>
 	
-	@State private var editMode = false
+	@State private var isEditing = false
 	
 	var body: some View {
 		ScrollView(.vertical, showsIndicators: true) {
-			let columns = [GridItem(.adaptive(minimum: 400))]
+			let columns = Array(repeating: GridItem(), count: 2)
 			
-			LazyVGrid(columns: columns, spacing: 50) {
+			LazyVGrid(columns: columns, spacing: 20) {
 				ForEach(exercises) { exercise in
 					ZStack(alignment: .topTrailing) {
 						ExerciseItem(exercise: exercise)
-						if editMode {
+						
+						if isEditing {
 							Button(role: .destructive) {
 								deleteExercise(exercise: exercise)
 							} label: {
-								Image(systemName: "x.circle.fill")
-									.font(.title)
+								Image(systemName: "trash.fill")
+									.padding()
 							}
-							.padding(8)
 						}
 					}
 				}
 			}
 		}
-		.navigationTitle("Simple Present")
+		.navigationTitle("My Exercises")  // TODO: Replace with folder title
 		.toolbar {
 			ToolbarItem {
-				Button(!editMode ? "Edit" : "Done") {
-					editMode.toggle()
+				Button(!isEditing ? "Edit" : "Done") {
+					isEditing.toggle()
 				}
-				.padding(.trailing, 30)
 			}
 		}
 		.background(Color(uiColor: .systemGroupedBackground))
 	}
+	
 	private func deleteExercise(exercise: CoreExercise) {
-		
 		withAnimation {
 			moc.delete(exercise)
 			saveContext()
 		}
 	}
+	
 	private func saveContext() {
 		do {
 			try moc.save()
