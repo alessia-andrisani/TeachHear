@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FoldersSection: View {
+	@State private var showingAddFolderDialog = false
 	var body: some View {
 		VStack(alignment: .leading, spacing: 10) {
 			HStack {
@@ -17,11 +18,16 @@ struct FoldersSection: View {
 				
 				Button {
 					//Add action here
+					showingAddFolderDialog = true
 				} label: {
 					Image(systemName: "folder.badge.plus")
 						.font(.title)
 				}
 				.padding(.trailing, 30)
+				.confirmationDialog("Coming Soon", isPresented: $showingAddFolderDialog, titleVisibility: .visible) {
+					
+
+				}
 			}
 			
 			ScrollView(.horizontal, showsIndicators: false) {
