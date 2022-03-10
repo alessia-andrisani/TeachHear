@@ -32,6 +32,8 @@ struct RecentsSection: View {
 					ForEach(exercises) { exercise in
 						ZStack(alignment: .topTrailing) {
 							ExerciseItem(exercise: exercise)
+								.rotationEffect(.degrees(isEditing ? 2.5 : 0 ))
+								.animation(isEditing ? .easeInOut(duration: 0.15).repeatForever(autoreverses: true) : .easeInOut(duration: 0.15), value: isEditing)
 							
 							if isEditing {
 								Button(role: .destructive) {
@@ -41,6 +43,12 @@ struct RecentsSection: View {
 										.padding()
 								}
 							}
+						}
+						
+					}
+					.onChange(of: exercises.count) { count in
+						if count == 0 {
+							isEditing = false 
 						}
 					}
 				}
