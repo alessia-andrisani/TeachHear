@@ -141,9 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				50DB599827BBB8EE00E6A635 /* TeachHearApp.swift */,
-				6C3C533D27C4E9EE00FA3CF8 /* APIFiles */,
-				50DB59AA27BBBE0A00E6A635 /* CoreDataModel */,
-				50DB59B627BBC00700E6A635 /* Classes&Properties */,
+				50FACF8D27C53E33004FDD40 /* Model */,
 				50DB59AB27BBBE1400E6A635 /* Views */,
 				F53B0CF927BFAD7300A6FC68 /* Extensions */,
 				50FB951E27CE4248001E9A0A /* Localizable.strings */,
@@ -161,13 +159,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		50DB59AA27BBBE0A00E6A635 /* CoreDataModel */ = {
+		50DB59AA27BBBE0A00E6A635 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				50DB59B627BBC00700E6A635 /* Classes&Properties */,
 				50DB59B427BBBF2D00E6A635 /* DataController.swift */,
 				50DB59A727BBBE0100E6A635 /* TeachHear.xcdatamodeld */,
 			);
-			path = CoreDataModel;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		50DB59AB27BBBE1400E6A635 /* Views */ = {
@@ -190,7 +189,6 @@
 				50FACF8227C525AD004FDD40 /* CoreSong+CoreDataProperties.swift */,
 				50FACF8327C525AD004FDD40 /* CoreExercise+CoreDataClass.swift */,
 				50FACF8427C525AD004FDD40 /* CoreExercise+CoreDataProperties.swift */,
-				50FACF8D27C53E33004FDD40 /* Model */,
 			);
 			path = "Classes&Properties";
 			sourceTree = "<group>";
@@ -215,24 +213,26 @@
 		50FACF8D27C53E33004FDD40 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				50FACF8E27C53E3D004FDD40 /* View Model */,
+				50DB59AA27BBBE0A00E6A635 /* CoreData */,
+				6C3C533D27C4E9EE00FA3CF8 /* Musixmatch */,
+				50FACF8E27C53E3D004FDD40 /* YouTube */,
 				F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */,
 				F5330E9127C3E9D400B1B204 /* ExerciseType.swift */,
-				71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		50FACF8E27C53E3D004FDD40 /* View Model */ = {
+		50FACF8E27C53E3D004FDD40 /* YouTube */ = {
 			isa = PBXGroup;
 			children = (
+				71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */,
 				71DCCF8427C7CF9B00D18FB7 /* YouTubeStore.swift */,
 				71C603C527C8EC89008CE482 /* YouTubeStore+APIKey.swift */,
 			);
-			path = "View Model";
+			path = YouTube;
 			sourceTree = "<group>";
 		};
-		6C3C533D27C4E9EE00FA3CF8 /* APIFiles */ = {
+		6C3C533D27C4E9EE00FA3CF8 /* Musixmatch */ = {
 			isa = PBXGroup;
 			children = (
 				6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */,
@@ -241,7 +241,7 @@
 				6CD6ADBD27CBA1FE00EECBD2 /* SearchManager.swift */,
 				6CD6ADC127CCDEE200EECBD2 /* SongResult.swift */,
 			);
-			path = APIFiles;
+			path = Musixmatch;
 			sourceTree = "<group>";
 		};
 		71050B3D27C7A680009409FA /* OnboardingViewComponents */ = {
