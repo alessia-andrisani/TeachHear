@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "YouTubeiOSPlayerHelper",
-        "repositoryURL": "https://github.com/youtube/youtube-ios-player-helper",
-        "state": {
-          "branch": "master",
-          "revision": "f57129cd4380ec0a74dd3a59da3270a1d653d59b",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "youtube-ios-player-helper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/youtube/youtube-ios-player-helper",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f57129cd4380ec0a74dd3a59da3270a1d653d59b"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

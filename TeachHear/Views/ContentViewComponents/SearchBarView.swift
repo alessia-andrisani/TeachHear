@@ -8,32 +8,21 @@
 import SwiftUI
 
 struct SearchBarView: View {
-	@EnvironmentObject var idTrackManager: IDTrackManager
-	
-	@StateObject var apiManager = APIManager()
-	
-	@State var userInput = ""
-	@State var searchButton = true
+	@EnvironmentObject private var searchManager: SearchManager
+		
+	@State private var query = ""
 	
 	var body: some View {
 		HStack {
 			Image(systemName: "magnifyingglass")
 				.foregroundColor(Color(uiColor: .systemGray2))
 			
-			TextField("Type artist and song name...", text: $userInput)
+			TextField("Type artist and song name...", text: $query)
 				.disableAutocorrection(true)
-				.onSubmit {
-					guard !userInput.isEmpty else { return }
-					
-					let pronnedInput = userInput.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-					
-					Task {
-						await apiManager.fetchData(userInput: pronnedInput!)
-					}
-				}
+				.onSubmit { searchManager.search(for: query) }
 			
-			if !userInput.isEmpty {
-				Button(action: clearSearch) {
+			if !query.isEmpty {
+				Button(action: clearQuery) {
 					Image(systemName: "xmark.circle.fill")
 						.foregroundColor(Color(uiColor: .systemGray2))
 				}
@@ -47,9 +36,9 @@ struct SearchBarView: View {
 		.padding(.horizontal, 20)
 	}
 	
-	private func clearSearch() {
-		userInput = ""
-		idTrackManager.listAppear = nil
+	private func clearQuery() {
+		query = ""
+		searchManager.clearResults()
 	}
 }
 

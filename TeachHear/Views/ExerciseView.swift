@@ -101,7 +101,7 @@ struct ExerciseView: View {
 			ToolbarItem {
 				if youTubeStore.trackID == nil {
 					Button {
-						searchWithCleanTitle()
+						search()
 					} label: {
 						Image(systemName: "play.fill")
 					}
@@ -122,17 +122,8 @@ struct ExerciseView: View {
 	}
 	
 	// TODO: EditableExercise should include Song with artist, then the search would be more reliable
-	private func searchWithCleanTitle() {
-		let searchTerm: String = {
-			if let firstBraceIndex = exercise.title.firstIndex(of: "(") ?? exercise.title.firstIndex(of: "[") {
-				let range = exercise.title.startIndex..<firstBraceIndex
-				return String(exercise.title[range])
-			} else {
-				return exercise.title
-			}
-		}()
-		
-		youTubeStore.search(for: searchTerm)
+	private func search() {
+		youTubeStore.search(for: exercise.title)
 	}
 	
 	private func saveContext() {

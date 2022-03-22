@@ -8,69 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var moc
-    @EnvironmentObject var IDTrackManager: IDTrackManager
-    @StateObject var APIMManager = APIManager()
-    
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date)], predicate: nil) private var exercises: FetchedResults<CoreExercise>
-    
-    @AppStorage("showOnboarding") private var showOnboarding = true
-    
+	@AppStorage("showOnboarding") private var showOnboarding = true
+	
+	@EnvironmentObject private var searchManager: SearchManager
+	
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 30) {
 					SearchBarView()
-                    
-                    ZStack(alignment: .top) {
-						VStack(spacing: 30) {
-							FoldersSection()
-								.onTapGesture {
-									if IDTrackManager.listAppear == true {
-										IDTrackManager.listAppear = false
-									}
-								}
-							
-							TrendsSection()
-								.onTapGesture {
-									if IDTrackManager.listAppear == true {
-										IDTrackManager.listAppear = false
-									}
-									
-								}
-							
-							RecentsSection()
-								.padding(.bottom, 30)
-								.onTapGesture {
-									if IDTrackManager.listAppear == true {
-										IDTrackManager.listAppear = false
-									}
-									
-								}
-						}
+					
+					VStack(spacing: 30) {
+						FoldersSection()
 						
-						ResultsList()
-                            .padding(.top, -33)
-                    }
+						TrendsSection()
+						
+						RecentsSection()
+							.padding(.bottom, 30)
+					}
+					.onTapGesture(perform: hideResults)
+					.overlay(alignment: .top) {
+						if searchManager.showResults {
+							SearchResults()
+								.offset(y: -30)
+						}
+					}
                 }
             }
+			.background(Color(uiColor: .systemGroupedBackground))
             .navigationTitle("Exercises")
             .navigationBarTitleDisplayMode(.inline)
-            .background(Color(uiColor: .systemGroupedBackground))
-            .alert("Your search threw no results", isPresented: $IDTrackManager.alertAppear) {
-				Button("OK") { }
-            }
         }
         .navigationViewStyle(.stack)
+		.alert("Your search threw no results", isPresented: $searchManager.showAlert) { }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView()
         }
     }
-}
-
-struct SizePreferenceKey: PreferenceKey {
-  static var defaultValue: CGSize = .zero
-  static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
+	
+	private func hideResults() {
+		searchManager.showResults = false
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
