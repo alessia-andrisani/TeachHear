@@ -18,7 +18,7 @@ import SwiftUI
 	@Published var showAlert = false
 	
 	public func search(for query: String) async throws {
-		results = nil
+		clearResults()
 		
 		guard !query.isEmpty else { return }
 		
@@ -35,7 +35,6 @@ import SwiftUI
 		
 		for trackIndex in tracks.indices {
 			let track = tracks[trackIndex]
-			
 			let data = try await sendFetchRequest(path: "/ws/1.1/track.lyrics.get",
 												  parameters: [URLQueryItem(name: "track_id",
 																			value: "\(track.track_id)")])
@@ -47,11 +46,11 @@ import SwiftUI
 			}
 			
 			if trackIndex == tracks.count - 1 {
-				showResults = !songs.isEmpty
-				results = !songs.isEmpty ? songs : nil
-				
-				if tracks.isEmpty {
+				if songs.isEmpty {
 					showAlert = true
+				} else {
+					showResults = true
+					results = songs
 				}
 			}
 		}
@@ -60,10 +59,10 @@ import SwiftUI
 	private func sendFetchRequest(path: String, parameters: [URLQueryItem]) async throws -> Data {
 		var urlComponents = URLComponents(string: "https://api.musixmatch.com")!
 		urlComponents.path = path
-		urlComponents.queryItems = parameters + [URLQueryItem(name: "apikey", value: LyricsApiKey().apiKey())]
-		let url = urlComponents.url!
+		urlComponents.queryItems = parameters + [URLQueryItem(name: "apikey",
+															  value: LyricsApiKey().apiKey())]
 		
-		var request = URLRequest(url: url)
+		var request = URLRequest(url: urlComponents.url!)
 		request.httpMethod = "GET"
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		
@@ -78,8 +77,7 @@ import SwiftUI
 	}
 	
 	private func decodeSearchResults(from data: Data) -> [TrackInfo]? {
-		let decoder = JSONDecoder()
-		let queryResponse = try? decoder.decode(QueryResponse.self, from: data)
+		let queryResponse = try? JSONDecoder().decode(QueryResponse.self, from: data)
 		
 		if let tracks = queryResponse?.message.body.track_list,
 		   !tracks.isEmpty {
@@ -91,8 +89,7 @@ import SwiftUI
 	}
 	
 	private func decodeLyrics(from data: Data) -> String? {
-		let decoder = JSONDecoder()
-		let lyricsResponse = try? decoder.decode(LyricsResponse.self, from: data)
+		let lyricsResponse = try? JSONDecoder().decode(LyricsResponse.self, from: data)
 
 		if let lyrics = lyricsResponse?.message.body.lyrics.lyrics_body,
 		   !lyrics.isEmpty {
