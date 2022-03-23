@@ -7,46 +7,40 @@
 
 import Foundation
 
-class YouTubeStore: ObservableObject {
+@MainActor class YouTubeStore: ObservableObject {
 	static var shared = YouTubeStore()
 	
 	private init() { }
 	
 	@Published var trackID: String? = nil
 	
-	func search(for searchText: String) {
-		guard let query = searchText
-				.trimmingCharacters(in: .whitespacesAndNewlines)
-				.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+	func search(for query: String) async throws {
+		trackID = nil
 		
-		fetchYouTubeVideos(searchText: query) { [weak self] results in
-			guard let firstResult = results.items.first else { return }
-			self?.trackID = firstResult.id.videoId
-		}
-	}
-	
-	private func fetchYouTubeVideos(searchText: String, completion: @escaping (YoutubeResults) -> Void) {
-		let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(searchText)&regionCode=US&maxResults=1&type=video&key=\(YouTubeStore.apiKey)"
-		guard let url = URL(string: urlString) else {return}
+		guard !query.isEmpty else { return }
 		
-		let task = URLSession.shared.dataTask(with: url) { jsonData, response, error in
-			if let error = error {
-				print("Failed to get JSON data", error.localizedDescription)
-				return
-			}
-			
-			guard let jsonData = jsonData else {return}
-			
-			do {
-				let youTubeResults = try JSONDecoder().decode(YoutubeResults.self, from: jsonData)
-				DispatchQueue.main.async {
-					completion(youTubeResults)
-				}
-			} catch let jsonError {
-				print("JSON serialization error", jsonError)
-			}
+		var urlComponents = URLComponents(string: "https://www.googleapis.com")!
+		urlComponents.path = "/youtube/v3/search"
+		urlComponents.queryItems = ["part": "snippet",
+									"q": query,
+									"regionCode": "US",
+									"maxResults": "1",
+									"type": "video",
+									"key": Self.apiKey]
+			.map { URLQueryItem(name: $0.key, value: $0.value) }
+		
+		var request = URLRequest(url: urlComponents.url!)
+		request.httpMethod = "GET"
+		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		
+		let (data, response) = try await URLSession.shared.data(for: request)
+		
+		guard let httpResponse = response as? HTTPURLResponse,
+			  httpResponse.statusCode == 200 else {
+			throw RequestError.serverError
 		}
 		
-		task.resume()
+		let results = try? JSONDecoder().decode(YoutubeResults.self, from: data)
+		trackID = results?.items.first?.id.videoId
 	}
 }

@@ -220,6 +220,7 @@
 				50FACF8E27C53E3D004FDD40 /* YouTube */,
 				F5681CC327CF6F4C00DB1932 /* EditableExercise.swift */,
 				F5330E9127C3E9D400B1B204 /* ExerciseType.swift */,
+				F519564227EB792F008FC9E0 /* RequestError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,7 +241,6 @@
 				6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */,
 				6C3C534627C4EA2B00FA3CF8 /* LyricsResponse.swift */,
 				6C3C534027C4EA1200FA3CF8 /* QueryResponse.swift */,
-				F519564227EB792F008FC9E0 /* RequestError.swift */,
 				6CD6ADBD27CBA1FE00EECBD2 /* SearchManager.swift */,
 				6CD6ADC127CCDEE200EECBD2 /* SongResult.swift */,
 			);

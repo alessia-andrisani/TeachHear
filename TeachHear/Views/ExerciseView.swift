@@ -123,7 +123,9 @@ struct ExerciseView: View {
 	
 	// TODO: EditableExercise should include Song with artist, then the search would be more reliable
 	private func search() {
-		youTubeStore.search(for: exercise.title)
+		Task {
+			try? await youTubeStore.search(for: exercise.title)
+		}
 	}
 	
 	private func saveContext() {
@@ -131,7 +133,7 @@ struct ExerciseView: View {
 			try moc.save()
 		} catch {
 			let error = error as NSError
-			fatalError("Unresolver error: \(error)")
+			fatalError("Unresolved error: \(error)")
 		}
 	}
 	
