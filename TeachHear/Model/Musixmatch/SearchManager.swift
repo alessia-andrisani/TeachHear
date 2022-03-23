@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public class SearchManager: ObservableObject {
+@MainActor class SearchManager: ObservableObject {
 	static let shared = SearchManager()
 	
 	private init() { }
@@ -17,107 +17,87 @@ public class SearchManager: ObservableObject {
 	@Published var showResults = false
 	@Published var showAlert = false
 	
-	public func search(for query: String) {
-		guard !query.isEmpty,
-			  let formattedInput = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-			  let url = URL(string: "https://api.musixmatch.com/ws/1.1/track.search?q=\(formattedInput)&apikey=\(LyricsApiKey().apiKey())") else { return }
-		let session = URLSession(configuration: .default)
+	public func search(for query: String) async throws {
+		results = nil
 		
-		let searchTask = session.dataTask(with: url) { [weak self] (data, response, error) in
-			guard let `self` = self else { return }
-			
-			guard error == nil else {
-				fatalError(error!.localizedDescription)
-			}
-			
-			if let data = data,
-			   let results = self.decodeQueryResults(from: data) {
-				self.fetchSongData(for: results)
-			}
-		}
+		guard !query.isEmpty else { return }
 		
-		searchTask.resume()
-	}
-	
-	private func decodeQueryResults(from data: Data) -> [TrackInfo]? {
-		let decoder = JSONDecoder()
+		let data = try await sendFetchRequest(path: "/ws/1.1/track.search",
+											  parameters: [URLQueryItem(name: "q", value: query)])
 		
-		do {
-			let queryResponse = try decoder.decode(QueryResponse.self, from: data)
-			
-			guard queryResponse.message.header.status_code == 200 else {
-				print("An Error Ocurred while requesting the lyrics")
-				return nil
-			}
-			
-			let tracks = queryResponse.message.body.track_list
-			
-			guard !tracks.isEmpty else {
-				showAlert = true
-				return nil
-			}
-			
-			return tracks.map(\.track)
-		} catch {
-			print(error)
-			return nil
+		if let results = self.decodeSearchResults(from: data) {
+			try await self.fetchLyrics(for: results)
 		}
 	}
 	
-	private func fetchSongData(for tracks: [TrackInfo]) {
+	private func fetchLyrics(for tracks: [TrackInfo]) async throws {
 		var songs = [SongResult]()
 		
 		for trackIndex in tracks.indices {
 			let track = tracks[trackIndex]
-			let session = URLSession(configuration: .default)
 			
-			if let songURL = URL(string: "https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=\(track.track_id)&apikey=\(LyricsApiKey().apiKey())") {
-				let task = session.dataTask(with: songURL) { [weak self] (data, response, error) in
-					guard let `self` = self else { return }
-					
-					guard error == nil else {
-						fatalError(error!.localizedDescription)
-					}
-					
-					if let data = data,
-					   let lyrics = self.decodeLyrics(from: data) {
-						if !lyrics.isEmpty {
-							songs.append(SongResult(id: track.track_id,
-													title: track.track_name,
-													lyrics: lyrics))
-						}
-					}
-					
-					if trackIndex == tracks.count - 1 {
-						DispatchQueue.main.sync {
-							self.showResults = !songs.isEmpty
-							self.results = !songs.isEmpty ? songs : nil
-							
-							if tracks.isEmpty {
-								self.showAlert = true
-							}
-						}
-					}
-				}
-				
-				task.resume()
+			let data = try await sendFetchRequest(path: "/ws/1.1/track.lyrics.get",
+												  parameters: [URLQueryItem(name: "track_id",
+																			value: "\(track.track_id)")])
+			
+			if let lyrics = decodeLyrics(from: data) {
+				songs.append(SongResult(id: track.track_id,
+										title: track.track_name,
+										lyrics: lyrics))
 			}
+			
+			if trackIndex == tracks.count - 1 {
+				showResults = !songs.isEmpty
+				results = !songs.isEmpty ? songs : nil
+				
+				if tracks.isEmpty {
+					showAlert = true
+				}
+			}
+		}
+	}
+	
+	private func sendFetchRequest(path: String, parameters: [URLQueryItem]) async throws -> Data {
+		var urlComponents = URLComponents(string: "https://api.musixmatch.com")!
+		urlComponents.path = path
+		urlComponents.queryItems = parameters + [URLQueryItem(name: "apikey", value: LyricsApiKey().apiKey())]
+		let url = urlComponents.url!
+		
+		var request = URLRequest(url: url)
+		request.httpMethod = "GET"
+		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		
+		let (data, response) = try await URLSession.shared.data(for: request)
+		
+		guard let httpResponse = response as? HTTPURLResponse,
+			  httpResponse.statusCode == 200 else {
+			throw RequestError.serverError
+		}
+		
+		return data
+	}
+	
+	private func decodeSearchResults(from data: Data) -> [TrackInfo]? {
+		let decoder = JSONDecoder()
+		let queryResponse = try? decoder.decode(QueryResponse.self, from: data)
+		
+		if let tracks = queryResponse?.message.body.track_list,
+		   !tracks.isEmpty {
+			return tracks.map(\.track)
+		} else {
+			showAlert = true
+			return nil
 		}
 	}
 	
 	private func decodeLyrics(from data: Data) -> String? {
 		let decoder = JSONDecoder()
-		
-		do {
-			let lyricsResponse = try decoder.decode(LyricsResponse.self, from: data)
-			
-			guard lyricsResponse.message.header.status_code == 200 else {
-				print("An Error Ocurred while requesting the lyrics")
-				return nil
-			}
-			
-			return lyricsResponse.message.body.lyrics.lyrics_body
-		} catch {
+		let lyricsResponse = try? decoder.decode(LyricsResponse.self, from: data)
+
+		if let lyrics = lyricsResponse?.message.body.lyrics.lyrics_body,
+		   !lyrics.isEmpty {
+			return lyrics
+		} else {
 			return nil
 		}
 	}

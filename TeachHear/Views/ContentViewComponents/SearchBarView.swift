@@ -19,7 +19,11 @@ struct SearchBarView: View {
 			
 			TextField("Type artist and song name...", text: $query)
 				.disableAutocorrection(true)
-				.onSubmit { searchManager.search(for: query) }
+				.onSubmit {
+					Task {
+						try? await searchManager.search(for: query)
+					}
+				}
 			
 			if !query.isEmpty {
 				Button(action: clearQuery) {

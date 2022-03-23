@@ -28,8 +28,9 @@ struct ContentView: View {
 					}
 					.onTapGesture(perform: hideResults)
 					.overlay(alignment: .top) {
-						if searchManager.showResults {
-							SearchResults()
+						if searchManager.showResults,
+						   let results = searchManager.results {
+							SearchResults(results: results)
 								.offset(y: -30)
 						}
 					}

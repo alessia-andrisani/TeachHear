@@ -37,6 +37,7 @@
 		71DCCF8327C7C81500D18FB7 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */; };
 		71DCCF8527C7CF9B00D18FB7 /* YouTubeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DCCF8427C7CF9B00D18FB7 /* YouTubeStore.swift */; };
 		71DCCF8727C7D01800D18FB7 /* YouTubeResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */; };
+		F519564327EB792F008FC9E0 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519564227EB792F008FC9E0 /* RequestError.swift */; };
 		F5330E9227C3E9D400B1B204 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5330E9127C3E9D400B1B204 /* ExerciseType.swift */; };
 		F538A84927BCF22800B6E4C1 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84827BCF22800B6E4C1 /* LyricsView.swift */; };
 		F538A84C27BCFCE400B6E4C1 /* LyricsButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538A84B27BCFCE400B6E4C1 /* LyricsButtonStyle.swift */; };
@@ -84,6 +85,7 @@
 		71DCCF8227C7C81500D18FB7 /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
 		71DCCF8427C7CF9B00D18FB7 /* YouTubeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeStore.swift; sourceTree = "<group>"; };
 		71DCCF8627C7D01800D18FB7 /* YouTubeResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeResults.swift; sourceTree = "<group>"; };
+		F519564227EB792F008FC9E0 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		F5330E9127C3E9D400B1B204 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		F538A84827BCF22800B6E4C1 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		F538A84B27BCFCE400B6E4C1 /* LyricsButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsButtonStyle.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				6C36CA7B27C9255600E0F39E /* LyricsAPIKey.swift */,
 				6C3C534627C4EA2B00FA3CF8 /* LyricsResponse.swift */,
 				6C3C534027C4EA1200FA3CF8 /* QueryResponse.swift */,
+				F519564227EB792F008FC9E0 /* RequestError.swift */,
 				6CD6ADBD27CBA1FE00EECBD2 /* SearchManager.swift */,
 				6CD6ADC127CCDEE200EECBD2 /* SongResult.swift */,
 			);
@@ -356,6 +359,7 @@
 				50DB59A927BBBE0100E6A635 /* TeachHear.xcdatamodeld in Sources */,
 				6C36CA7C27C9255600E0F39E /* LyricsAPIKey.swift in Sources */,
 				F53B0CF627BFA44700A6FC68 /* FolderItem.swift in Sources */,
+				F519564327EB792F008FC9E0 /* RequestError.swift in Sources */,
 				71050B4027C7A696009409FA /* OnboardingView.swift in Sources */,
 				F538A84C27BCFCE400B6E4C1 /* LyricsButtonStyle.swift in Sources */,
 				71DCCF8327C7C81500D18FB7 /* YouTubePlayer.swift in Sources */,
