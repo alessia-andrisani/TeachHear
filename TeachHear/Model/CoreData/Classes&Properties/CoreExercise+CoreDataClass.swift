@@ -11,12 +11,14 @@ import CoreData
 
 @objc(CoreExercise)
 public class CoreExercise: NSManagedObject {
-	func setValues(date: Date,
-				   id: UUID,
-				   lyrics: String,
-				   title: String,
-				   song: CoreSong,
-				   type: String) {
+	convenience init(context moc: NSManagedObjectContext,
+					 date: Date,
+					 id: UUID,
+					 lyrics: String,
+					 title: String,
+					 song: CoreSong,
+					 type: String) {
+		self.init(context: moc)
 		self.date = date
 		self.id = id
 		self.lyrics = lyrics

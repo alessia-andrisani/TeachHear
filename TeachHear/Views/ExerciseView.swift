@@ -138,21 +138,20 @@ struct ExerciseView: View {
 	}
 	
 	private func saveToRecents() {
-		let newSong = CoreSong(context: moc)
-		newSong.setValues(id: UUID().uuidString,
-						  lyrics: exercise.originalLyrics,
-						  title: exercise.title)
+		let newSong = CoreSong(context: moc,
+							   id: UUID().uuidString,
+							   lyrics: exercise.originalLyrics,
+							   title: exercise.title)
 		
-		let newExercise = CoreExercise(context: moc)
-		newExercise.setValues(date: .now,
-							  id: UUID(),
-							  lyrics: exercise.words.toString(),
-							  title: exercise.title,
-							  song: newSong,
-							  type: exercise.type.rawValue)
+		_ = CoreExercise(context: moc,
+						 date: .now,
+						 id: UUID(),
+						 lyrics: exercise.words.toString(),
+						 title: exercise.title,
+						 song: newSong,
+						 type: exercise.type.rawValue)
 		
 		saveContext()
-		
 		dismiss()
 	}
 }

@@ -11,7 +11,11 @@ import CoreData
 
 @objc(CoreSong)
 public class CoreSong: NSManagedObject {
-	func setValues(id: String, lyrics: String, title: String) {
+	convenience init(context moc: NSManagedObjectContext,
+					 id: String,
+					 lyrics: String,
+					 title: String) {
+		self.init(context: moc)
 		self.id = id
 		self.lyrics = lyrics
 		self.title = title
