@@ -40,6 +40,7 @@ struct LyricsView: View {
 						}
 					}
 				}
+				.animation(.default, value: exercise.words)
 				
 				Link(destination: URL(string: "https://www.musixmatch.com")!) {
 					Image("MusixmatchLogo")

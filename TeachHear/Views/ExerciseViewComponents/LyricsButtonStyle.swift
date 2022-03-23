@@ -15,6 +15,7 @@ struct LyricsButtonStyle: ButtonStyle {
 			.font(.largeTitle.weight(.semibold))
 			.frame(minHeight: 44)
 			.foregroundColor(isHighlighted ? .accentColor : .primary)
+			.scaleEffect(configuration.isPressed ? 0.85 : 1)
 	}
 }
 
