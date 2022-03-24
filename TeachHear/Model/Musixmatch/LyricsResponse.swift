@@ -12,7 +12,6 @@ struct LyricsResponse: Codable {
 }
 
 struct LyricsMessage: Codable {
-    let header: MessageHeader
     let body: LyricsMessageBody
 }
 
@@ -21,5 +20,9 @@ struct LyricsMessageBody: Codable {
 }
 
 struct Lyrics: Codable {
-    let lyrics_body: String
+	enum CodingKeys: String, CodingKey {
+		case body = "lyrics_body"
+	}
+	
+    let body: String
 }

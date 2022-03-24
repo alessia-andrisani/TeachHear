@@ -37,11 +37,11 @@ import SwiftUI
 			let track = tracks[trackIndex]
 			let data = try await sendFetchRequest(path: "/ws/1.1/track.lyrics.get",
 												  parameters: [URLQueryItem(name: "track_id",
-																			value: "\(track.track_id)")])
+																			value: "\(track.id)")])
 			
 			if let lyrics = decodeLyrics(from: data) {
-				songs.append(SongResult(id: track.track_id,
-										title: track.track_name,
+				songs.append(SongResult(id: track.id,
+										title: track.title,
 										lyrics: lyrics))
 			}
 			
@@ -77,11 +77,11 @@ import SwiftUI
 	}
 	
 	private func decodeSearchResults(from data: Data) -> [TrackInfo]? {
-		let queryResponse = try? JSONDecoder().decode(QueryResponse.self, from: data)
+		let searchResponse = try? JSONDecoder().decode(SearchResponse.self, from: data)
 		
-		if let tracks = queryResponse?.message.body.track_list,
+		if let tracks = searchResponse?.message.body.tracks,
 		   !tracks.isEmpty {
-			return tracks.map(\.track)
+			return tracks.map(\.info)
 		} else {
 			showAlert = true
 			return nil
@@ -91,7 +91,7 @@ import SwiftUI
 	private func decodeLyrics(from data: Data) -> String? {
 		let lyricsResponse = try? JSONDecoder().decode(LyricsResponse.self, from: data)
 
-		if let lyrics = lyricsResponse?.message.body.lyrics.lyrics_body,
+		if let lyrics = lyricsResponse?.message.body.lyrics.body,
 		   !lyrics.isEmpty {
 			return lyrics
 		} else {
