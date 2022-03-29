@@ -15,28 +15,40 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 30) {
-					SearchBarView()
-					
-					VStack(spacing: 30) {
-						FoldersSection()
-						
-						TrendsSection()
-						
-						RecentsSection()
-							.padding(.bottom, 30)
-					}
-					.onTapGesture(perform: hideResults)
-					.overlay(alignment: .top) {
-						if searchManager.showResults,
-						   let results = searchManager.results {
-							SearchResults(results: results)
-								.offset(y: -30)
+				LazyVStack(spacing: 30, pinnedViews: .sectionHeaders) {
+					Section {
+						VStack(spacing: 30) {
+							FoldersSection()
+							
+							TrendsSection()
+							
+							RecentsSection()
+								.padding(.bottom, 30)
 						}
+						.onTapGesture(perform: hideResults)
+					} header: {
+						SearchBarView()
+							.padding(.vertical, 8)
+							.background(Color(uiColor: .systemGroupedBackground))
+							.overlay(alignment: .top) {
+								if searchManager.showResults,
+								   let results = searchManager.results {
+									VStack {
+										SearchBarView()
+											.hidden()
+											.padding(.bottom, 8)
+										
+										SearchResults(results: results)
+									}
+								}
+							}
 					}
                 }
             }
-			.background(Color(uiColor: .systemGroupedBackground))
+			.background {
+				Color(uiColor: .systemGroupedBackground)
+					.ignoresSafeArea()
+			}
             .navigationTitle("Exercises")
             .navigationBarTitleDisplayMode(.inline)
         }

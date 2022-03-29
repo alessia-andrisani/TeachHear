@@ -15,10 +15,11 @@ struct SearchResults: View {
 			NavigationLink(song.title) {
 				ExerciseView(EditableExercise(song))
 			}
+			.listSectionSeparator(.hidden)
 		}
 		.listStyle(.plain)
 		.cornerRadius(10)
-		.padding(.horizontal, 20)
+		.padding(.horizontal, 50)
 		.frame(height: UIScreen.main.bounds.height / 4)
 		.shadow(radius: 3, y: 1)
 	}
