@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct TeachHearApp: App {
-	@StateObject private var dataController = DataController()
-	
-    var body: some Scene {
+	var body: some Scene {
         WindowGroup {
             ContentView()
-				.environment(\.managedObjectContext, dataController.container.viewContext)
+				.environment(\.managedObjectContext, DataController().container.viewContext)
                 .environmentObject(SearchManager.shared)
 				.environmentObject(YouTubeStore.shared)
         }
