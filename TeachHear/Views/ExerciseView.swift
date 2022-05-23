@@ -20,6 +20,7 @@ struct ExerciseView: View {
 	@StateObject private var exercise: EditableExercise
 	
 	@State private var showSaveDialog = false
+	@State private var isSearching = false
 	
 	private var exerciseTypePicker: some View {
 		VStack(alignment: .leading) {
@@ -83,26 +84,27 @@ struct ExerciseView: View {
 					.confirmationDialog("Where do you want to save the exercise?",
 										isPresented: $showSaveDialog,
 										titleVisibility: .hidden) {
-						Button("Add to recents") {
-							saveToRecents()
-						}
+						Button("Add to recents", action: saveToRecents)
 						
 						Button("Create new folder") {
-							// TODO: Add action here
+							// TODO: Create new folder
 						}
 						
 						Button("Add to existing folder") {
-							// TODO: Add action here
+							// TODO: Add to existing folder
 						}
 					}
 				}
 			}
 			
 			ToolbarItem {
-				if youTubeStore.trackID == nil {
-					Button {
-						search()
-					} label: {
+				if isSearching {
+					Button {} label: {
+						ProgressView()
+					}
+					.disabled(true)
+				} else if youTubeStore.trackID == nil {
+					Button(action: search) {
 						Image(systemName: "play.fill")
 					}
 				} else {
@@ -124,7 +126,9 @@ struct ExerciseView: View {
 	// TODO: EditableExercise should include Song with artist, then the search would be more reliable
 	private func search() {
 		Task {
+			isSearching = true
 			try? await youTubeStore.search(for: exercise.title)
+			isSearching = false
 		}
 	}
 	
