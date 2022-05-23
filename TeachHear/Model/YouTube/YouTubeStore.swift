@@ -21,12 +21,14 @@ import Foundation
 		
 		var urlComponents = URLComponents(string: "https://www.googleapis.com")!
 		urlComponents.path = "/youtube/v3/search"
-		urlComponents.queryItems = ["part": "snippet",
-									"q": query,
-									"regionCode": "US",
-									"maxResults": "1",
-									"type": "video",
-									"key": Self.apiKey]
+		urlComponents.queryItems = [
+			"part": "snippet",
+			"q": query,
+			"regionCode": "US",
+			"maxResults": "1",
+			"type": "video",
+			"key": Self.apiKey,
+		]
 			.map { URLQueryItem(name: $0.key, value: $0.value) }
 		
 		var request = URLRequest(url: urlComponents.url!)
@@ -35,9 +37,12 @@ import Foundation
 		
 		let (data, response) = try await URLSession.shared.data(for: request)
 		
-		guard let httpResponse = response as? HTTPURLResponse,
-			  httpResponse.statusCode == 200 else {
-			throw RequestError.serverError
+		guard let httpResponse = response as? HTTPURLResponse else {
+			throw URLError(.cannotParseResponse)
+		}
+		
+		guard httpResponse.statusCode == 200 else {
+			throw URLError(.init(rawValue: httpResponse.statusCode))
 		}
 		
 		let results = try? JSONDecoder().decode(YoutubeResults.self, from: data)
