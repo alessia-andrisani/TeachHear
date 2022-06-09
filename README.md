@@ -3,7 +3,7 @@
 TeachHear helps language teachers who want to engage their students better by simplifying the preparation for classes using songs to create exercises.
 ___
 It has been developed in `SwiftUI` for `iPad` at targets `iOS 15.2`. 
-We also access the `Musixmatch` Api to retrieve the lyrics for the songs and the `YouTube` Api to play the music video in a player embedded in the app.
+We also access the `Musixmatch` API to retrieve the lyrics for the songs and the `YouTube` API to play the music video in a player embedded in the app.
 
 TeachHear has been localised in 5 languages: English, Italian, French, Spanish and German. 
 ___
