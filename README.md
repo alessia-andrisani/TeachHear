@@ -1,4 +1,7 @@
 # TeachHear
+[![](https://img.shields.io/badge/iOS-15.2-orange)](#)
+[![](https://img.shields.io/badge/Platforms-iPad-blue)](#)
+[![](https://img.shields.io/badge/Category-Education-brightgreen)](#)
 
 TeachHear helps language teachers who want to engage their students better by simplifying the preparation for classes using songs to create exercises.
 ___
